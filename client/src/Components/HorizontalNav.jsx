@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "./images/logo.png";
+
 import {NavLink} from "react-router-dom";
 class HorizontalNav extends React.Component
 {
@@ -22,16 +22,16 @@ class HorizontalNav extends React.Component
     render()
     {
         return (
-          <div className="box has-background-white-ter		">
+          <div className="box has-background-white-ter">
           <div className="menu ">
             <p className="menu-label"><span className="is-primary"><b>General</b></span></p>
 
             <ul className="menu-list">
             <li>
-              <NavLink to= "dashboard" activeClassName="is-active current"><a>Dashboard</a></NavLink>
+              <NavLink to= "dashboard" activeClassName="is-active has-text-white">Dashboard</NavLink>
             </li>
             <li>
-                <NavLink to = "cabs" activeClassName="is-active current"><a> Cab Sharing</a></NavLink>
+                <NavLink to = "cabs" activeClassName="is-active has-text-white"> Cab Sharing Portal</NavLink>
             </li>
             </ul>
 

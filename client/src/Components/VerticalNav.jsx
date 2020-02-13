@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "./images/logo.png";
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 class VerticalNav extends React.Component
 {
     render()
@@ -70,10 +70,9 @@ class VerticalNav extends React.Component
                 <div className="navbar-item">
                   <div className="buttons">
                   
-                  <Link to = "/">
-                    <a className="button is-primary is-light is-danger">
+                  <NavLink to = "/" className="button is-primary is-light is-danger">
                       <strong>Sign Out</strong>
-                    </a></Link>
+                    </NavLink>
                   </div>
                 </div>
               

@@ -1,14 +1,11 @@
 import React from "react"
 import HorizontalNav from "./HorizontalNav"
 import VerticalNav from "./VerticalNav"
-
+import CabRequests from "./CabRequests"
+import CabForm from "./CabForm";
+import "../Stylesheets/main.css"
 class CabPage extends React.Component
 {
-    constructor()
-    {
-        super()
-    }
-
     render()
     {
         return(
@@ -21,8 +18,11 @@ class CabPage extends React.Component
                 <HorizontalNav />
               </div>
               <div>
-              <div className="column box">
-                  <div id="content"><center><b>AVAILABLE CABS<hr/></b></center></div>
+              <center><b>AVAILABLE CABS<hr/></b></center>
+              <div className="columns box is-paddingless	">
+                  
+                  <CabRequests></CabRequests>
+                  <CabForm></CabForm>
               </div>
               </div>
             </div>

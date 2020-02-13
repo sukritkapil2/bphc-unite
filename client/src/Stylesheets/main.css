@@ -19,10 +19,10 @@
     width: 1450px;
     height:700px;
 }
-html, body
+/* html, body
 {
     height: 100%;
-}
+} */
 
 .is-active
 {
@@ -34,6 +34,18 @@ html, body
     color :white
 }
 
+.columns.box
+{
+    margin-right: 10px;
+    width: 1450px;
+    height:700px;
+}
+
+.pic-container {
+    width: 600px;
+    height: 600px;
+    overflow-y: scroll;
+  }
 
 
 
