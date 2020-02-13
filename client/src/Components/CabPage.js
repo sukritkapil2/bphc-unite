@@ -1,13 +1,18 @@
 import React from "react"
-import VerticalNav from "./VerticalNav"
 import HorizontalNav from "./HorizontalNav"
-import "../Stylesheets/main.css"
-class Dashboard extends React.Component
+import VerticalNav from "./VerticalNav"
+
+class CabPage extends React.Component
 {
+    constructor()
+    {
+        super()
+    }
+
     render()
     {
-        return (
-          <div>
+        return(
+            <div>
             <div className="box">
               <VerticalNav />
             </div>
@@ -17,15 +22,15 @@ class Dashboard extends React.Component
               </div>
               <div>
               <div className="column box">
-                  <div id="content"><center><b>Welcome User<hr/></b></center></div>
+                  <div id="content"><center><b>AVAILABLE CABS<hr/></b></center></div>
               </div>
               </div>
             </div>
             
            
           </div>
-        );
+        )
     }
 }
 
-export default Dashboard;
+export default CabPage

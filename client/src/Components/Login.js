@@ -5,7 +5,7 @@ class Login extends React.Component
     render()
     {
         return(
-            <div>
+            <div className="box">
                 <input type = "text"></input>
                 <Link to="/dashboard">
                     <button>Login</button>
