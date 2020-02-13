@@ -1,0 +1,968 @@
+
+
+      html {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        font-family: 'Open Sans', serif;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        -webkit-font-smoothing: antialiased;
+        overflow: -moz-scrollbars-none;
+        -ms-overflow-style: none;
+      }
+
+      
+
+      .web19201 {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: auto;
+      overflow-y: auto;
+      background-color: rgba(33, 65, 108, 1);
+      width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+
+}
+
+.web19201 .insideBphc {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      background-image: url("assets/insideBphc.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+      opacity: 0.1899999976158142;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(0, 0, 0, 0);
+      border-bottom-color: rgba(112, 112, 112, 1);
+      border-bottom-style: none;
+      border-bottom-width: 1.00px;
+      border-left-color: rgba(112, 112, 112, 1);
+      border-left-style: none;
+      border-left-width: 1.00px;
+      border-right-color: rgba(112, 112, 112, 1);
+      border-right-style: none;
+      border-right-width: 1.00px;
+      border-top-color: rgba(112, 112, 112, 1);
+      border-top-style: none;
+      border-top-width: 1.00px;
+      border-top-left-radius: 0.00px;
+      border-top-right-radius: 0.00px;
+      border-bottom-left-radius: 0.00px;
+      border-bottom-right-radius: 0.00px;
+      box-shadow: none;
+      -webkit-filter: blur(3px);
+    filter: blur(3px);
+    width: 100%;
+    height: 100%;
+    left: 0.00px;
+    top: 0.00px;
+
+}
+
+.web19201 .bphc {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 0.5099999904632568;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: left;
+      letter-spacing: 0.00px;
+      color: rgba(255, 255, 255, 1);
+      -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+      font-size: 113.00px;
+      font-weight: 700;
+    font-style: italic;
+      font-family: Verdana, Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 350.00px;
+    height: 138.00px;
+    left: 105.00px;
+    top: 290.00px;
+
+}
+
+.web19201 .unite {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 0.9599999785423279;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: left;
+      letter-spacing: 0.00px;
+      color: rgba(255, 255, 255, 1);
+      -webkit-text-stroke: unset;
+      font-size: 178.00px;
+      font-weight: 700;
+    font-style: italic;
+      font-family: Verdana, Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 514.00px;
+    height: 216.00px;
+    left: 87.00px;
+    top: 346.00px;
+
+}
+
+.web19201 .x92025f97ab7df {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(230, 52, 52, 1);
+      box-shadow: none;
+      width: 55.06px;
+    height: 51.83px;
+    left: 540.94px;
+    top: 313.56px;
+
+}
+
+.web19201 .aStudentPortal {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 0.8999999761581421;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: left;
+      letter-spacing: 0.00px;
+      color: rgba(255, 255, 255, 1);
+      -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+      font-size: 29.00px;
+      font-weight: 300;
+    font-style: normal;
+      font-family: 'Leelawadee UI', Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 212.00px;
+    height: 38.00px;
+    left: 370.00px;
+    top: 553.00px;
+
+}
+
+.web19201 .x920255bd91ba9 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(0, 221, 255, 1);
+      box-shadow: none;
+      width: 76.98px;
+    height: 84.00px;
+    left: 595.73px;
+    top: 247.00px;
+
+}
+
+.web19201 .x92025 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(255, 230, 0, 1);
+      box-shadow: none;
+      width: 38.73px;
+    height: 35.31px;
+    left: 488.70px;
+    top: 352.40px;
+
+}
+
+.web19201 .rectangle1 {
+    position: absolute;
+      box-sizing: border-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 0.2800000011920929;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 1);
+      border-bottom-color: rgba(112, 112, 112, 1);
+      border-bottom-style: solid;
+      border-bottom-width: 1.00px;
+      border-left-color: rgba(112, 112, 112, 1);
+      border-left-style: solid;
+      border-left-width: 1.00px;
+      border-right-color: rgba(112, 112, 112, 1);
+      border-right-style: solid;
+      border-right-width: 1.00px;
+      border-top-color: rgba(112, 112, 112, 1);
+      border-top-style: solid;
+      border-top-width: 1.00px;
+      border-top-left-radius: 51.00px;
+      border-top-right-radius: 51.00px;
+      border-bottom-left-radius: 51.00px;
+      border-bottom-right-radius: 51.00px;
+      box-shadow: none;
+      width: 483.00px;
+      height: 677.00px;
+      left: 1301.00px;
+      top: 200.00px;
+
+}
+
+.web19201 .rectangle2 {
+    position: absolute;
+      box-sizing: border-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 0.49000000953674316;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 1);
+      border-bottom-color: rgba(112, 112, 112, 1);
+      border-bottom-style: solid;
+      border-bottom-width: 1.00px;
+      border-left-color: rgba(112, 112, 112, 1);
+      border-left-style: solid;
+      border-left-width: 1.00px;
+      border-right-color: rgba(112, 112, 112, 1);
+      border-right-style: solid;
+      border-right-width: 1.00px;
+      border-top-color: rgba(112, 112, 112, 1);
+      border-top-style: solid;
+      border-top-width: 1.00px;
+      border-top-left-radius: 0.00px;
+      border-top-right-radius: 0.00px;
+      border-bottom-left-radius: 0.00px;
+      border-bottom-right-radius: 0.00px;
+      box-shadow: none;
+      width: 100%;
+      height: 90.00px;
+
+}
+
+.web19201 .studentLogin {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: center;
+      letter-spacing: 0.00px;
+      color: rgba(255, 255, 255, 1);
+      -webkit-text-stroke: unset;
+      font-size: 34.00px;
+      font-weight: 300;
+    font-style: normal;
+      font-family: 'Leelawadee UI', Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 204.00px;
+    height: 46.00px;
+    left: 1438.00px;
+    top: 268.00px;
+
+}
+
+.web19201 .rectangle3 {
+    position: absolute;
+      box-sizing: border-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 0.8500000238418579;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 1);
+      border-bottom-color: rgba(112, 112, 112, 1);
+      border-bottom-style: solid;
+      border-bottom-width: 1.00px;
+      border-left-color: rgba(112, 112, 112, 1);
+      border-left-style: solid;
+      border-left-width: 1.00px;
+      border-right-color: rgba(112, 112, 112, 1);
+      border-right-style: solid;
+      border-right-width: 1.00px;
+      border-top-color: rgba(112, 112, 112, 1);
+      border-top-style: solid;
+      border-top-width: 1.00px;
+      border-top-left-radius: 24.00px;
+      border-top-right-radius: 24.00px;
+      border-bottom-left-radius: 24.00px;
+      border-bottom-right-radius: 24.00px;
+      box-shadow: none;
+      width: 295.00px;
+    height: 54.00px;
+    left: 1394.00px;
+    top: 358.00px;
+
+}
+
+.web19201 .home {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: center;
+      letter-spacing: 0.00px;
+      color: rgba(255, 255, 255, 1);
+      -webkit-text-stroke: unset;
+      font-size: 30.00px;
+      font-weight: 300;
+    font-style: normal;
+      font-family: 'Leelawadee UI', Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 90.00px;
+    height: 46.00px;
+    left: 1294.00px;
+    top: 25.00px;
+
+}
+
+.web19201 .developers {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: center;
+      letter-spacing: 0.00px;
+      color: rgba(255, 255, 255, 1);
+      -webkit-text-stroke: unset;
+      font-size: 29.00px;
+      font-weight: 300;
+    font-style: normal;
+      font-family: 'Leelawadee UI', Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 164.00px;
+    height: 46.00px;
+    left: 1648.00px;
+    top: 25.00px;
+
+}
+
+.web19201 .contact {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: center;
+      letter-spacing: 0.00px;
+      color: rgba(255, 255, 255, 1);
+      -webkit-text-stroke: unset;
+      font-size: 30.00px;
+      font-weight: 300;
+    font-style: normal;
+      font-family: 'Leelawadee UI', Arial;
+      text-decoration: none;
+      box-shadow: none;
+      overflow-x: unset;
+      overflow-y: unset;
+      white-space: pre;
+      width: 114.00px;
+    height: 46.00px;
+    left: 1463.00px;
+    top: 25.00px;
+
+}
+
+.web19201 .group4 {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: 72.95px;
+    height: 74.15px;
+    left: 104.69px;
+    top: 686.60px;
+
+}
+
+.web19201 .group4 .calendar {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: 72.95px;
+    height: 74.15px;
+    left: 0.00px;
+    top: 0.00px;
+
+}
+
+.web19201 .group4 .calendar .group3 {
+
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      overflow-x: unset;
+      overflow-y: unset;
+      background-color: transparent;
+      width: 72.95px;
+    height: 74.15px;
+    left: 0.00px;
+    top: 0.00px;
+
+}
+
+.web19201 .group4 .calendar .group3 .path11 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(255, 255, 255, 1);
+      box-shadow: none;
+      width: 20.93px;
+    height: 32.07px;
+    left: 13.97px;
+    top: 26.05px;
+
+}
+
+.web19201 .group4 .calendar .group3 .path12 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(255, 255, 255, 1);
+      box-shadow: none;
+      width: 21.58px;
+    height: 32.70px;
+    left: 37.72px;
+    top: 26.05px;
+
+}
+
+.web19201 .group4 .calendar .group3 .path13 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(255, 255, 255, 1);
+      box-shadow: none;
+      width: 72.95px;
+    height: 74.15px;
+    left: 0.00px;
+    top: 0.00px;
+
+}
+
+.web19201 .group4 .calendar .group3 .path14 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(255, 255, 255, 1);
+      box-shadow: none;
+      width: 6.39px;
+    height: 9.24px;
+    left: 16.30px;
+    top: 6.22px;
+
+}
+
+.web19201 .group4 .calendar .group3 .path15 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(255, 255, 255, 1);
+      box-shadow: none;
+      width: 5.53px;
+    height: 7.09px;
+    left: 23.50px;
+    top: 8.38px;
+
+}
+
+.web19201 .group4 .calendar .group3 .path16 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(255, 255, 255, 1);
+      box-shadow: none;
+      width: 3.87px;
+    height: 8.79px;
+    left: 29.26px;
+    top: 6.57px;
+
+}
+
+.web19201 .group4 .calendar .group3 .path17 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(255, 255, 255, 1);
+      box-shadow: none;
+      width: 5.68px;
+    height: 7.08px;
+    left: 33.63px;
+    top: 8.37px;
+
+}
+
+.web19201 .group4 .calendar .group3 .path18 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(255, 255, 255, 1);
+      box-shadow: none;
+      width: 5.63px;
+    height: 9.07px;
+    left: 40.23px;
+    top: 6.39px;
+
+}
+
+.web19201 .group4 .calendar .group3 .path19 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(255, 255, 255, 1);
+      box-shadow: none;
+      width: 5.53px;
+    height: 7.09px;
+    left: 46.62px;
+    top: 8.37px;
+
+}
+
+.web19201 .group4 .calendar .group3 .path20 {
+    position: absolute;
+      box-sizing: content-box;
+      -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+      opacity: 1;
+      cursor: default;
+      margin-top: 0.00px;
+      margin-right: 0.00px;
+      margin-bottom: 0.00px;
+      margin-left: 0.00px;
+      padding-top: 0.00px;
+      padding-right: 0.00px;
+      padding-bottom: 0.00px;
+      padding-left: 0.00px;
+      fill: rgba(255, 255, 255, 1);
+      box-shadow: none;
+      width: 4.00px;
+    height: 6.91px;
+    left: 52.97px;
+    top: 8.37px;
+
+}
+
