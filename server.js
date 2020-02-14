@@ -10,9 +10,9 @@
    new GoogleStrategy({
      clientID: keys.googleClientId,
      clientSecret: keys.googleClientSecret,
-     callbackURL: "auth/google/callback"
+     callbackURL: '/auth/google/redirect'
         },
-       function(accessToken, refreshToken, profile, done) {
+       (accessToken, refreshToken, profile, done)=>{
             console.log("accessToken",accessToken);
             console.log("refreshToken",refreshToken);
             console.log("profile",profile);
@@ -26,7 +26,13 @@
  );
     app.get('/',(req,res)=>{
         res.send("HELLO");
-    })    
+    })   
+    
+    app.get('/auth/google/redirect',passport.authenticate('google'),(req,res)=>
+    {
+        res.send("SUCCESS")
+    })
+
     app.get('/auth/google',passport.authenticate('google',{
         scope:['profile','email']
     }))
