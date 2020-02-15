@@ -10,6 +10,7 @@ class Login extends React.Component
                 <Link to="/dashboard">
                     <button>Login</button>
                 </Link>
+                <a href="/auth/google">Sign up with google</a>
             </div>
         )
     }
