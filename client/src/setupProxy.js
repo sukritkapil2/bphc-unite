@@ -8,4 +8,11 @@ module.exports = function(app) {
       changeOrigin: true,
     })
   );
+  app.use(
+    '/api/*',
+    proxy({
+      target: 'http://localhost:5000',
+      changeOrigin: true,
+    })
+  );
 };

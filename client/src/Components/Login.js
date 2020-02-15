@@ -1,19 +1,39 @@
 import React from "react"
 import {Link} from "react-router-dom";
-class Login extends React.Component
-{
-    render()
+import {connect} from 'react-redux';
+import Dashboard from './Dashboard';
+const Login = (props)=>{
+
+    const renderContent = ()=>
     {
-        return(
-            <div className="box">
-                <input type = "text"></input>
-                <Link to="/dashboard">
-                    <button>Login</button>
-                </Link>
-                <a href="/auth/google">Sign up with google</a>
-            </div>
-        )
+        switch(props.user){
+            case null :
+                return <a href="/">Loading</a>
+            case false :
+                return(
+                    <Login/>
+                )
+            default :
+                return(
+                    <Dashboard/>
+                )
+        }
+    }
+    return(
+        <div className="box">
+            <input type = "text"></input>
+            {/* <Link to="/dashboard">
+                <button>Login</button>
+            </Link> */}
+            <a href="/auth/google">Sign up with google</a>
+        </div>
+    )
+}
+
+const mapStateToProps = (state)=>{
+    return{
+        user:state.auth
     }
 }
 
-export default Login
+export default connect(mapStateToProps)(Login);

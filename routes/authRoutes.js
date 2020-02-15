@@ -6,10 +6,10 @@ module.exports = (app)=>{
     }))
     app.get("/auth/google/redirect",passport.authenticate("google"),
         (req, res) => {
-        res.send("SUCCESS");
+        res.redirect('http://localhost:3000/dashboard');
         }
     );   
-    app.get('/current_user',(req,res)=>{
+    app.get('/api/current_user',(req,res)=>{
         res.send(req.user)
     })    
 
