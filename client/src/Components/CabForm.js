@@ -1,5 +1,5 @@
 import React from "react";
-
+import Calendar from "./Calendar"
 class CabForm extends React.Component
 {
     render()
@@ -11,14 +11,15 @@ class CabForm extends React.Component
 
 <div class="field">
   <label class="label">Departure Time</label>
-  <div class="control">
+  {/* <div class="control">
     <div class="select">
       <select>
         <option>Select dropdown</option>
         <option>With options</option>
       </select>
     </div>
-  </div>
+  </div> */}
+  <Calendar/>
 </div>
 
 <div class="field">
