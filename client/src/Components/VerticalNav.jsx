@@ -1,7 +1,6 @@
 import React from "react";
 import Logo from "./images/logo.png";
 import {NavLink} from "react-router-dom"
-import {connect} from 'react-redux'
 class VerticalNav extends React.Component
 {
     render()
@@ -49,9 +48,11 @@ class VerticalNav extends React.Component
               </div>
               <div className="navbar-brand">
               
-              <figure class="image is-96x96" style={{marginTop:"10px"}}>
-              <img class="is-rounded" style={{border:"10px solid #ddd"}} src={this.props.user.avatar}/>
-              </figure>
+              <img
+                src={Logo}
+                width="112"
+                height="500"
+              />
 
               <a
                 role="button"
@@ -82,10 +83,4 @@ class VerticalNav extends React.Component
 
 } 
 
-const mapStateToProps = (state)=>{
-  return {
-    user : state.auth
-  }
-}
-
-export default connect(mapStateToProps)(VerticalNav);
+export default VerticalNav;
