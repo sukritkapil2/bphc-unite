@@ -29,7 +29,8 @@ passport.use(
                   console.log('Current user is :'+profile.id)
                   done(null,userExists);
                 } else{
-                    new User({googleId:profile.id , name:profile.displayName, email:profile.email,avatar:profile.picture}).save().then((newUser)=>{
+                    console.log(profile);
+                    new User({googleId:profile.id , name:profile.displayName, email:profile.emails[0].value,avatar:profile.photos[0].value}).save().then((newUser)=>{
                     console.log('new user created'+newUser)
                     done(null,newUser);   
                     })
