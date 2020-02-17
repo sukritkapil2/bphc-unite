@@ -1,0 +1,35 @@
+.sideNav {
+  margin-left: 20px;
+}
+
+#navbarBasicExample.navbar-menu {
+  margin-left: 20px;
+}
+
+.navbar-item {
+  margin: 10px;
+}
+#content {
+  width: 1450px;
+  height: 700px;
+}
+
+.is-active {
+  font-weight: bold;
+}
+
+.current {
+  color: white;
+}
+
+.columns.box {
+  margin-right: 10px;
+  width: 1450px;
+  height: 700px;
+}
+
+.pic-container {
+  width: 600px;
+  height: 600px;
+  overflow-y: scroll;
+}
