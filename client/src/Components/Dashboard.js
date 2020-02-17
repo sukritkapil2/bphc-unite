@@ -2,30 +2,61 @@ import React from "react"
 import VerticalNav from "./VerticalNav"
 import HorizontalNav from "./HorizontalNav"
 import "../Stylesheets/main.css"
-class Dashboard extends React.Component
+import {connect} from 'react-redux'
+import { render } from "react-dom"
+import Login from './Login'
+
+const Dashboard = (props)=>
 {
-    render()
+  const renderContent = ()=>
     {
-        return (
-          <div>
-            <div className="box">
-              <VerticalNav />
-            </div>
-            <div className="columns">
-              <div className="column is-one-fifth sideNav">
-                <HorizontalNav />
-              </div>
+        switch(props.user){
+            case null :
+                return(
+                    <Login/>
+                    
+                )
+                
+            case false :
+                return(
+                    <Login/>
+                )
+            default :
+            return (
               <div>
-              <div className="column box">
-                  <div id="content"><center><b>Welcome User<hr/></b></center></div>
+                <div className="box">
+                  <VerticalNav />
+                </div>
+                <div className="columns">
+                  <div className="column is-one-fifth sideNav">
+                    <HorizontalNav />
+                  </div>
+                  <div>
+                  <div className="column box">
+                      <div id="content"><center><b>Welcome {props.user.googleId}<hr/></b></center></div>
+                  </div>
+                  </div>
+                </div>
+                
+               
               </div>
-              </div>
-            </div>
-            
-           
-          </div>
-        );
+            );  
+                
+        }
     }
+
+    return(
+      <div>
+        {renderContent()}
+      </div>
+    )
+  
 }
 
-export default Dashboard;
+const mapStateToProps = (state)=>{
+  return {
+    user : state.auth
+  }
+}
+
+export default connect(mapStateToProps)(Dashboard);

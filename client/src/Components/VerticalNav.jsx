@@ -70,9 +70,9 @@ class VerticalNav extends React.Component
                 <div className="navbar-item">
                   <div className="buttons">
                   
-                  <NavLink to = "/" className="button is-primary is-light is-danger">
+                  <a href = "/api/logout" className="button is-primary is-light is-danger" >
                       <strong>Sign Out</strong>
-                    </NavLink>
+                    </a>
                   </div>
                 </div>
               
