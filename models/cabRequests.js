@@ -3,11 +3,14 @@ const Schema = mongoose.Schema;
 
 //create Schema
 
-const PostSchema = new Schema({
+const requestSchema = new Schema({
     user : {
         type : Schema.Types.ObjectId,
         ref : 'users'
     }, 
+    name : {
+        type: String
+    },
     msg : {
         type : String,
     },
@@ -16,3 +19,5 @@ const PostSchema = new Schema({
         default:Date.now
     }
 })
+
+module.exports=Post=mongoose.model('cabRequest',requestSchema); 
