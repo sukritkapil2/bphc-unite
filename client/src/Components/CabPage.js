@@ -3,7 +3,7 @@ import HorizontalNav from "./HorizontalNav"
 import VerticalNav from "./VerticalNav"
 import CabRequests from "./CabRequests"
 import CabForm from "./CabForm";
-import "./main.css"
+import "../Stylesheets/main.css"
 class CabPage extends React.Component
 {
     render()

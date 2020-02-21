@@ -1,20 +1,18 @@
-/* global gapi */
 import React from "react";
 import Logo from "./images/logo.png";
-
+import { NavLink } from "react-router-dom"
+import { connect } from 'react-redux'
 class VerticalNav extends React.Component {
-  signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function() {
-      window.location.replace("/");
-    });
-  }
-
   render() {
     return (
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <img src={Logo} width="112" height="100" alt="verticalimg" />
+
+          <img
+            src={Logo}
+            width="112"
+            height="100"
+          />
 
           <a
             role="button"
@@ -48,7 +46,10 @@ class VerticalNav extends React.Component {
             </div>
           </div>
           <div className="navbar-brand">
-            <img src={Logo} width="112" height="500" alt="verticalimg3" />
+
+            <figure class="image is-96x96" style={{ marginTop: "10px" }}>
+              <img class="is-rounded" style={{ border: "10px solid #ddd" }} src={this.props.user.avatar} />
+            </figure>
 
             <a
               role="button"
@@ -65,19 +66,24 @@ class VerticalNav extends React.Component {
 
           <div className="navbar-item">
             <div className="buttons">
-              <a
-                href="/"
-                className="button is-primary is-light is-danger"
-                onClick={this.signOut}
-              >
+
+              <a href="/api/logout" className="button is-primary is-light is-danger" >
                 <strong>Sign Out</strong>
               </a>
             </div>
           </div>
+
         </div>
       </nav>
     );
   }
+
 }
 
-export default VerticalNav;
+const mapStateToProps = (state) => {
+  return {
+    user: state.auth
+  }
+}
+
+export default connect(mapStateToProps)(VerticalNav);

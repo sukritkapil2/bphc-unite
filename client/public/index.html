@@ -14,41 +14,9 @@
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="/client/src/Stylesheets/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="/client/src/Stylesheets/main.css">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <meta
-      name="google-signin-client_id"
-      content="195311539306-lsg0qe9qq6bj00u8a455498vegv3k6hd.apps.googleusercontent.com"
-    />
-    <script src="https://apis.google.com/js/api.js"></script>
-    <script
-      src="https://apis.google.com/js/platform.js?onload=init"
-      async
-      defer
-    ></script>
-    <script>
-      function init() {
-        gapi.load("auth2", function() {
-          gapi.auth2.init();
-          var GoogleAuth = gapi.auth2.getAuthInstance();
-          var isLoggedIn = GoogleAuth.isSignedIn.get();
-          if (isLoggedIn) {
-            window.location.replace("/dashboard");
-          }
-        });
-      }
-      function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function() {
-          window.location.replace("/");
-        });
-      }
-    </script>
-
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.

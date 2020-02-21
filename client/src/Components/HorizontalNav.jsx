@@ -28,10 +28,10 @@ class HorizontalNav extends React.Component
 
             <ul className="menu-list">
             <li>
-              <NavLink to="dashboard" activeClassName="is-active has-text-white">Dashboard</NavLink>
+              <NavLink to= "dashboard" activeClassName="is-active has-text-white">Dashboard</NavLink>
             </li>
             <li>
-                <NavLink to="cabs" activeClassName="is-active has-text-white"> Cab Sharing Portal</NavLink>
+                <NavLink to = "cabs" activeClassName="is-active has-text-white"> Cab Sharing Portal</NavLink>
             </li>
             </ul>
 
