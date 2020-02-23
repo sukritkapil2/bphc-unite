@@ -3,7 +3,6 @@ import React from "react";
 import Calendar from "./Calendar"
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { set } from "mongoose";
 
 class CabForm extends React.Component {
   constructor(props){
@@ -31,7 +30,7 @@ class CabForm extends React.Component {
           emailID:this.props.user.email
       }
         console.log(newRequest);
-        axios.post('http://localhost:5000/cabs/request', newRequest)
+        axios.post('/api/cabs/request', newRequest)
         .then((res) => {
           console.log(res.data)
         }).catch((error) => {

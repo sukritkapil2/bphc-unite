@@ -2,7 +2,6 @@
 import React from "react";
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { set } from "mongoose";
 import VerticalNav from "./VerticalNav";
 import HorizontalNav from './HorizontalNav';
 import RequestCard from "./RequestCard"
@@ -18,14 +17,15 @@ class MyRequests extends React.Component {
   
   render() {
 
-    axios.get("http://localhost:5000/fetchrequests")
-          .then((response)=>{
-            const data = response.data;
-            this.setState({requests:data});
-          })
-          .catch((err)=>{
-            console.log(err);
-    })
+    axios
+      .get("/api/fetchrequests")
+      .then(response => {
+        const data = response.data;
+        this.setState({ requests: data });
+      })
+      .catch(err => {
+        console.log(err);
+      });
     const myrequests = this.state.requests.map((item,index)=>{
       if(item.email==this.props.user.email)
       {

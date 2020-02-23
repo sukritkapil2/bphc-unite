@@ -20,11 +20,14 @@ class RequestCard extends React.Component
             email:this.props.user.email
         }
         console.log(oldRequest);
-        axios.post("http://localhost:5000/deletemyrequests",oldRequest)
-            .then((res)=>{
-                console.log(res.data);
-            })
-            .catch((err)=>{console.log(err)})
+        axios
+          .post("/api/deletemyrequests", oldRequest)
+          .then(res => {
+            console.log(res.data);
+          })
+          .catch(err => {
+            console.log(err);
+          });
 
     }
     render()
@@ -36,7 +39,7 @@ class RequestCard extends React.Component
                 <p class="card-header-title">
                 {this.props.requesterName}
                 </p>
-                <a href="#" class="card-header-icon" aria-label="more options">
+                <a class="card-header-icon" aria-label="more options">
                 <span class="icon">
                     <i class="fas fa-angle-down" aria-hidden="true"></i>
                 </span>
@@ -50,7 +53,7 @@ class RequestCard extends React.Component
                 </div>
             </div>
             <footer class="card-footer">
-                <a href="#" class="card-footer-item has-text-danger" onClick={this.deleteRequest}>Delete Request</a>
+                <a class="card-footer-item has-text-danger" onClick={this.deleteRequest}>Delete Request</a>
                 {/* <a href="#" class="card-footer-item">Edit</a>
                 <a href="#" class="card-footer-item">Delete</a> */}
             </footer>

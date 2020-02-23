@@ -3,7 +3,6 @@ import VerticalNav from "./VerticalNav"
 import HorizontalNav from "./HorizontalNav"
 import "../Stylesheets/main.css"
 import {connect} from 'react-redux'
-import { render } from "react-dom"
 import Login from './Login'
 
 const Dashboard = (props)=>

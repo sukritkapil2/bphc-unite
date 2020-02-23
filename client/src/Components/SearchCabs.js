@@ -2,7 +2,6 @@
 import React from "react";
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { set } from "mongoose";
 import VerticalNav from "./VerticalNav";
 import HorizontalNav from './HorizontalNav';
 import CabCard from "./CabCard";
@@ -41,13 +40,14 @@ class MyRequests extends React.Component {
   }
   refresh()
   {
-    axios.get("http://localhost:5000/fetchrequests")
-    .then((response)=>{
+    axios
+      .get("/api/fetchrequests")
+      .then(response => {
         const data = response.data;
-        this.setState({requests:data})
+        this.setState({ requests: data });
         console.log(this.state);
-    })
-    .catch((err)=>console.log(err));
+      })
+      .catch(err => console.log(err));
   }
   render() {
     const reqrev = this.state.requests.reverse();

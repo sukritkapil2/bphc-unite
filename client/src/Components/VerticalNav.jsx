@@ -1,6 +1,5 @@
 import React from "react";
 import Logo from "./images/logo.png";
-import { NavLink } from "react-router-dom"
 import { connect } from 'react-redux'
 class VerticalNav extends React.Component {
   render() {
@@ -12,6 +11,7 @@ class VerticalNav extends React.Component {
             src={Logo}
             width="112"
             height="100"
+            alt="LOGO"
           />
 
           <a
@@ -37,9 +37,9 @@ class VerticalNav extends React.Component {
               <a className="navbar-link">Notifications</a>
 
               <div className="navbar-dropdown">
-                <a className="navbar-item">About</a>
-                <a className="navbar-item">Jobs</a>
-                <a className="navbar-item">Contact</a>
+                <a className="navbar-item">Notif 1</a>
+                <a className="navbar-item">Notif 2</a>
+                <a className="navbar-item">Notif 3</a>
                 <hr className="navbar-divider" />
                 <a className="navbar-item">Report an issue</a>
               </div>
