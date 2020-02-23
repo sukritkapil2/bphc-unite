@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.container{
+  background-image: url("/client/src/Components/images/BITS-Hyderabad.jpg");
+  height:1000px;
+  background-size: cover;
+}

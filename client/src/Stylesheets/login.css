@@ -1,0 +1,14 @@
+body, html {
+height: 30%;
+}
+.bg {
+background-image: url("https://i.imgur.com/JmTWof7.jpg");
+height: 800px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.signin{
+margin-top: 400px;
+margin-left: 1080px;
+}

@@ -1,6 +1,6 @@
 import React from "react"
-import Flatpickr from "react-flatpickr";
-import "flatpickr/dist/themes/dark.css";
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css";
 
 class Calendar extends React.Component
 {
@@ -31,10 +31,10 @@ class Calendar extends React.Component
     render()
     {
         return(
-            <Flatpickr
-                data-enable-time
-                value={this.state.startDate}
+            <DatePicker
+                selected={this.state.startDate}
                 onChange={this.handleChange}
+                showTimeSelect
             />
         )
     }
