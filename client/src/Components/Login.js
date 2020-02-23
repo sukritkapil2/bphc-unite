@@ -2,41 +2,19 @@ import React from "react"
 import {Link} from "react-router-dom";
 import {connect} from 'react-redux';
 import Dashboard from './Dashboard';
+import signinButton from './images/signinButton.png'
+import '../Stylesheets/login.css'
 const Login = (props)=>{
-
-    // const renderContent = ()=>
-    // {
-    //     switch(props.user){
-    //         case null :
-    //             return(
-    //                 <div>
-    //                     <input type = "text"></input>
-    //                     <a href="/auth/google">Sign up with google</a>
-    //                 </div>
-                    
-    //             )
-                
-    //         case false :
-    //             return(
-    //                 <div>
-    //                     <input type = "text"></input>
-    //                     <a href="/auth/google">Sign up with google</a>
-    //                 </div>
-    //             )
-    //         default :
-    //                 return(
-    //                     <Dashboard/>
-    //                 )   
-                
-    //     }
-    // }
-    return(
-        <div className="box">
-            
-            <input type = "text"></input>
-            <a href="/auth/google">Sign up with google</a>
-        </div>
-    )
+    const bg = {
+      backgroundImage: "url(/images/frontpage.png)",
+      width: "1000px",
+      height: "1000px"
+    };
+    return (
+      <div className='bg'>
+        <a href="/auth/google"><img className="signin" src={signinButton} /></a>
+      </div>
+    );
 }
 
 const mapStateToProps = (state)=>{

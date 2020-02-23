@@ -7,7 +7,8 @@ const keys = require('./config/keys')
 const cookieSession = require("cookie-session");
 const crequest = require('./services/post');
 const bodyParser = require('body-parser');
-
+const getrequests = require('./services/fetchrequests')
+const deleterequests = require('./services/deleterequest')
 require("./models/cabRequests")
 require("./models/User")
 require('./services/passport')
@@ -32,6 +33,8 @@ app.use(cors());
 app.use(passport.initialize())
 app.use(passport.session())
 app.use('/cabs',crequest);
+app.use('/fetchrequests',getrequests);
+app.use('/deletemyrequests',deleterequests)
 const port=process.env.PORT  || 5000;
 require('./routes/authRoutes')(app)
  

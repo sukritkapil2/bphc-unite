@@ -12,11 +12,14 @@ const requestSchema = new Schema({
         type: String
     },
     msg : {
-        type : String,
+        type : String
     },
     date : {
         type:Date,
         default:Date.now
+    },
+    email : {
+        type : String
     }
 })
 

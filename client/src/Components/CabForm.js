@@ -27,8 +27,8 @@ class CabForm extends React.Component {
       const newRequest={
           name:this.props.user.name,
           msg:this.state.value,
-          date:this.state.date
-
+          date:this.state.date,
+          emailID:this.props.user.email
       }
         console.log(newRequest);
         axios.post('http://localhost:5000/cabs/request', newRequest)
@@ -70,36 +70,11 @@ class CabForm extends React.Component {
             <textarea class="textarea" placeholder="Textarea" onChange={this.updateText} value={this.state.value}></textarea>
           </div>
         </div>
-
-        <div class="field">
-          <div class="control">
-            <label class="checkbox">
-              <input type="checkbox" />
-              I agree to the <a href="#">terms and conditions</a>
-            </label>
-          </div>
-        </div>
-
-        <div class="field">
-          <div class="control">
-            <label class="radio">
-              <input type="radio" name="question" />
-              Yes
-    </label>
-            <label class="radio">
-              <input type="radio" name="question" />
-              No
-    </label>
-          </div>
-        </div>
-
         <div class="field is-grouped">
           <div class="control">
             <button class="button is-link" onClick={this.submitRequest}>Submit</button>
           </div>
-          <div class="control">
-            <button class="button is-success">Search</button>
-          </div>
+          
         </div>
 
       </div>

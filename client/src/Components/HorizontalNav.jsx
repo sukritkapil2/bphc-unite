@@ -30,12 +30,21 @@ class HorizontalNav extends React.Component
             <li>
               <NavLink to= "dashboard" activeClassName="is-active has-text-white">Dashboard</NavLink>
             </li>
+            </ul>
+            <p className="menu-label"><span className="is-primary"><b>Cab Sharing</b></span></p>
+            <ul className="menu-list">
             <li>
                 <NavLink to = "cabs" activeClassName="is-active has-text-white"> Cab Sharing Portal</NavLink>
             </li>
+            <li>
+                <NavLink to = "myrequests" activeClassName="is-active has-text-white">My Requests</NavLink>
+            </li>
+            <li>
+                <NavLink to = "searchcabs" activeClassName="is-active has-text-white">Search for Cabs</NavLink>
+            </li>
             </ul>
 
-            <p className="menu-label">  Administration</p>
+            {/* <p className="menu-label">  Administration</p>
               <ul className="menu-list">
               <li>
                 <a>Team Settings</a>
@@ -76,6 +85,7 @@ class HorizontalNav extends React.Component
                 <a>Balance</a>
               </li>
             </ul>
+          </div> */}
           </div>
           </div>
         );
