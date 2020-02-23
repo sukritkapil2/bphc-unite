@@ -41,7 +41,7 @@ class MyRequests extends React.Component {
   }
   refresh()
   {
-    axios.get("http://localhost:5000/fetchrequests")
+    axios.get("/api/fetchrequests")
     .then((response)=>{
         const data = response.data;
         this.setState({requests:data})
