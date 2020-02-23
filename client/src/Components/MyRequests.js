@@ -2,7 +2,6 @@
 import React from "react";
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { set } from "mongoose";
 import VerticalNav from "./VerticalNav";
 import HorizontalNav from './HorizontalNav';
 import RequestCard from "./RequestCard"
@@ -18,7 +17,7 @@ class MyRequests extends React.Component {
   
   render() {
 
-    axios.get("http://localhost:5000/fetchrequests")
+    axios.get("/api/fetchrequests")
           .then((response)=>{
             const data = response.data;
             this.setState({requests:data});

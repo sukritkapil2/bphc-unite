@@ -7,12 +7,7 @@ class VerticalNav extends React.Component {
     return (
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-
-          <img
-            src={Logo}
-            width="112"
-            height="100"
-          />
+          <img src={Logo} width="112" height="100" />
 
           <a
             role="button"
@@ -37,18 +32,21 @@ class VerticalNav extends React.Component {
               <a className="navbar-link">Notifications</a>
 
               <div className="navbar-dropdown">
-                <a className="navbar-item">About</a>
-                <a className="navbar-item">Jobs</a>
-                <a className="navbar-item">Contact</a>
+                <a className="navbar-item">NOTIF 1</a>
+                <a className="navbar-item">NOTIF 2</a>
+                <a className="navbar-item">NOTIF 3</a>
                 <hr className="navbar-divider" />
                 <a className="navbar-item">Report an issue</a>
               </div>
             </div>
           </div>
           <div className="navbar-brand">
-
             <figure class="image is-96x96" style={{ marginTop: "10px" }}>
-              <img class="is-rounded" style={{ border: "10px solid #ddd" }} src={this.props.user.avatar} />
+              <img
+                class="is-rounded"
+                style={{ border: "10px solid #ddd" }}
+                src={this.props.user.avatar}
+              />
             </figure>
 
             <a
@@ -66,13 +64,14 @@ class VerticalNav extends React.Component {
 
           <div className="navbar-item">
             <div className="buttons">
-
-              <a href="/api/logout" className="button is-primary is-light is-danger" >
+              <a
+                href="/api/logout"
+                className="button is-primary is-light is-danger"
+              >
                 <strong>Sign Out</strong>
               </a>
             </div>
           </div>
-
         </div>
       </nav>
     );

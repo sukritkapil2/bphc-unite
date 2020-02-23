@@ -1,4 +1,4 @@
-const express =require("express");
+const express = require("express");
 const app = express();
 var cors = require("cors");
 const passport = require("passport");
@@ -9,18 +9,25 @@ const crequest = require('./services/post');
 const bodyParser = require('body-parser');
 const getrequests = require('./services/fetchrequests')
 const deleterequests = require('./services/deleterequest')
+const path = require('path');
+require('dotenv').config();             
+
+const host = process.env.YOUR_HOST || '0.0.0.0'
 require("./models/cabRequests")
 require("./models/User")
 require('./services/passport')
 
-mongoose.connect(keys.mongoURI,()=>{
-    console.log("Connected.db")
-})
+// mongoose.connect(keys.mongoURI, () => {
+//     console.log("Connected.db")
+// })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, () => {
+       console.log("Connected.db")
+    });
 
 app.use(
     cookieSession({
-        maxAge:30 * 24 * 60* 60 * 1000,
-        keys:[keys.cookieKey]
+        maxAge: 30 * 24 * 60 * 60 * 1000,
+        keys: [keys.cookieKey]
     })
 )
 
@@ -32,28 +39,26 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 app.use(passport.initialize())
 app.use(passport.session())
-app.use('/cabs',crequest);
-app.use('/fetchrequests',getrequests);
-app.use('/deletemyrequests',deleterequests)
-const port=process.env.PORT  || 5000;
+app.use("/api/cabs", crequest);
+app.use("/api/fetchrequests", getrequests);
+app.use("/api/deletemyrequests", deleterequests);
+const port = process.env.PORT ;
 require('./routes/authRoutes')(app)
- 
-app.get('/',(req,res)=>{
-    res.send("HELLO");
-})   
+
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static( 'client/build' ));
+    app.use(express.static('client/build'));
 
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html')); // relative path
+        res.sendFile(path.resolve('client', 'build', 'index.html')); // relative path
     });
 }
-app.use(express.static("client/build"));
+else{
+    app.use(express.static("client/build"));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
+    app.get("*", (req, res) => {
+    res.sendFile(path.resolve("client", "build", "index.html")); // relative path
 });
-
-app.listen(port,()=>{
+}
+app.listen(port,host, () => {
     console.log(port);
 })

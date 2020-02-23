@@ -20,7 +20,7 @@ class RequestCard extends React.Component
             email:this.props.user.email
         }
         console.log(oldRequest);
-        axios.post("http://localhost:5000/deletemyrequests",oldRequest)
+        axios.post("/api/deletemyrequests",oldRequest)
             .then((res)=>{
                 console.log(res.data);
             })

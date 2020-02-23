@@ -31,7 +31,7 @@ class CabForm extends React.Component {
           emailID:this.props.user.email
       }
         console.log(newRequest);
-        axios.post('http://localhost:5000/cabs/request', newRequest)
+        axios.post('/api/cabs/request', newRequest)
         .then((res) => {
           console.log(res.data)
         }).catch((error) => {
