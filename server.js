@@ -14,9 +14,14 @@ require("./models/cabRequests")
 require("./models/User")
 require('./services/passport')
 
-mongoose.connect(process.env.MONGODB_URI || keys.mongoURI, () => {
-  console.log("Connected.db");
-});
+mongoose.connect(
+  process.env.MONGODB_URI ||
+    "mongodb://user:password1@ds035583.mlab.com:35583/heroku_43nxkp62" ||
+    keys.mongoURI,
+  () => {
+    console.log("Connected.db");
+  }
+);
 
 app.use(
     cookieSession({
