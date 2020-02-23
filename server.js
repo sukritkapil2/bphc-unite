@@ -14,9 +14,9 @@ require("./models/cabRequests")
 require("./models/User")
 require('./services/passport')
 
-mongoose.connect(keys.mongoURI,()=>{
-    console.log("Connected.db")
-})
+mongoose.connect(process.env.MONGODB_URI || keys.mongoURI, () => {
+  console.log("Connected.db");
+});
 
 app.use(
     cookieSession({
@@ -40,16 +40,16 @@ const port=process.env.PORT  || 5000;
 require('./routes/authRoutes')(app)
  
 if(process.env.NODE_ENV=== 'production')
-{
+{   
     app.use(express.static('client/build'));
     app.get('*',(req,res)=>{
      res.sendFile(path.resolve(__dirname,'client','build','index.html'));   
     });
 }
 
-app.get('/',(req,res)=>{
-    res.send("HELLO");
-})   
+// app.get('/',(req,res)=>{
+//     res.send("HELLO");
+// })   
 
 app.listen(port,()=>{
     console.log(port);
