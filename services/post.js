@@ -9,7 +9,9 @@ router.route('/request').post((req,res)=>{
         msg:  req.body.msg,
         name: req.body.name,
         date: req.body.date,
-        email : req.body.emailID       
+        email : req.body.emailID,  
+        from:req.body.from,
+        to:req.body.to     
     });
     newRequest.save().then(post=>res.json(post));
     console.log("Request sucessfully submitted");

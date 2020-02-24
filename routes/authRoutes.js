@@ -6,7 +6,7 @@ module.exports = (app)=>{
     }))
     app.get("/auth/google/redirect",passport.authenticate("google"),
         (req, res) => {
-        res.redirect('/dashboard');
+            res.redirect('/dashboard');
         }
     );   
     app.get('/api/current_user',(req,res)=>{

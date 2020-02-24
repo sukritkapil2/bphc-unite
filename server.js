@@ -20,7 +20,7 @@ require('./services/passport')
 // mongoose.connect(keys.mongoURI, () => {
 //     console.log("Connected.db")
 // })
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, () => {
+mongoose.connect(process.env.MONGODB_URI || keys.mongoURI, { useNewUrlParser: true }, () => {
        console.log("Connected.db")
     });
 
@@ -42,7 +42,7 @@ app.use(passport.session())
 app.use("/api/cabs", crequest);
 app.use("/api/fetchrequests", getrequests);
 app.use("/api/deletemyrequests", deleterequests);
-const port = process.env.PORT ;
+const port = process.env.PORT || 5000 ;
 require('./routes/authRoutes')(app)
 
 if (process.env.NODE_ENV === 'production') {

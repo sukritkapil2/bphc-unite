@@ -3,7 +3,7 @@ import React from "react";
 import Calendar from "./Calendar"
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { set } from "mongoose";
+import "../Stylesheets/cabform.css";
 
 class CabForm extends React.Component {
   constructor(props){
@@ -11,9 +11,11 @@ class CabForm extends React.Component {
     this.submitRequest=this.submitRequest.bind(this);
     this.updateText=this.updateText.bind(this);
     this.setDate=this.setDate.bind(this)
-    this.state={value: '',date:Date.now};
+    this.state={value: '',date:Date.now,fromValue:'check',toValue:'check'};
+    this.fromSelect=this.fromSelect.bind(this)
+    this.toSelect = this.toSelect.bind(this)
+
   }
-  
   updateText(event)
   {
     this.setState({value:event.target.value});
@@ -28,7 +30,9 @@ class CabForm extends React.Component {
           name:this.props.user.name,
           msg:this.state.value,
           date:this.state.date,
-          emailID:this.props.user.email
+          emailID:this.props.user.email,
+          from:this.state.fromValue,
+          to:this.state.toValue
       }
         console.log(newRequest);
         axios.post('/api/cabs/request', newRequest)
@@ -45,10 +49,19 @@ class CabForm extends React.Component {
     this.setState({date:childData})
     console.log(this.state.date)
   }
+  fromSelect(event)
+  {
+    this.setState({fromValue:event.target.value})
+    console.log(this.state)
+  }
+  toSelect(event) {
+    this.setState({ toValue: event.target.value })
+    console.log(this.state)
+  }
   render() {
     return (
       <div className="column is-half">
-        <center><b>Form</b></center>
+        <b>Form</b>
 
 
         <div class="field">
@@ -63,7 +76,29 @@ class CabForm extends React.Component {
   </div> */}
           <Calendar setDate={this.setDate}/>
         </div>
-
+        <label class="label">From</label>
+        <div class="control">
+          <div class="select">
+            <select class="is-focused" onChange={this.fromSelect} defaultValue={this.state.fromValue}>
+              <option>Airport</option>
+              <option>Secundarabad</option>
+              <option>Railway Station</option>
+              <option>Event</option>
+              <option>Campus</option>
+            </select>
+          </div>
+          <label class="label">To</label>
+          <div class="control">
+            <div class="select">
+              <select class="is-focused" onChange={this.toSelect} defaultValue={this.state.toValue}>
+                <option>Airport</option>
+                <option>Secundarabad</option>
+                <option>Railway Station</option>
+                <option>Event</option>
+                <option>Campus</option>
+              </select>
+            </div>
+        </div>
         <div class="field">
           <label class="label">Message</label>
           <div class="control">
@@ -78,15 +113,16 @@ class CabForm extends React.Component {
         </div>
 
       </div>
+    </div>
     )
-
-  }
-}
-
-const mapStateToProps = (state) => {
+    
+      }
+    }
+    
+const mapStateToProps = (state)=>{
   return {
-    user: state.auth
-  }
-}
-
+          user : state.auth
+      }
+    }
+    
 export default connect(mapStateToProps)(CabForm);

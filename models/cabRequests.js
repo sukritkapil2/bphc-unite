@@ -20,6 +20,12 @@ const requestSchema = new Schema({
     },
     email : {
         type : String
+    },
+    from : {
+        type: String
+    },
+    to: {
+        type: String
     }
 })
 

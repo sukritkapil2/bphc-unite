@@ -23,7 +23,7 @@ class CabRequests extends React.Component
             .catch((err)=>console.log(err));
         const arr = this.state.requests.reverse();
         const cabcards = arr.map((item,index)=>{
-            return <CabCard key ={index} requesterName={item.name} dateofrequest = {item.date} message = {item.msg} ></CabCard>
+            return <CabCard key ={index} requesterName={item.name} dateofrequest = {item.date} message = {item.msg} from={item.from} to={item.to}></CabCard>
         })
         
         return(

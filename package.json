@@ -25,6 +25,7 @@
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
     "postinstall": "^0.7.0",
+    "react-auto-scale": "^1.0.4",
     "react-datepicker": "^2.12.1"
   },
   "devDependencies": {}

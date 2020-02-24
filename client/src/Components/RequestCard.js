@@ -47,6 +47,10 @@ class RequestCard extends React.Component
                 {this.props.message}
                 <br/>
                 <time datetime="2016-1-1">{this.props.dateofrequest}</time>
+                <br />
+                <b>From :</b>{this.props.from}
+                <br />
+                <b>To :</b>{this.props.to}
                 </div>
             </div>
             <footer class="card-footer">

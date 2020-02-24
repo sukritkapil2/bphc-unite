@@ -28,7 +28,7 @@ class MyRequests extends React.Component {
     const myrequests = this.state.requests.map((item,index)=>{
       if(item.email==this.props.user.email)
       {
-        return <RequestCard key={index} requesterName={item.name} dateofrequest={item.date} message={item.msg}></RequestCard>
+        return <RequestCard key={index} requesterName={item.name} dateofrequest={item.date} message={item.msg} from={item.from} to={item.to}></RequestCard>
       }
     })
     return (

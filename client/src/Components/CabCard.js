@@ -37,6 +37,10 @@ class CabCard extends React.Component
                 <time datetime="2016-1-1"><b>Date :</b>{date}</time>
                 <br/>
                 <time datetime="2016-1-1"><b>Time :</b>{time}</time>
+                <br />
+                <b>From :</b>{this.props.from}
+                <br />
+                <b>To :</b>{this.props.to}
                 </div>
             </div>
             <footer class="card-footer">
