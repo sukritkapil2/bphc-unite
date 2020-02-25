@@ -1,4 +1,3 @@
-
 import React from "react";
 import { connect } from 'react-redux'
 import axios from 'axios'
@@ -8,75 +7,88 @@ import HorizontalNav from './HorizontalNav';
 import CabCard from "./CabCard";
 import Calendar from "./Calendar";
 import moment from 'moment';
-class MyRequests extends React.Component {
-  constructor(props)
-  {
-    super(props) 
-    this.state={
-      requests:[],
-      date:Date.now
+class SearchCabs extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      requests: [],
+      date: Date.now,
+      fromValue:'Secunderabad',
+      toValue:''
     }
-    this.setDate=this.setDate.bind(this)
-    this.filterResult=this.filterResult.bind(this)
-    this.refresh=this.refresh.bind(this)
+    this.fromSelect = this.fromSelect.bind(this)
+    this.toSelect = this.toSelect.bind(this)
+    this.filterResult = this.filterResult.bind(this)
   }
 
-  setDate(childData)
-  {
-    this.setState({date:childData})
-    console.log(this.state.date)
+  fromSelect(event) {
+    this.setState({ fromValue: event.target.value })
+    console.log(this.state)
   }
-
-  filterResult()
-  {
-    this.refresh();
-    const newstate = this.state.requests.map((item,index)=>{
-        if(moment(item.date).isSame(this.state.date,'minutes'))
-        {
-            return <CabCard requesterName = {item.name} key={index} dateofrequest={item.date} msg={item.msg}/>
-        }
-    })
-    this.setState({requests:newstate})
-    this.render();
+  toSelect(event) {
+    this.setState({ toValue: event.target.value })
+    console.log(this.state)
   }
-  refresh()
-  {
-    axios.get("/api/fetchrequests")
-    .then((response)=>{
+  filterResult() {
+    axios.get("/api/filterrequests",request)
+      .then((response) => {
         const data = response.data;
-        this.setState({requests:data})
-        console.log(this.state);
-    })
-    .catch((err)=>console.log(err));
+        console.log(data);
+        this.setState({ requests: data })
+      })
+      .catch((err) => console.log(err));
   }
+  
   render() {
-    const reqrev = this.state.requests.reverse();
-    const req = reqrev.map((item,index)=>
-    {
-        return <CabCard requesterName = {item.name} key={index} dateofrequest={item.date} msg={item.msg}/>
-    })
-      return (
-        <div>
-            <div className="box">
-                    <VerticalNav />
-            </div>
-            <div className="columns">
-              <div className="column is-one-fifth sideNav">
-                    <HorizontalNav />
-              </div>
-              <div className="normal-container">
-              <div class="control">Search by Date and Time : <Calendar  setDate={this.setDate}/></div>
-              <div class="control">
-                <button class="button is-link" onClick={this.filterResult}>Submit</button>
-              </div>
-                    {req}
-              </div>
-  
-           </div>
+    
+    return (
+      <div>
+        <div className="box">
+          <VerticalNav />
         </div>
-      )
-  
-    }
+        <div className="columns">
+          <div className="column is-one-fifth sideNav">
+            <HorizontalNav />
+          </div>
+          <div className="normal-container">
+            <label class="label">From</label>
+            <div class="control">
+              <div class="select">
+                <select class="is-focused" onChange={this.fromSelect} defaultValue={this.state.fromValue}>
+                  <option>Airport</option>
+                  <option>Secundarabad</option>
+                  <option>Railway Station</option>
+                  <option>Event</option>
+                  <option>Campus</option>
+                </select>
+              </div>
+              <label class="label">To</label>
+              <div class="control">
+                <div class="select">
+                  <select class="is-focused" onChange={this.toSelect} defaultValue={this.state.toValue}>
+                    <option>Airport</option>
+                    <option>Secundarabad</option>
+                    <option>Railway Station</option>
+                    <option>Event</option>
+                    <option>Campus</option>
+                  </select>
+                </div>
+              </div>
+            <div class="control">
+              <button class="button is-link" onClick={this.filterResult}>Submit</button>
+            </div>
+              {
+                this.state.requests.map((item, index) => {
+                  return <CabCard key={index} requesterName={item.name} dateofrequest={item.date} message={item.msg} from={this.state.from} to={this.state.to}></CabCard>
+                })
+              }
+          </div>
+        </div>
+        </div>
+      </div>
+    )
+
+  }
 
 }
 
@@ -87,4 +99,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(MyRequests);
+export default connect(mapStateToProps)(SearchCabs);
