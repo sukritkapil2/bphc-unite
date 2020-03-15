@@ -1,22 +1,34 @@
 import React from "react";
-import moment from "moment"
-class CabCard extends React.Component
+import { connect } from 'react-redux'
+import axios from "axios";
+
+class RequestCard extends React.Component
 {
     constructor(props)
     {
-        super(props);
+        super(props)
+        this.deleteRequest = this.deleteRequest.bind(this);
     }
 
+    deleteRequest()
+    {
+        const oldRequest={
+            id:this.props.id,
+            name:this.props.requesterName,
+            msg:this.props.message,
+            date:this.props.dateofrequest,
+            email:this.props.user.email
+        }
+        console.log(oldRequest);
+        axios.post("/api/deletemyrequests",oldRequest)
+            .then((res)=>{
+                console.log(res.data);
+            })
+            .catch((err)=>{console.log(err)})
+
+    }
     render()
     {
-        // const dateinfo = this.props.dateofrequest.split('T');
-        // const date = dateinfo[0];
-        // const time = dateinfo[1];
-        // const dateobj = date.parse(this.props.dateofrequest);
-        const dateobj = moment(this.props.dateofrequest);
-        var newDateObj = moment(dateobj).toDate();
-        var date = moment(newDateObj).format('DD/MM/YY')
-        var time = moment(newDateObj).format('HH:mm')
         return(
             <div>
             <div class="card">
@@ -34,9 +46,7 @@ class CabCard extends React.Component
                 <div class="content">
                 {this.props.message}
                 <br/>
-                <time datetime="2016-1-1"><b>Date :</b>{date}</time>
-                <br/>
-                <time datetime="2016-1-1"><b>Time :</b>{time}</time>
+                <time datetime="2016-1-1">{this.props.dateofrequest}</time>
                 <br />
                 <b>From :</b>{this.props.from}
                 <br />
@@ -44,7 +54,7 @@ class CabCard extends React.Component
                 </div>
             </div>
             <footer class="card-footer">
-                <a href="#" class="card-footer-item has-text-primary">Send Request</a>
+                <a href="#" class="card-footer-item has-text-danger" onClick={this.deleteRequest}>Delete Request</a>
                 {/* <a href="#" class="card-footer-item">Edit</a>
                 <a href="#" class="card-footer-item">Delete</a> */}
             </footer>
@@ -55,4 +65,10 @@ class CabCard extends React.Component
     }
 }
 
-export default CabCard;
+const mapStateToProps = (state) => {
+    return {
+      user: state.auth
+    }
+  }
+  
+  export default connect(mapStateToProps)(RequestCard);

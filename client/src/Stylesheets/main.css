@@ -45,7 +45,13 @@
     width: 600px;
     height: 600px;
     overflow-y: scroll;
-  }
+}
+
+.normal-container
+{
+    width:1200px;
+    overflow-y:scroll;
+}
 
 
 

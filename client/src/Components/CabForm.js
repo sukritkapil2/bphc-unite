@@ -1,19 +1,72 @@
+
 import React from "react";
 import Calendar from "./Calendar"
-class CabForm extends React.Component
-{
+import { connect } from 'react-redux'
+import axios from 'axios'
+import "../Stylesheets/cabform.css";
 
-  
-    render()
-    {
-        return(
-            <div className="column is-half">
-            <center><b>Form</b></center>
-            
+class CabForm extends React.Component {
+  constructor(props){
+    super(props);
+    this.submitRequest=this.submitRequest.bind(this);
+    this.updateText=this.updateText.bind(this);
+    this.setDate=this.setDate.bind(this)
+    this.state={value: '',date:Date.now,fromValue:'check',toValue:'check'};
+    this.fromSelect=this.fromSelect.bind(this)
+    this.toSelect = this.toSelect.bind(this)
 
-<div class="field">
-  <label class="label">Departure Time</label>
-  {/* <div class="control">
+  }
+  updateText(event)
+  {
+    this.setState({value:event.target.value});
+    console.log(this.state.value)
+  }
+  submitRequest(event)
+  {
+    console.log(this.props.user)
+      event.preventDefault();
+      console.log(this.state.value)
+      const newRequest={
+          name:this.props.user.name,
+          msg:this.state.value,
+          date:this.state.date,
+          emailID:this.props.user.email,
+          from:this.state.fromValue,
+          to:this.state.toValue
+      }
+        console.log(newRequest);
+        axios.post('/api/cabs/request', newRequest)
+        .then((res) => {
+          console.log(res.data)
+        }).catch((error) => {
+          console.log(error)
+          console.log("CabForm")
+        });
+        
+  }
+  setDate(childData)
+  {
+    this.setState({date:childData})
+    console.log(this.state.date)
+  }
+  fromSelect(event)
+  {
+    this.setState({fromValue:event.target.value})
+    console.log(this.state)
+  }
+  toSelect(event) {
+    this.setState({ toValue: event.target.value })
+    console.log(this.state)
+  }
+  render() {
+    return (
+      <div className="column is-half">
+        <b>Form</b>
+
+
+        <div class="field">
+          <label class="label">Departure Time</label>
+          {/* <div class="control">
     <div class="select">
       <select>
         <option>Select dropdown</option>
@@ -21,51 +74,55 @@ class CabForm extends React.Component
       </select>
     </div>
   </div> */}
-  <Calendar/>
-</div>
-
-<div class="field">
-  <label class="label">Message</label>
-  <div class="control">
-    <textarea class="textarea" placeholder="Textarea"></textarea>
-  </div>
-</div>
-
-<div class="field">
-  <div class="control">
-    <label class="checkbox">
-      <input type="checkbox"/>
-      I agree to the <a href="#">terms and conditions</a>
-    </label>
-  </div>
-</div>
-
-<div class="field">
-  <div class="control">
-    <label class="radio">
-      <input type="radio" name="question"/>
-      Yes
-    </label>
-    <label class="radio">
-      <input type="radio" name="question"/>
-      No
-    </label>
-  </div>
-</div>
-
-<div class="field is-grouped">
-  <div class="control">
-    <button class="button is-link">Submit</button>
-  </div>
-  <div class="control">
-    <button class="button is-success">Search</button>
-  </div>
-</div>
-            
+          <Calendar setDate={this.setDate}/>
+        </div>
+        <label class="label">From</label>
+        <div class="control">
+          <div class="select">
+            <select class="is-focused" onChange={this.fromSelect} defaultValue={this.state.fromValue}>
+              <option>Airport</option>
+              <option>Secundarabad</option>
+              <option>Railway Station</option>
+              <option>Event</option>
+              <option>Campus</option>
+            </select>
+          </div>
+          <label class="label">To</label>
+          <div class="control">
+            <div class="select">
+              <select class="is-focused" onChange={this.toSelect} defaultValue={this.state.toValue}>
+                <option>Airport</option>
+                <option>Secundarabad</option>
+                <option>Railway Station</option>
+                <option>Event</option>
+                <option>Campus</option>
+              </select>
             </div>
-        )
+        </div>
+        <div class="field">
+          <label class="label">Message</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Textarea" onChange={this.updateText} value={this.state.value}></textarea>
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link" onClick={this.submitRequest}>Submit</button>
+          </div>
+          
+        </div>
 
+      </div>
+    </div>
+    )
+    
+      }
     }
-}
-
-export default CabForm;
+    
+const mapStateToProps = (state)=>{
+  return {
+          user : state.auth
+      }
+    }
+    
+export default connect(mapStateToProps)(CabForm);

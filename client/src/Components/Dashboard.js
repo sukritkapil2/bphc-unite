@@ -33,7 +33,7 @@ const Dashboard = (props)=>
                   </div>
                   <div>
                   <div className="column box">
-                      <div id="content"><center><b>Welcome ,{props.user.name}<hr/></b></center></div>
+                      <div id="content"><center><b>Welcome {props.user.name}<hr/></b></center></div>
                   </div>
                   </div>
                 </div>
