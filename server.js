@@ -9,6 +9,8 @@ const crequest = require("./services/post");
 const bodyParser = require("body-parser");
 const getrequests = require("./services/fetchrequests");
 const deleterequests = require("./services/deleterequest");
+const sharerequests=require("./services/sharerequests")
+const sharing=require("./services/sharing");
 const events = require("./services/events");
 const path = require("path");
 require("./models/cabRequests");
@@ -43,7 +45,9 @@ app.use(passport.session());
 app.use("/api/cabs", crequest);
 app.use("/api/fetchrequests", getrequests);
 app.use("/api/deletemyrequests", deleterequests);
-app.use("/api/events",events);
+app.use("/api/share", sharerequests);
+app.use("/api/sharing", sharing);
+app.use('/api/events',events);
 const port = process.env.PORT || 5000;
 require("./routes/authRoutes")(app);
 

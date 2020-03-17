@@ -34,5 +34,10 @@ class CabRequests extends React.Component
         
     }
 }
+const mapStateToProps = state => {
+  return {
+    user: state.auth
+  };
+};
 
 export default CabRequests;
