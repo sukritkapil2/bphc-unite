@@ -7,6 +7,7 @@ import SearchCabs from "./Components/SearchCabs";
 import { connect } from "react-redux";
 import { fetchUserAction } from "./actions/myaction";
 import MyRequests from "./Components/MyRequests";
+import SuggestEvents from "./Components/SuggestEvents";
 
 function App(props) {
   useEffect(() => {
@@ -19,6 +20,7 @@ function App(props) {
           <Route path="/cabs" component={CabPage}></Route>
           <Route path="/myrequests" component={MyRequests}></Route>
           <Route path="/searchcabs" component={SearchCabs}></Route>
+          <Route path = "/suggestevents" component = {SuggestEvents}></Route>
     </Router>
   );
 }

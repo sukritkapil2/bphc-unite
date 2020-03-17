@@ -6,55 +6,79 @@ import { set } from "mongoose";
 import VerticalNav from "./VerticalNav";
 import HorizontalNav from './HorizontalNav';
 import CabCard from "./CabCard";
-import Calendar from "./Calendar";
-import moment from 'moment';
+import Select from "react-select"
 class MyRequests extends React.Component {
   constructor(props)
   {
     super(props) 
     this.state={
       requests:[],
-      date:Date.now
+      date:Date.now,
+      fromValue : 'check',
+      toValue : 'check',
+      options:[]
     }
-    this.setDate=this.setDate.bind(this)
+
     this.filterResult=this.filterResult.bind(this)
-    this.refresh=this.refresh.bind(this)
+    this.fromSelect = this.fromSelect.bind(this)
+    this.toSelect = this.toSelect.bind(this)
   }
 
-  setDate(childData)
-  {
-    this.setState({date:childData})
-    console.log(this.state.date)
-  }
+ 
 
   filterResult()
   {
-    this.refresh();
-    const newstate = this.state.requests.map((item,index)=>{
-        if(moment(item.date).isSame(this.state.date,'minutes'))
+    axios.get('/api/fetchrequests')
+    .then((response)=>{
+      const data = response.data;
+      const req = data.map((item,index)=>{
+        if(item.to==this.state.toValue && item.from == this.state.fromValue)
         {
-            return <CabCard requesterName = {item.name} key={index} dateofrequest={item.date} msg={item.msg}/>
+          return <CabCard key = {index} requesterName = {item.name} from = {item.from} to = {item.to} dateofrequest = {item.date}></CabCard>
         }
+      })
+      this.setState({requests : req})
     })
-    this.setState({requests:newstate})
-    this.render();
+    .catch(err=>{
+      console.log(err);
+    })
   }
-  refresh()
+  componentDidMount()
   {
     axios.get("/api/fetchrequests")
     .then((response)=>{
         const data = response.data;
-        this.setState({requests:data})
-        console.log(this.state);
+        const req = data.map((item,index)=>{
+          return <CabCard key = {index} requesterName = {item.name} from = {item.from} to = {item.to} dateofrequest = {item.date}></CabCard>
+        })
+        this.setState({requests:req})
     })
     .catch((err)=>console.log(err));
+
+    axios.get('/api/events/get')
+    .then((response)=>{
+      const data = response.data;
+      console.log(data);
+      const optionList = data.map((event,index)=>{
+        return {value : event.eventName, label:event.eventName}
+      })
+      this.setState({options:optionList})
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
+
+  fromSelect(event)
+  {
+    this.setState({fromValue : event.label})
+  }
+
+  toSelect(event)
+  {
+    this.setState({toValue : event.label})
   }
   render() {
-    const reqrev = this.state.requests.reverse();
-    const req = reqrev.map((item,index)=>
-    {
-        return <CabCard requesterName = {item.name} key={index} dateofrequest={item.date} msg={item.msg}/>
-    })
       return (
         <div>
             <div className="box">
@@ -65,11 +89,14 @@ class MyRequests extends React.Component {
                     <HorizontalNav />
               </div>
               <div className="normal-container">
-              <div class="control">Search by Date and Time : <Calendar  setDate={this.setDate}/></div>
+              <label>From :</label>
+              <Select onChange = {this.fromSelect} options = {this.state.options}></Select>
+              <label>To :</label>
+              <Select onChange = {this.toSelect} options = {this.state.options}></Select>
               <div class="control">
                 <button class="button is-link" onClick={this.filterResult}>Submit</button>
               </div>
-                    {req}
+                    {this.state.requests}
               </div>
   
            </div>

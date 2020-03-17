@@ -9,6 +9,7 @@ const crequest = require("./services/post");
 const bodyParser = require("body-parser");
 const getrequests = require("./services/fetchrequests");
 const deleterequests = require("./services/deleterequest");
+const events = require("./services/events");
 const path = require("path");
 require("./models/cabRequests");
 require("./models/User");
@@ -42,6 +43,7 @@ app.use(passport.session());
 app.use("/api/cabs", crequest);
 app.use("/api/fetchrequests", getrequests);
 app.use("/api/deletemyrequests", deleterequests);
+app.use("/api/events",events);
 const port = process.env.PORT || 5000;
 require("./routes/authRoutes")(app);
 

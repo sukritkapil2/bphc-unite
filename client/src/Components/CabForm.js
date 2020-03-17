@@ -4,6 +4,7 @@ import Calendar from "./Calendar"
 import { connect } from 'react-redux'
 import axios from 'axios'
 import "../Stylesheets/cabform.css";
+import Select from "react-select";
 
 class CabForm extends React.Component {
   constructor(props){
@@ -11,10 +12,25 @@ class CabForm extends React.Component {
     this.submitRequest=this.submitRequest.bind(this);
     this.updateText=this.updateText.bind(this);
     this.setDate=this.setDate.bind(this)
-    this.state={value: '',date:Date.now,fromValue:'check',toValue:'check'};
+    this.state={value: '',date:Date.now,fromValue:'check',toValue:'check', options:[]};
     this.fromSelect=this.fromSelect.bind(this)
     this.toSelect = this.toSelect.bind(this)
 
+  }
+  componentDidMount()
+  {
+    axios.get('/api/events/get')
+    .then((response)=>{
+      const data = response.data;
+      console.log(data);
+      const optionList = data.map((event,index)=>{
+        return {value : event.eventName, label:event.eventName}
+      })
+      this.setState({options:optionList})
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
   }
   updateText(event)
   {
@@ -51,14 +67,16 @@ class CabForm extends React.Component {
   }
   fromSelect(event)
   {
-    this.setState({fromValue:event.target.value})
+    console.log(event);
+    this.setState({fromValue : event.label})
     console.log(this.state)
   }
   toSelect(event) {
-    this.setState({ toValue: event.target.value })
+    this.setState({ toValue: event.label})
     console.log(this.state)
   }
   render() {
+    
     return (
       <div className="column is-half">
         <b>Form</b>
@@ -66,38 +84,19 @@ class CabForm extends React.Component {
 
         <div class="field">
           <label class="label">Departure Time</label>
-          {/* <div class="control">
-    <div class="select">
-      <select>
-        <option>Select dropdown</option>
-        <option>With options</option>
-      </select>
-    </div>
-  </div> */}
           <Calendar setDate={this.setDate}/>
         </div>
         <label class="label">From</label>
         <div class="control">
-          <div class="select">
-            <select class="is-focused" onChange={this.fromSelect} defaultValue={this.state.fromValue}>
-              <option>Airport</option>
-              <option>Secundarabad</option>
-              <option>Railway Station</option>
-              <option>Event</option>
-              <option>Campus</option>
-            </select>
-          </div>
+          
+            <Select onChange={this.fromSelect} options={this.state.options}/>
+            
+          
           <label class="label">To</label>
           <div class="control">
-            <div class="select">
-              <select class="is-focused" onChange={this.toSelect} defaultValue={this.state.toValue}>
-                <option>Airport</option>
-                <option>Secundarabad</option>
-                <option>Railway Station</option>
-                <option>Event</option>
-                <option>Campus</option>
-              </select>
-            </div>
+            
+              <Select onChange={this.toSelect} options = {this.state.options}/>
+            
         </div>
         <div class="field">
           <label class="label">Message</label>

@@ -15,8 +15,6 @@ class HorizontalNav extends React.Component
     {
        let container = document.getElementsByClassName("menu-list");
        console.log(container);
-      
-    
     }
 
     render()
@@ -41,6 +39,9 @@ class HorizontalNav extends React.Component
             </li>
             <li>
                 <NavLink to = "searchcabs" activeClassName="is-active has-text-white">Search for Cabs</NavLink>
+            </li>
+            <li>
+                <NavLink to = "suggestevents" activeClassName="is-active has-text-white">Suggest Events</NavLink>
             </li>
             </ul>
 
