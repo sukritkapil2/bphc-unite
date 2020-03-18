@@ -12,6 +12,7 @@ class RequestCard extends React.Component
 
     deleteRequest()
     {
+        
         const oldRequest={
             id:this.props.id,
             name:this.props.requesterName,
@@ -24,7 +25,7 @@ class RequestCard extends React.Component
             .then((res)=>{
                 console.log(res.data);
             })
-            .catch((err)=>{console.log(err)})
+            .catch((err)=>{console.log(err)});
 
     }
     render()

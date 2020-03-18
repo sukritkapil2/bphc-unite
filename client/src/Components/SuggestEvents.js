@@ -26,7 +26,8 @@ class SuggestEvents extends React.Component {
     //api call to add it to mongodb
     const evt = {
       name: this.state.location,
-      addr: this.state.address
+      addr: this.state.address,
+      status : "1"
     }
     console.log(evt)
     axios.post('/api/events/suggest', evt)

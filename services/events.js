@@ -6,7 +6,8 @@ const Events = require('../models/Events');
 router.route('/suggest').post((req,res)=>{
     const newEvents = new Events({
         eventName : req.body.name,
-        eventAddr :req.body.addr    
+        eventAddr :req.body.addr,
+        status : req.body.status    
     });
     newEvents.save().then(post=>res.json(post));
     console.log("Event request sucessfully submitted");

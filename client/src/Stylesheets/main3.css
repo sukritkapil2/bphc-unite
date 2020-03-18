@@ -9,7 +9,7 @@
 .AdminPage .card {
     width: 300px;
     height: 400px;
-    margin-left: 40%;
+    margin-left: 10%;
     margin-top: 10%;
     border-radius: 30px;
 }
@@ -19,3 +19,4 @@
     transform: translate(0, 330%);
     font-weight: 600;
 }
+

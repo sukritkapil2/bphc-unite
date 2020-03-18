@@ -9,6 +9,7 @@ import { fetchUserAction } from "./actions/myaction";
 import MyRequests from "./Components/MyRequests";
 import AdminLogin from "./Components/AdminLogin";
 import AdminPage from "./Components/AdminPage";
+import SuggestEvents from "./Components/SuggestEvents";
 import PrivateRoute from "./helpers/PrivateRoute";
 
 function App(props) {
@@ -23,6 +24,7 @@ function App(props) {
       <Route exact path="/myrequests" component={MyRequests}></Route>
       <Route exact path="/searchcabs" component={SearchCabs}></Route>
       <Route exact path="/adminlogin" component={AdminLogin}></Route>
+      <Route exact path="/suggestevents" component={SuggestEvents}></Route>
       <PrivateRoute exact path="/admin" component={AdminPage}></PrivateRoute>
     </Router>
   );

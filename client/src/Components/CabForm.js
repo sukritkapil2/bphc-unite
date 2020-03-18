@@ -23,7 +23,9 @@ class CabForm extends React.Component {
         const data = response.data;
         console.log(data);
         const optionList = data.map((event, index) => {
-          return { value: event.eventName, label: event.eventName }
+          
+            return { value: event.eventName, label: event.eventName }
+          
         })
         this.setState({ options: optionList })
       })
