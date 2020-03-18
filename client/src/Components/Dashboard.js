@@ -44,12 +44,14 @@ class Dashboard extends React.Component {
               <div>
                 <div className="column box">
                   <div id="content"><center><b>Welcome {this.props.user.name}<hr /></b></center>
-                    <div>
-                      <div >
+                    <div className="columns box is-paddingless	">
+                      <div className="column is-half">
                         <center><b>New Requests<hr /></b></center>
+                        <div className="column pic-container">
                         <ShareRequests></ShareRequests>\
+                        </div>
                     </div>
-                      <div>
+                      <div className="column is-half pic-container">
                         <center><b>Upcoming<hr /></b></center>
                       </div>
                     </div>

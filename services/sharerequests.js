@@ -8,7 +8,7 @@ router.route("/request").post((req, res) => {
   const newRequest = new Post({
       requestor: req.body.requestor,
       requestee: req.body.requestee,
-      msg: req.body.message,
+      msg: req.body.msg,
       date: req.body.date,
       from: req.body.from,
       to: req.body.to

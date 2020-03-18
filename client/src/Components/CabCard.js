@@ -17,43 +17,58 @@ class CabCard extends React.Component {
         const sharing = {
             requestor: this.props.user.name,
             requestee: this.props.requesterName,
-            mmessage: this.props.message,
+            msg: this.props.message,
             date: this.props.dateofrequest,
             from: this.props.from,
             to: this.props.to
         };
-        const check1 = JSON.stringify(sharing);
-        var flag = 0
+        const str1 = JSON.stringify(sharing);
+        var check1=str1.slice(1)
+        console.log(check1)
+       if(sharing.requestor=== sharing.requestee)
+       {
+           toast.error("You cannot send a Request to yourself !", {
+               position: toast.POSITION.TOP_RIGHT
+           });
+       }
+       else{
         axios.get("/api/sharing")
             .then((response) => {
                 const data = response.data;
+                var flag = 0
                 this.setState({ requests: data })
                 data.map((item) => {
-                    const check2 = JSON.stringify(item)
-                    console.log(item)
+                    
+                    const str = JSON.stringify(item)
+                    
+                    var pos = str.indexOf("requestor", 15);
+                    var check2=str.slice(pos-1)
+                     console.log(check2)
                     if (check2 === check1) {
                         toast.warn("You have already sent a Request !", {
                             position: toast.POSITION.TOP_RIGHT
                         });
                         flag = 1;
+
                     }
                 })
+                if (flag === 0) {
+                    console.log(sharing);
+                    axios
+                        .post("/api/share/request", sharing)
+                        .then(res => {
+                            console.log(res.data);
+                        })
+                        .catch(err => {
+                            console.log(err);
+                        });
+                    toast.success("Request Sent !", {
+                        position: toast.POSITION.TOP_RIGHT
+                    });
+                }
             })
             .catch((err) => console.log(err));
 
-        if (flag === 0) {
-            console.log(sharing);
-            axios
-                .post("/api/share/request", sharing)
-                .then(res => {
-                    console.log(res.data);
-                })
-                .catch(err => {
-                    console.log(err);
-                });
-            toast.success("Request Sent !", {
-                position: toast.POSITION.TOP_RIGHT
-            });
         }
     }
 

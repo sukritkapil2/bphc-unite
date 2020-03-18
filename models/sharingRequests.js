@@ -24,6 +24,6 @@ const sharingSchema = new Schema({
   status:{
     type: String
   }
-});
+}, { versionKey: false });
 
 module.exports = Post = mongoose.model("sharingRequests", sharingSchema);
