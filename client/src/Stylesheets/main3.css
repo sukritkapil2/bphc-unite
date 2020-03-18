@@ -1,0 +1,21 @@
+.AdminPage .buttonlogout {
+  margin-left: 92%;
+  margin-top: 2%;
+  background-color: rgb(241, 70, 70);
+  font-weight: 600;
+  font-family: "Varela";
+}
+
+.AdminPage .card {
+    width: 300px;
+    height: 400px;
+    margin-left: 40%;
+    margin-top: 10%;
+    border-radius: 30px;
+}
+
+.AdminPage .card .text {
+    text-align: center;
+    transform: translate(0, 330%);
+    font-weight: 600;
+}
