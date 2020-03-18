@@ -2777,10 +2777,12 @@
     overflow-x: unset;
     overflow-y: unset;
     white-space: pre;
-    width: 200px;
-    height: 43px;
-    left: 21%;
-    top: 68%;
+    width: 150px;
+    height: 30px;
+    left: 27%;
+    top: 67%;
+    border-radius: 10px;
+    background-color: #43cece;
   }
 
   .rectangle6 .popuptext {
