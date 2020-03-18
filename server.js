@@ -9,9 +9,10 @@ const crequest = require("./services/post");
 const bodyParser = require("body-parser");
 const getrequests = require("./services/fetchrequests");
 const deleterequests = require("./services/deleterequest");
-const sharerequests=require("./services/sharerequests")
-const sharing=require("./services/sharing");
+const sharerequests = require("./services/sharerequests")
+const sharing = require("./services/sharing");
 const events = require("./services/events");
+const adminLogin = require("./services/adminLogin");
 const path = require("path");
 require("./models/cabRequests");
 require("./models/User");
@@ -47,7 +48,9 @@ app.use("/api/fetchrequests", getrequests);
 app.use("/api/deletemyrequests", deleterequests);
 app.use("/api/share", sharerequests);
 app.use("/api/sharing", sharing);
-app.use('/api/events',events);
+app.use('/api/events', events);
+app.use("/adminlogin", adminLogin);
+
 const port = process.env.PORT || 5000;
 require("./routes/authRoutes")(app);
 

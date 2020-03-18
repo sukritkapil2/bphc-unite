@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import Dashboard from "./Dashboard";
 import signinButton from "./images/signinButton.png";
@@ -47,6 +47,11 @@ class Login extends React.Component {
     popup2.classList.toggle("show");
   }
 
+  gotologin() {
+    console.log("Clicked");
+    window.location.href = "/adminlogin";
+  }
+
   render() {
     return (
       <div data-layer="7c5fe039-61b7-412a-8bd8-6980e141ecd1" class="web19201">
@@ -87,16 +92,13 @@ class Login extends React.Component {
         >
           Student Login
         </div>
-        <div
-          data-layer="11712fd0-65ff-4f73-affc-528387370808"
-          class="rectangle4"
-        ></div>
-        <div
+        <button
           data-layer="a24b63a3-5b99-4c70-8b75-616ccf8ab9cb"
           class="loginAsAdmin"
+          onClick={this.gotologin}
         >
           Login as Admin
-        </div>
+        </button>
         <button
           data-layer="16af46dc-0c06-4cc2-9fc7-cb7818024444"
           class="rectangle5"

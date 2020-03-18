@@ -1,12 +1,12 @@
-import React,{useState} from "react"
+import React, { useState } from "react"
 import VerticalNav from "./VerticalNav"
 import HorizontalNav from "./HorizontalNav"
 import "../Stylesheets/main.css"
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { render } from "react-dom"
 import Login from './Login'
 import ShareRequestCard from '../Components/ShareRequestCard'
-import {axios} from 'axios'
+import { axios } from 'axios'
 import ShareRequests from './ShareRequests'
 class Dashboard extends React.Component {
   constructor(props) {
@@ -17,9 +17,8 @@ class Dashboard extends React.Component {
     this.renderContent = this.renderContent.bind(this);
 
   }
-  renderContent()
-  {
-    
+  renderContent() {
+
     switch (this.props.user) {
       case null:
         return (
@@ -32,7 +31,7 @@ class Dashboard extends React.Component {
           <Login />
         )
       default:
-        
+
         return (
           <div>
             <div className="box">
@@ -46,32 +45,31 @@ class Dashboard extends React.Component {
                 <div className="column box">
                   <div id="content"><center><b>Welcome {this.props.user.name}<hr /></b></center>
                     <div>
-                    <div >
-                      <center><b>New Requests<hr /></b></center>
-                    <ShareRequests></ShareRequests>\
+                      <div >
+                        <center><b>New Requests<hr /></b></center>
+                        <ShareRequests></ShareRequests>\
                     </div>
-                    <div>
-                      <center><b>Upcoming<hr /></b></center>
+                      <div>
+                        <center><b>Upcoming<hr /></b></center>
+                      </div>
                     </div>
-                 </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-          </div>
+            </div>
           </div>
         );
 
     }
   }
 
-  render()
-  {
-   
-    return(
+  render() {
+
+    return (
       <div>
-      {this.renderContent()}
-     </div>
+        {this.renderContent()}
+      </div>
     )
   }
 }

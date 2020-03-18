@@ -359,49 +359,6 @@
     top: 230px;
   }
 
-  .web19201 .rectangle4 {
-    position: absolute;
-    box-sizing: border-box;
-    -ms-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -ms-transform-origin: center;
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    opacity: 1;
-    cursor: default;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    background-color: #43cece;
-    border-bottom-color: rgba(112, 112, 112, 1);
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-left-color: rgba(112, 112, 112, 1);
-    border-left-style: solid;
-    border-left-width: 1px;
-    border-right-color: rgba(112, 112, 112, 1);
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-top-color: rgba(112, 112, 112, 1);
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-top-left-radius: 22px;
-    border-top-right-radius: 22px;
-    border-bottom-left-radius: 22px;
-    border-bottom-right-radius: 22px;
-    box-shadow: none;
-    width: 260px;
-    height: 55px;
-    left: 1275px;
-    top: 770px;
-  }
-
   .web19201 .loginAsAdmin {
     position: absolute;
     box-sizing: content-box;
@@ -435,10 +392,13 @@
     overflow-x: unset;
     overflow-y: unset;
     white-space: pre;
-    width: 220px;
+    width: 252px;
     height: 43px;
-    left: 1296px;
+    left: 1278px;
     top: 777px;
+    border-radius: 20px;
+    background-color: #43cece;
+    outline: none;
   }
 
   .web19201 .rectangle5 {
@@ -1280,8 +1240,8 @@
 
   .rectangle7 .popuptext2 {
     visibility: hidden;
-    width: 300px;
-    height: 170px;
+    width: 330px;
+    height: 130px;
     background-color: rgb(80, 79, 79);
     color: #fff;
     text-align: center;
@@ -1294,6 +1254,12 @@
     margin-left: 0px;
     opacity: 0.75;
   }
+
+  .rectangle7 .slide-container2 {
+    width: 340px;
+    transform: translate(-2%, 10%);
+  }
+
   .rectangle7 .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
@@ -1326,27 +1292,27 @@
 
   .slide-container2 .each-slide2 .slide1 .text1 {
     text-align: left;
-    transform: translate(10%, -3%);
+    transform: translate(6.35%, -3%);
     font-family: "Varela";
   }
   .slide-container2 .each-slide2 .slide2 .text2 {
     text-align: left;
-    transform: translate(10%, -3%);
+    transform: translate(6.35%, -3%);
     font-family: "Varela";
   }
   .slide-container2 .each-slide2 .slide3 .text3 {
     text-align: left;
-    transform: translate(10%, -3%);
+    transform: translate(6.35%, -3%);
     font-family: "Varela";
   }
   .slide-container2 .each-slide2 .slide4 .text4 {
     text-align: left;
-    transform: translate(10%, -3%);
+    transform: translate(6.35%, -3%);
     font-family: "Varela";
   }
   .slide-container2 .each-slide2 .slide5 .text5 {
     text-align: left;
-    transform: translate(10%, -3%);
+    transform: translate(6.35%, -3%);
     font-family: "Varela";
   }
 }
@@ -1883,49 +1849,6 @@
 
   .web19201 .clubNotices {
     display: none;
-  }
-
-  .web19201 .rectangle4 {
-    position: absolute;
-    box-sizing: border-box;
-    -ms-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -ms-transform-origin: center;
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    opacity: 1;
-    cursor: default;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    background-color: #43cece;
-    border-bottom-color: rgba(112, 112, 112, 1);
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-left-color: rgba(112, 112, 112, 1);
-    border-left-style: solid;
-    border-left-width: 1px;
-    border-right-color: rgba(112, 112, 112, 1);
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-top-color: rgba(112, 112, 112, 1);
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-top-left-radius: 22px;
-    border-top-right-radius: 22px;
-    border-bottom-left-radius: 22px;
-    border-bottom-right-radius: 22px;
-    box-shadow: none;
-    width: 135px;
-    height: 30px;
-    left: 38%;
-    top: 100%;
   }
 
   .web19201 .loginAsAdmin {
@@ -2819,49 +2742,6 @@
     height: 26px;
     left: 66.5%;
     top: 92%;
-  }
-
-  .web19201 .rectangle4 {
-    position: absolute;
-    box-sizing: border-box;
-    -ms-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -ms-transform-origin: center;
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    opacity: 1;
-    cursor: default;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    background-color: #43cece;
-    border-bottom-color: rgba(112, 112, 112, 1);
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-left-color: rgba(112, 112, 112, 1);
-    border-left-style: solid;
-    border-left-width: 1px;
-    border-right-color: rgba(112, 112, 112, 1);
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-top-color: rgba(112, 112, 112, 1);
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-top-left-radius: 22px;
-    border-top-right-radius: 22px;
-    border-bottom-left-radius: 22px;
-    border-bottom-right-radius: 22px;
-    box-shadow: none;
-    width: 135px;
-    height: 30px;
-    left: 29%;
-    top: 67.5%;
   }
 
   .web19201 .loginAsAdmin {
