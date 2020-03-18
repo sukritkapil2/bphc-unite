@@ -20,6 +20,9 @@ const sharingSchema = new Schema({
   },
   to: {
     type: String
+  },
+  status:{
+    type: String
   }
 });
 

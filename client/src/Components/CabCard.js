@@ -2,31 +2,61 @@ import React from "react";
 import moment from "moment"
 import axios from "axios";
 import { connect } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class CabCard extends React.Component {
   constructor(props) {
     super(props);
     this.onSend = this.onSend.bind(this);
+    this.state = {
+      requests: []
+    };
   }
   onSend() {
     const sharing = {
       requestor: this.props.user.name,
       requestee: this.props.requesterName,
-      msg: this.props.message,
+      mmessage: this.props.message,
       date: this.props.dateofrequest,
       from: this.props.from,
       to: this.props.to
     };
-    console.log(sharing);
-    axios
-      .post("/api/share/request", sharing)
-      .then(res => {
-        console.log(res.data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    }
+    const check1=JSON.stringify(sharing);
+    var flag=0
+    axios.get("/api/sharing")
+            .then((response) => {
+                const data = response.data;
+                this.setState({ requests: data })
+                data.map((item)=>{
+                  const check2=JSON.stringify(item)
+                  console.log(item)
+                if (check2 === check1) {
+                  toast.warn("You have already sent a Request !", {
+                    position: toast.POSITION.TOP_RIGHT
+                  });
+                  flag=1;
+                } 
+                })
+              })
+            .catch((err) => console.log(err));
+        
+            if(flag===0) 
+            {
+                  console.log(sharing);
+                  axios
+                    .post("/api/share/request", sharing)
+                    .then(res => {
+                      console.log(res.data);
+                    })
+                    .catch(err => {
+                      console.log(err);
+                    });
+                  toast.success("Request Sent !", {
+                    position: toast.POSITION.TOP_RIGHT
+                  });
+                }        
+      }
 
     render()
     {
@@ -81,6 +111,7 @@ class CabCard extends React.Component {
             </a>
             {/* <a href="#" class="card-footer-item">Edit</a>
                 <a href="#" class="card-footer-item">Delete</a> */}
+            <ToastContainer></ToastContainer>
           </footer>
         </div>
         <br />
