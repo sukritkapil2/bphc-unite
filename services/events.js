@@ -14,7 +14,17 @@ router.route('/suggest').post((req,res)=>{
 });
 
 router.route('/get').get((req,res)=>{
-    Events.find({ })
+    Events.find({ status : "1" })
+        .then((data)=>{
+            res.json(data);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+})
+
+router.route('/get/all').get((req,res)=>{
+    Events.find({ status : "0" })
         .then((data)=>{
             res.json(data);
         })

@@ -27,7 +27,7 @@ class SuggestEvents extends React.Component {
     const evt = {
       name: this.state.location,
       addr: this.state.address,
-      status : "1"
+      status : "0"
     }
     console.log(evt)
     axios.post('/api/events/suggest', evt)
