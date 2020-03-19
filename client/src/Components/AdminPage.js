@@ -35,6 +35,7 @@ class AdminPage extends React.Component {
               eventName={item.eventName}
               status = {item.status}
               eventAddr = {item.eventAddr}
+              action = {this.forceUpdate}
             ></EventApprovalCard>
           );
       });

@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux'
 import axios from "axios";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 class EventApprovalCard extends React.Component
 {
     constructor(props)
@@ -21,11 +22,19 @@ class EventApprovalCard extends React.Component
             eventName:this.props.eventName,
             eventAddr:this.props.eventAddr
         }
+        let deleteFlag=0;
         axios.post("/api/events/delete",deletedEvent)
             .then((res)=>{
                 console.log(res.data);
+                deleteFlag=1;
             })
             .catch((err)=>{console.log(err)});
+        
+        toast.error("Event deleted", {
+            position: toast.POSITION.TOP_RIGHT
+        });
+        
+                
     }
 
     approveLocation()
@@ -39,8 +48,13 @@ class EventApprovalCard extends React.Component
         axios.post("/api/events/approve",approvedEvent)
             .then((res)=>{
                 console.log(res.data);
+                
             })
             .catch((err)=>{console.log(err)});
+        toast.success("Event approved.Refresh the page.", {
+            position: toast.POSITION.TOP_RIGHT
+        });
+        this.props.action();
     }
 
     render()
@@ -73,6 +87,7 @@ class EventApprovalCard extends React.Component
                 {buttons}
                 </div>
             </article>
+            <ToastContainer></ToastContainer>
             </div>
         )
     }
