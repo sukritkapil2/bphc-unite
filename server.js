@@ -13,11 +13,12 @@ const sharerequests = require("./services/sharerequests")
 const sharing = require("./services/sharing");
 const events = require("./services/events");
 const adminLogin = require("./services/adminLogin");
+const updateshare=require("./services/updateshare")
 const path = require("path");
 require("./models/cabRequests");
 require("./models/User");
 require("./services/passport");
-
+mongoose.set('useFindAndModify', false);
 mongoose.connect(
   keys.mongoURI,
   { useNewUrlParser: true, useUnifiedTopology: true },
@@ -48,6 +49,7 @@ app.use("/api/fetchrequests", getrequests);
 app.use("/api/deletemyrequests", deleterequests);
 app.use("/api/share", sharerequests);
 app.use("/api/sharing", sharing);
+app.use('/api/share', updateshare);
 app.use('/api/events', events);
 app.use("/adminlogin", adminLogin);
 

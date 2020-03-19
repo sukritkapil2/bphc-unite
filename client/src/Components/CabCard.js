@@ -20,7 +20,8 @@ class CabCard extends React.Component {
             msg: this.props.message,
             date: this.props.dateofrequest,
             from: this.props.from,
-            to: this.props.to
+            to: this.props.to,
+            status:""
         };
         const str1 = JSON.stringify(sharing);
         var check1=str1.slice(1)
@@ -44,7 +45,7 @@ class CabCard extends React.Component {
                     var pos = str.indexOf("requestor", 15);
                     var check2=str.slice(pos-1)
                      console.log(check2)
-                    if (check2 === check1) {
+                    if (check2 === check1 || item.status ==="rejected") {
                         toast.warn("You have already sent a Request !", {
                             position: toast.POSITION.TOP_RIGHT
                         });
