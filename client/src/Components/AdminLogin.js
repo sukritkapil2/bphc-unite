@@ -48,7 +48,7 @@ class AdminLogin extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="mainclass">
         <div className="login">
           <h1>Login as Admin</h1>
           <input
