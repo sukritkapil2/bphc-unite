@@ -19,12 +19,13 @@ class ShareRequests extends React.Component {
             })
             .catch((err) => console.log(err));
         const myrequests = this.state.requests.map((item, index) => {
-            if (item.requestee === this.props.user.name && item.status === "") {
+            if (item.requestee === this.props.user.name && item.status === "sent") {
                 return (
                     <ShareRequestCard
                         key={index}
-                        id={item._id}
+                        id={item.id}
                         requesterName={item.requestor}
+                        requesteeName={item.requestee}
                         dateofrequest={item.date} message={item.msg} from={item.from} to={item.to}
                     ></ShareRequestCard>
                 );

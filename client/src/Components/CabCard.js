@@ -8,69 +8,92 @@ import "react-toastify/dist/ReactToastify.css";
 class CabCard extends React.Component {
     constructor(props) {
         super(props);
+        
         this.onSend = this.onSend.bind(this);
         this.state = {
-            requests: []
+            requests: [],count:0
         };
     }
-    onSend() {
-        const sharing = {
-            requestor: this.props.user.name,
-            requestee: this.props.requesterName,
-            msg: this.props.message,
-            date: this.props.dateofrequest,
-            from: this.props.from,
-            to: this.props.to,
-            status:""
-        };
-        const str1 = JSON.stringify(sharing);
-        var check1=str1.slice(1)
-        console.log(check1)
-       if(sharing.requestor=== sharing.requestee)
-       {
-           toast.error("You cannot send a Request to yourself !", {
-               position: toast.POSITION.TOP_RIGHT
-           });
-       }
-       else{
-        axios.get("/api/sharing")
-            .then((response) => {
-                const data = response.data;
-                var flag = 0
-                this.setState({ requests: data })
-                data.map((item) => {
-                    
-                    const str = JSON.stringify(item)
-                    
-                    var pos = str.indexOf("requestor", 15);
-                    var check2=str.slice(pos-1)
-                     console.log(check2)
-                    if (check2 === check1 || item.status ==="rejected") {
-                        toast.warn("You have already sent a Request !", {
-                            position: toast.POSITION.TOP_RIGHT
-                        });
-                        flag = 1;
+   onSend() {
+        
+        axios.get("/api/counter/")
+            .then(response => {
+               const data= response.data.map((item, index) => {
 
+                    if (item.Field === "Sharing") {
+                        return{Counter:item.Counter}
                     }
-                })
-                if (flag === 0) {
-                    console.log(sharing);
-                    axios
-                        .post("/api/share/request", sharing)
-                        .then(res => {
-                            console.log(res.data);
-                        })
-                        .catch(err => {
-                            console.log(err);
-                        });
-                    toast.success("Request Sent !", {
+                });
+                this.setState({ count: data[0].Counter })
+
+                const sharing = {
+                    id: this.state.count + 1,
+                    requestor: this.props.user.name,
+                    requestee: this.props.requesterName,
+                    msg: this.props.message,
+                    date: this.props.dateofrequest,
+                    from: this.props.from,
+                    to: this.props.to,
+                    status: "sent"
+                };
+                const str1 = JSON.stringify(sharing);
+                var pos = str1.indexOf("requestor");
+                var check1 = str1.slice(pos-1);
+                console.log(check1);
+
+                if (sharing.requestor === sharing.requestee) {
+                    toast.error("You cannot send a Request to yourself !", {
                         position: toast.POSITION.TOP_RIGHT
                     });
                 }
-            })
-            .catch((err) => console.log(err));
+                else {
+                    axios.get("/api/sharing")
+                        .then((response) => {
+                            const data = response.data;
+                            var flag = 0
+                            this.setState({ requests: data })
+                            data.map((item) => {
 
-        }
+                                const str = JSON.stringify(item)
+
+                                var pos = str.indexOf("requestor");
+                                var check2 = str.slice(pos - 1)
+                                console.log(check2)
+                                
+                                if (check2 === check1 || item.status === "rejected") {
+                                    toast.warn("You have already sent a Request !", {
+                                        position: toast.POSITION.TOP_RIGHT
+                                    });
+                                    flag = 1;
+
+                                }
+                            })
+                            if (flag === 0) {
+                                console.log(sharing);
+                               axios
+                                    .post("/api/share/request", sharing)
+                                    .then(res => {
+                                        
+                                    })
+                                    .catch(err => {
+                                        console.log(err);
+                                    });
+                                toast.success("Request Sent !", {
+                                    position: toast.POSITION.TOP_RIGHT
+                                });
+                               axios.post("/api/counter/update")
+
+                            }
+                        })
+                        .catch((err) => console.log(err));
+
+                }    
+            })
+            .catch(err => {
+                console.log(err);
+            });
+
+       
     }
 
     render() {

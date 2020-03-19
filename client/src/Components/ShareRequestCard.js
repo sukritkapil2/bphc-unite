@@ -10,19 +10,11 @@ class ShareRequestCard extends React.Component {
         this.onReject=this.onReject.bind(this)
     }
     onAccept() {
-        // const sharing = {
-        //     requestor: this.props.user.name,
-        //     requestee: this.props.requesterName
-        // };
-        // console.log(sharing);
-        // axios
-        //     .post("/api/share/request", sharing)
-        //     .then(res => {
-        //         console.log(res.data);
-        //     })
-        //     .catch(err => {
-        //         console.log(err);
-        //     });
+        const member={
+            member1: this.props.requesterName,
+            member2: this.props.requesteeName,
+        }
+        
     }
     onReject()
     {

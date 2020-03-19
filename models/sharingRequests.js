@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const sharingSchema = new Schema({
+  id:{
+      type:Number,unique:true
+  },
   requestor: {
     type: String
   },

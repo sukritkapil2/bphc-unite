@@ -6,6 +6,7 @@ const passport = require("passport");
 
 router.route("/request").post((req, res) => {
   const newRequest = new Post({
+      id:req.body.id,
       requestor: req.body.requestor,
       requestee: req.body.requestee,
       msg: req.body.msg,
