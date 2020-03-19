@@ -7,6 +7,7 @@ class ShareRequestCard extends React.Component {
     constructor(props) {
         super(props);
         this.onSend = this.onAccept.bind(this);
+        this.onReject=this.onReject.bind(this)
     }
     onAccept() {
         // const sharing = {
@@ -22,6 +23,17 @@ class ShareRequestCard extends React.Component {
         //     .catch(err => {
         //         console.log(err);
         //     });
+    }
+    onReject()
+    {
+        const update={
+            id:this.props.id,
+            status:"rejected"
+        }
+        console.log(update)
+        axios
+            .post("/api/share/update", update)
+            
     }
 
     render() {
@@ -79,7 +91,7 @@ class ShareRequestCard extends React.Component {
                         <a
                             href="#"
                             class="card-footer-item has-text-primary"
-                            onClick={this.onAccept}
+                            onClick={this.onReject}
                         >
                             Reject
             </a>

@@ -11,7 +11,8 @@ router.route("/request").post((req, res) => {
       msg: req.body.msg,
       date: req.body.date,
       from: req.body.from,
-      to: req.body.to
+      to: req.body.to,
+      status:req.body.status
   });
   newRequest.save().then(post => res.json(post));
   console.log("Sharing Request sucessfully submitted");
