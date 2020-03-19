@@ -11,6 +11,7 @@ const getrequests = require("./services/fetchrequests");
 const deleterequests = require("./services/deleterequest");
 const path = require("path");
 const adminLogin = require("./services/adminLogin");
+const submitFeedback = require("./services/submitFeedback");
 require("./models/cabRequests");
 require("./models/User");
 require("./services/passport");
@@ -44,6 +45,7 @@ app.use("/api/cabs", crequest);
 app.use("/api/fetchrequests", getrequests);
 app.use("/api/deletemyrequests", deleterequests);
 app.use("/adminlogin", adminLogin);
+app.use("/feedback", submitFeedback);
 
 const port = process.env.PORT || 5000;
 require("./routes/authRoutes")(app);

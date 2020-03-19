@@ -1,0 +1,22 @@
+body {
+    background: white;
+}
+
+.feedback {
+    width: 520px;
+    height: 640px;
+    
+    background: linear-gradient(-120deg, rgb(208, 100, 241), rgb(72, 72, 204));
+    margin-left: 34%;
+    margin-top: 9%;
+    border-radius: 20px;
+}
+
+.feedback .text{
+    color: rgb(255, 255, 255);
+    font-family: "Varela";
+    font-weight: 600;
+    text-align: center;
+    font-size: x-large;
+    transform: translate(0, 50%);
+}

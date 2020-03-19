@@ -10,6 +10,7 @@ import { fetchUserAction } from "./actions/myaction";
 import AdminPage from "./Components/AdminPage";
 import MyRequests from "./Components/MyRequests";
 import PrivateRoute from "./helpers/PrivateRoute";
+import Feedback from "./Components/Feedback"
 
 function App(props) {
   useEffect(() => {
@@ -24,6 +25,7 @@ function App(props) {
       <Route exact path="/searchcabs" component={SearchCabs}></Route>
       <Route exact path="/adminlogin" component={AdminLogin}></Route>
       <PrivateRoute exact path="/admin" component={AdminPage}></PrivateRoute>
+      <Route exact path="/feedback" component={Feedback}></Route>
     </Router>
   );
 }
