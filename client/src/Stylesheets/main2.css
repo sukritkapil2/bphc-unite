@@ -137,7 +137,7 @@ body {
   width: 420px;
   height: 470px;
   zoom: 1.5;
-  background: linear-gradient(-120deg,  rgb(208, 100, 241), rgb(72, 72, 204));
+  background: linear-gradient(-120deg, rgb(208, 100, 241), rgb(72, 72, 204));
   border-radius: 20px;
 }
 .login h1 {

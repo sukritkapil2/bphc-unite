@@ -16,7 +16,7 @@ class CabCard extends React.Component {
     var time = moment(newDateObj).format("HH:mm");
     return (
       <div>
-        <div class="card">
+        <div class="card2">
           <header class="card-header">
             <p class="card-header-title">{this.props.requesterName}</p>
             <a href="#" class="card-header-icon" aria-label="more options">

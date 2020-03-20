@@ -50,7 +50,7 @@ class AdminPage extends React.Component {
           >
             LOGOUT
           </button>
-          <div class="container">
+          <div class="container2">
             {feedcards}
             </div>
         </div>
