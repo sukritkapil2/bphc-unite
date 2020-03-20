@@ -21,10 +21,11 @@ class CabCard extends React.Component {
                const data= response.data.map((item, index) => {
 
                     if (item.Field === "Sharing") {
-                        return{Counter:item.Counter}
+                        return item.Counter
                     }
                 });
-                this.setState({ count: data[0].Counter })
+                console.log(data)
+                this.setState({ count: data })
 
                 const sharing = {
                     id: this.state.count + 1,
@@ -39,8 +40,7 @@ class CabCard extends React.Component {
                 const str1 = JSON.stringify(sharing);
                 var pos = str1.indexOf("requestor");
                 var check1 = str1.slice(pos-1);
-                console.log(check1);
-
+                console.log(check1)
                 if (sharing.requestor === sharing.requestee) {
                     toast.error("You cannot send a Request to yourself !", {
                         position: toast.POSITION.TOP_RIGHT
@@ -52,6 +52,7 @@ class CabCard extends React.Component {
                             const data = response.data;
                             var flag = 0
                             this.setState({ requests: data })
+                            console.log(data)
                             data.map((item) => {
 
                                 const str = JSON.stringify(item)
@@ -59,7 +60,6 @@ class CabCard extends React.Component {
                                 var pos = str.indexOf("requestor");
                                 var check2 = str.slice(pos - 1)
                                 console.log(check2)
-                                
                                 if (check2 === check1 || item.status === "rejected") {
                                     toast.warn("You have already sent a Request !", {
                                         position: toast.POSITION.TOP_RIGHT
@@ -81,7 +81,10 @@ class CabCard extends React.Component {
                                 toast.success("Request Sent !", {
                                     position: toast.POSITION.TOP_RIGHT
                                 });
-                               axios.post("/api/counter/update")
+                                const updateCount = {
+                                    Field: "Sharing",
+                                }
+                               axios.post("/api/counter/update",updateCount)
 
                             }
                         })

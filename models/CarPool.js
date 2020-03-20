@@ -3,10 +3,22 @@ const Schema = mongoose.Schema;
 
 const carPoolSchema = new Schema(
   {
-    members:[ {
-      type: String,
-      unique: true
-    }],
+    id: {
+      type: Number
+    },
+    members:{
+      type:Array
+    },
+    date: {
+      type: Date,
+      default: Date.now
+    },
+    from: {
+      type: String
+    },
+    to: {
+      type: String
+    },
   },
   { versionKey: false }
 );

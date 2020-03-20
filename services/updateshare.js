@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const mongoose = require('mongoose');
+
 const Post = require("../models/sharingRequests");
 router.route("/update").post(function (req, res) {
     const newRequest = new Post({

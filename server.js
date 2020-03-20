@@ -18,7 +18,7 @@ const updatecounter = require("./services/updatecounter")
 const getcounter = require("./services/getcounter")
 const updatemember = require("./services/updatemembers");
 const getmemeber = require("./services/getmembers");
-
+const postmember = require("./services/postmembers");
 
 const path = require("path");
 require("./models/cabRequests");
@@ -61,7 +61,9 @@ app.use("/adminlogin", adminLogin);
 app.use("/api/counter", getcounter);
 app.use("/api/counter", updatecounter);
 app.use("/api/member", getmemeber);
-app.use("/api/memeber", updatememeber);
+app.use("/api/member", updatemember);
+app.use("/api/member", postmember);
+
 
 const port = process.env.PORT || 5000;
 require("./routes/authRoutes")(app);
