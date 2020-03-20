@@ -1,5 +1,7 @@
 import React from "react";
 import moment from "moment";
+import "../Stylesheets/main4.css"
+
 class CabCard extends React.Component {
   constructor(props) {
     super(props);
@@ -17,38 +19,37 @@ class CabCard extends React.Component {
     return (
       <div>
         <div class="card2">
-          <header class="card-header">
-            <p class="card-header-title">{this.props.requesterName}</p>
+          <header class="card-header" id="head4">
+            <p class="card-header-title" id="head4t">{this.props.requesterName}</p>
             <a href="#" class="card-header-icon" aria-label="more options">
               <span class="icon">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
               </span>
             </a>
           </header>
-          <div class="card-content">
+          <div class="card-content contentcard">
             <div class="content">
-              {this.props.message}
-              <br />
-              <time datetime="2016-1-1">
-                <b>Date :</b>
-                {date}
+              <p id="p1"><b>MESSAGE : </b>&nbsp;{this.props.message}</p>
+              <time datetime="2016-1-1" id="d1">
+                <b>DATE : </b>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{date}
               </time>
               <br />
-              <time datetime="2016-1-1">
-                <b>Time :</b>
-                {time}
+              <time datetime="2016-1-1" id="t1">
+                <b>TIME : </b>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{time}
               </time>
               <br />
-              <b>From :</b>
-              {this.props.from}
+              <b>FROM : </b>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.props.from}
               <br />
-              <b>To :</b>
-              {this.props.to}
+              <b>TO : </b>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.props.to}
             </div>
           </div>
-          <footer class="card-footer">
+          <footer class="card-footer footcard">
             <a href="#" class="card-footer-item has-text-primary">
-              Send Request
+              SEND REQUEST
             </a>
             {/* <a href="#" class="card-footer-item">Edit</a>
                 <a href="#" class="card-footer-item">Delete</a> */}

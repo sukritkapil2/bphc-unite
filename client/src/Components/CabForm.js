@@ -3,6 +3,7 @@ import Calendar from "./Calendar";
 import { connect } from "react-redux";
 import axios from "axios";
 import "../Stylesheets/cabform.css";
+import "../Stylesheets/main4.css";
 
 class CabForm extends React.Component {
   constructor(props) {
@@ -60,10 +61,11 @@ class CabForm extends React.Component {
   }
   render() {
     return (
-      <div className="column is-half">
-        <b>Form</b>
+      <div className="column is-half" id="cont2">
+        <p className="text">FORM</p>
 
         <div class="field">
+          <br></br>
           <label class="label">Departure Time</label>
           {/* <div class="control">
     <div class="select">
@@ -73,9 +75,9 @@ class CabForm extends React.Component {
       </select>
     </div>
   </div> */}
-          <Calendar setDate={this.setDate} />
+          <Calendar id="f1" setDate={this.setDate} />
         </div>
-        <label class="label">From</label>
+        <label class="label" id="l1">From</label>
         <div class="control">
           <div class="select">
             <select
@@ -90,8 +92,8 @@ class CabForm extends React.Component {
               <option>Campus</option>
             </select>
           </div>
-          <label class="label">To</label>
-          <div class="control">
+          <label class="label" id="l2">To</label>
+          <div class="control"id="c2">
             <div class="select">
               <select
                 class="is-focused"
@@ -107,19 +109,20 @@ class CabForm extends React.Component {
             </div>
           </div>
           <div class="field">
-            <label class="label">Message</label>
+            <label class="label" id="l3">Message</label>
             <div class="control">
               <textarea
                 class="textarea"
                 placeholder="Textarea"
                 onChange={this.updateText}
                 value={this.state.value}
+                id="te1"
               ></textarea>
             </div>
           </div>
           <div class="field is-grouped">
             <div class="control">
-              <button class="button is-link" onClick={this.submitRequest}>
+              <button class="button is-link" id="buto1" onClick={this.submitRequest}>
                 Submit
               </button>
             </div>

@@ -1,13 +1,15 @@
 import React from "react";
 import Logo from "./images/logo.png";
-import { NavLink, Link } from "react-router-dom"
-import { connect } from 'react-redux'
+import { NavLink, Link } from "react-router-dom";
+import { connect } from "react-redux";
 class VerticalNav extends React.Component {
   render() {
     return (
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <a href='/dashboard'><img src={Logo} width="112" height="100" /></a>
+          <a href="/dashboard">
+            <img src={Logo} width="112" height="100" />
+          </a>
 
           <a
             role="button"
@@ -24,7 +26,9 @@ class VerticalNav extends React.Component {
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <a href='/dashboard' className="navbar-item">Home</a> 
+            <a href="/dashboard" className="navbar-item">
+              Home
+            </a>
 
             <a className="navbar-item">Profile</a>
 
@@ -76,13 +80,12 @@ class VerticalNav extends React.Component {
       </nav>
     );
   }
-
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     user: state.auth
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps)(VerticalNav);

@@ -63,7 +63,7 @@ class Feedback extends React.Component {
     return (
       <div>
         <div className="feedback">
-          <div className="text">Feedback to Developers</div>
+          <div className="text12">Feedback to Developers</div>
           <input
             type="text"
             name="n"
