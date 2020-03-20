@@ -39,7 +39,7 @@ class EventApprovalCard extends React.Component
 
     approveLocation()
     {
-        this.setState({status:"1"});
+        
         const approvedEvent={
             id : this.props.id,
             status:this.state.status,
@@ -49,14 +49,14 @@ class EventApprovalCard extends React.Component
         axios.post("/api/events/approve",approvedEvent)
             .then((res)=>{
                 console.log(res.data);
-                
                 console.log(this.state);
             })
             .catch((err)=>{console.log(err)});
         toast.success("Event approved.Refresh the page.", {
             position: toast.POSITION.TOP_RIGHT
         });
-        
+       
+        this.setState({status:"1"});
     }
 
     render()
