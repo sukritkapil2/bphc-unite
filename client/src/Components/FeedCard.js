@@ -38,8 +38,9 @@ class FeedCard extends React.Component {
             {this.props.message}
           </p>
           <button
-            className="btn btn-primary buttondelete"
+            className="btn btn-primary"
             onClick={this.delete}
+            id="buttonl"
           >
             X
           </button>
