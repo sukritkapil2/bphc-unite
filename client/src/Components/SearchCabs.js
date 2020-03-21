@@ -7,6 +7,7 @@ import VerticalNav from "./VerticalNav";
 import HorizontalNav from './HorizontalNav';
 import CabCard from "./CabCard";
 import Select from "react-select"
+import "../Stylesheets/main4.css";
 class MyRequests extends React.Component {
   constructor(props) {
     super(props)
@@ -75,14 +76,14 @@ class MyRequests extends React.Component {
   render() {
     return (
       <div>
-        <div className="box">
+        <div className="box" id="nav1">
           <VerticalNav />
         </div>
         <div className="columns">
           <div className="column is-one-fifth sideNav">
             <HorizontalNav />
           </div>
-          <div className="normal-container">
+          <div className="control">
             <label>From :</label>
             <Select onChange={this.fromSelect} options={this.state.options}></Select>
             <label>To :</label>
@@ -90,10 +91,13 @@ class MyRequests extends React.Component {
             <div class="control">
               <button class="button is-link" onClick={this.filterResult}>Submit</button>
             </div>
+            
+            <div className="cnt1" id="cnt1">
             {this.state.requests}
+            </div>
           </div>
-
         </div>
+        
       </div>
     )
 

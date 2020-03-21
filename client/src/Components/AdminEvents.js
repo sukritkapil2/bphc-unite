@@ -1,20 +1,26 @@
 import React from "react";
 import "../Stylesheets/main3.css";
-import EventApprovalCard from "./EventApprovalCard"
 import axios from "axios";
-class AdminPage extends React.Component {
-  constructor(props)
-  {
-    super(props);
-    this.state = {
-      events : []
-    }
+import EventApprovalCard from "./EventApprovalCard";
+
+
+
+class AdminEvents extends React.Component {
+  constructor() {
+    super();
+    this.state = {events:[]};
     this.onClick = this.onClick.bind(this);
-    
+    this.goBack = this.goBack.bind(this);
   }
+
   onClick(event) {
     window.localStorage.removeItem("authToken");
     window.location.href = "/adminlogin";
+  }
+
+  goBack(event)
+  {
+    window.location.href = "/admin";
   }
 
   render() {
@@ -39,29 +45,30 @@ class AdminPage extends React.Component {
             ></EventApprovalCard>
           );
       });
+
     return (
       <div>
         <div className="AdminPage">
+        <h1 id = "header-text">EVENT MANAGEMENT</h1>
+        <button
+            className="btn btn-primary btn-large buttonlogout"
+            onClick={this.goBack}
+          >
+            Back
+          </button>
           <button
             className="btn btn-primary btn-large buttonlogout"
             onClick={this.onClick}
           >
             LOGOUT
           </button>
-          <div class="card">
-            <center><b><h3>Events and Locations</h3></b></center>
-            <hr></hr>
+          <div class="container2">
             {myevents}
-          </div>
-          <div class="card">
-            <p class="text">EVENT SUBMISSIONS</p>
-            <br/>
-            
-          </div>
+            </div>
         </div>
       </div>
     );
   }
 }
 
-export default AdminPage;
+export default AdminEvents;

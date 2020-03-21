@@ -35,6 +35,10 @@ const properties2 = {
 };
 
 class Login extends React.Component {
+  submitFeedback() {
+    window.location.href = "/feedback";
+  }
+
   showPopUp() {
     console.log("Clicked");
     var popup = document.getElementById("myPopup");
@@ -234,6 +238,7 @@ class Login extends React.Component {
         <button
           data-layer="22c82d5d-7ae7-4326-802b-0e7684d4ee92"
           class="rectangle9"
+          onClick={this.submitFeedback}
         >
           Feedback
         </button>

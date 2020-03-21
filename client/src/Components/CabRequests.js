@@ -1,7 +1,7 @@
 import React from "react"
 import CabCard from "./CabCard"
 import axios from 'axios'
-
+import "../Stylesheets/main4.css"
 class CabRequests extends React.Component
 {
     constructor()
@@ -27,7 +27,7 @@ class CabRequests extends React.Component
         })
         
         return(
-            <div className="column is-half pic-container"><center><b>Requests</b></center>
+            <div className="column is-half pic-container cont1">
             {cabcards}
             </div>
         )

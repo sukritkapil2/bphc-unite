@@ -4,8 +4,9 @@ import axios from "axios";
 import VerticalNav from "./VerticalNav";
 import HorizontalNav from "./HorizontalNav";
 import { ToastsContainer, ToastsStore } from 'react-toasts';
-
-
+import "../Stylesheets/main4.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 class SuggestEvents extends React.Component {
   constructor(props) {
     super(props);
@@ -33,38 +34,46 @@ class SuggestEvents extends React.Component {
     axios.post('/api/events/suggest', evt)
       .then((res) => {
         console.log(res.data)
-        ToastsStore.success("Submitted event for approval!")
       })
       .catch((err) => {
         console.log(err);
-        ToastsStore.warning("Unsucessful submission. Try again later.")
       })
+    toast.success("Event sent for approval!", {
+        position: toast.POSITION.TOP_RIGHT
+    });
+    
+    
   }
 
   render() {
 
     return (
       <div>
-        <div className="box">
+        <div className="box" id="nav1">
           <VerticalNav />
         </div>
         <div className="columns">
           <div className="column is-one-fifth sideNav">
             <HorizontalNav />
           </div>
-          <div className="normal-container">
-            <div class="control">
-              <input class="input" type="text" placeholder="Enter event here" onChange={this.updateText} name="location"></input>
-            </div>
+          <div class = "box" id="cont2">
+          
+          
+              <input class="input" type="text" placeholder="Enter event here" onChange={this.updateText} name="location" width="250px"></input>
+          
             <br />
+          <p>
             <div class="control">
               <textarea class="textarea has-fixed-size" placeholder="Fixed size textarea" onChange={this.updateAddress} name="address"></textarea>
             </div>
+            </p>
             <br />
+            
             <button class="button is-link" onClick={this.submitEvent}>Submit</button>
+            
           </div>
         </div>
-        <ToastsContainer store={ToastsStore} />
+        <ToastContainer></ToastContainer>
       </div>
     );
   }

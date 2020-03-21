@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment"
 import axios from "axios";
 import { connect } from "react-redux";
-
+import "../Stylesheets/main4.css";
 class ShareRequestCard extends React.Component {
     constructor(props) {
         super(props);

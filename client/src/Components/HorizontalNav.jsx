@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../Stylesheets/nav.css"
 import { NavLink } from "react-router-dom";
 class HorizontalNav extends React.Component {
   constructor() {
@@ -16,28 +16,28 @@ class HorizontalNav extends React.Component {
 
   render() {
     return (
-      <div className="box has-background-white-ter">
+      <div className="box" id="boxhor">
         <div className="menu ">
           <p className="menu-label"><span className="is-primary"><b>General</b></span></p>
 
           <ul className="menu-list">
             <li>
-              <NavLink to="dashboard" activeClassName="is-active has-text-white">Dashboard</NavLink>
+              <NavLink to="dashboard" activeClassName="is-active has-text-white"><b id="list1">Dashboard</b></NavLink>
             </li>
           </ul>
           <p className="menu-label"><span className="is-primary"><b>Cab Sharing</b></span></p>
           <ul className="menu-list">
             <li>
-              <NavLink to="cabs" activeClassName="is-active has-text-white"> Cab Sharing Portal</NavLink>
+              <NavLink to="cabs" activeClassName="is-active has-text-white"><b id="list1">Cab Sharing Portal</b></NavLink>
             </li>
             <li>
-              <NavLink to="myrequests" activeClassName="is-active has-text-white">My Requests</NavLink>
+              <NavLink to="myrequests" activeClassName="is-active has-text-white"><b id="list1">My Requests</b></NavLink>
             </li>
             <li>
-              <NavLink to="searchcabs" activeClassName="is-active has-text-white">Search for Cabs</NavLink>
+              <NavLink to="searchcabs" activeClassName="is-active has-text-white"><b id="list1">Search for Cabs</b></NavLink>
             </li>
             <li>
-              <NavLink to="suggestevents" activeClassName="is-active has-text-white">Suggest Events</NavLink>
+              <NavLink to="suggestevents" activeClassName="is-active has-text-white"><b id="list1">Suggest Events</b></NavLink>
             </li>
           </ul>
 

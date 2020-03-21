@@ -4,7 +4,9 @@ import Calendar from "./Calendar"
 import { connect } from 'react-redux'
 import axios from 'axios'
 import "../Stylesheets/cabform.css";
+import "../Stylesheets/main4.css";
 import Select from "react-select";
+
 
 class CabForm extends React.Component {
   constructor(props) {
@@ -73,37 +75,86 @@ class CabForm extends React.Component {
     console.log(this.state)
   }
   render() {
+    const customStyles = {
+      container: (provided) => ({
+        ...provided,
+        display: 'inline-block',
+        width: '250px',
+        minHeight: '1px',
+        textAlign: 'left',
+        border: 'none',
+      }),
+      control: (provided) => ({
+        ...provided,
+        border: '2px solid #757575',
+        borderRadius: '0',
+        minHeight: '1px',
+        height: '20px',
+      }),
+      input: (provided) => ({
+        ...provided,
+        minHeight: '1px',
+      }),
+      dropdownIndicator: (provided) => ({
+        ...provided,
+        minHeight: '1px',
+        paddingTop: '0',
+        paddingBottom: '0',
+        color: '#757575',
+      }),
+      indicatorSeparator: (provided) => ({
+        ...provided,
+        minHeight: '1px',
+        height: '24px',
+      }),
+      clearIndicator: (provided) => ({
+        ...provided,
+        minHeight: '1px',
+      }),
+      valueContainer: (provided) => ({
+        ...provided,
+        minHeight: '1px',
+        height: '20px',
+        paddingTop: '0',
+        paddingBottom: '0',
+      }),
+      singleValue: (provided) => ({
+        ...provided,
+        minHeight: '1px',
+        paddingBottom: '2px',
+      }),
+    };
 
     return (
-      <div className="column is-half">
-        <b>Form</b>
+      <div className="column is-half" id="cont2">
+        <p className="text">Add a Cab Request</p>
 
 
-        <div class="field">
+        <div class="field" id="f1">
+        <br/>
           <label class="label">Departure Time</label>
           <Calendar setDate={this.setDate} />
         </div>
-        <label class="label">From</label>
+        <label class="label" id = "l1">From</label>
         <div class="control">
-
-          <Select onChange={this.fromSelect} options={this.state.options} />
-
-
-          <label class="label">To</label>
-          <div class="control">
-
-            <Select onChange={this.toSelect} options={this.state.options} />
-
+          <div class = "field" id = "f1">
+          <Select onChange={this.fromSelect} options={this.state.options} styles={{customStyles}}/>
           </div>
-          <div class="field">
-            <label class="label">Message</label>
+          <label class="label" id="l2">To</label>
+          <div class="field" id="f1">
+
+            <Select onChange={this.toSelect} options={this.state.options} styles={{customStyles}}/>
+            <br/>
+          </div>
+          <div class="field" id = "f1">
+            <label class="label" id="l3">Message</label>
             <div class="control">
-              <textarea class="textarea" placeholder="Textarea" onChange={this.updateText} value={this.state.value}></textarea>
+              <textarea class="textarea" id="te1" placeholder="Textarea" onChange={this.updateText} value={this.state.value}></textarea>
             </div>
           </div>
           <div class="field is-grouped">
             <div class="control">
-              <button class="button is-link" onClick={this.submitRequest}>Submit</button>
+              <button class="button is-link" id="buto1" onClick={this.submitRequest}>Submit</button>
             </div>
 
           </div>

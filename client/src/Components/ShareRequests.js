@@ -2,7 +2,7 @@ import React from "react"
 import axios from 'axios'
 import { connect } from 'react-redux'
 import ShareRequestCard from './ShareRequestCard'
-
+import "../Stylesheets/main4.css";
 class ShareRequests extends React.Component {
     constructor() {
         super()

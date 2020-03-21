@@ -65,30 +65,38 @@ class EventApprovalCard extends React.Component
         const status = this.state.status;
         if(status=="0"){
             buttons = <div>
-                            <button class="button is-success" onClick = {this.approveLocation}>Accept</button>
-                           &emsp; &emsp;
-                           <button class="button is-danger" onClick = {this.deleteLocation}>Reject</button>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                            <button class="button is-success" onClick = {this.approveLocation}>&#10004;</button>
+                           
+                           <button class="button is-danger" onClick = {this.deleteLocation}>X</button>
                      </div>
         } else {
             buttons = <div>
-                             <a href = "#" onClick = {this.deleteLocation}><button class="button is-danger">Delete Location</button></a>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                             <a href = "#" onClick = {this.deleteLocation}><button class="button is-danger">X</button></a>
                       </div>
         }
 
         return(
-            <div class="box">
-            <article class="media">
-                <div class="media-content">
-                <div class="content">
-                    <p>
-                    <strong>{this.props.eventName}</strong>
-                    <br/>
-                    {this.props.eventAddr}
-                    </p>
-                </div>
-                {buttons}
-                </div>
-            </article>
+            <div>
+            <div className="card">
+            
+          <h3 className="title">{this.props.eventName}</h3>
+          <p className="title2"></p>
+          <div class="bar2">
+            <div className="emptybar2"></div>
+            <div className="filledbar2"></div>
+          </div>
+          <p className="message3">
+            Address: <br></br>
+            {this.props.eventAddr}
+          </p>
+          {buttons}
+        </div>
             <ToastContainer></ToastContainer>
             </div>
         )

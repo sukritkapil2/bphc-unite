@@ -13,7 +13,10 @@ const sharerequests = require("./services/sharerequests")
 const sharing = require("./services/sharing");
 const events = require("./services/events");
 const adminLogin = require("./services/adminLogin");
-const updateshare=require("./services/updateshare")
+const updateshare=require("./services/updateshare");
+const sendFeedback = require("./services/sendFeedback");
+const getFeedback = require("./services/getFeedback");
+const deleteFeedback = require("./services/deleteFeedback");
 const path = require("path");
 require("./models/cabRequests");
 require("./models/User");
@@ -52,7 +55,9 @@ app.use("/api/sharing", sharing);
 app.use('/api/share', updateshare);
 app.use('/api/events', events);
 app.use("/adminlogin", adminLogin);
-
+app.use("/feedback", sendFeedback);
+app.use("/getfeedback", getFeedback);
+app.use("/deletefeedback", deleteFeedback);
 const port = process.env.PORT || 5000;
 require("./routes/authRoutes")(app);
 
