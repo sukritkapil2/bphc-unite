@@ -31,6 +31,7 @@
   width: 1450px;
   height: 700px;
   border-radius: 30px;
+  
 }
 
 .pic-container {
@@ -62,7 +63,27 @@
 }
 
 #box2 {
-  width: 1300px;
   height: 685px;
   margin-top: 15px;
+  background-color: rgb(20, 20, 20);
+  margin-left: 5%;
+}
+
+#hde {
+  color: white;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 27%;
+}
+
+#nav1 {
+  background: rgb(25, 26, 26);
+}
+
+.text1 {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Open Sans";
 }

@@ -29,9 +29,9 @@ class FeedCard extends React.Component {
         <div className="card">
           <h3 className="title">{this.props.name}</h3>
           <p className="title2">{this.props.email}</p>
-          <div class="bar">
-            <div className="emptybar"></div>
-            <div className="filledbar"></div>
+          <div class="bar2">
+            <div className="emptybar2"></div>
+            <div className="filledbar2"></div>
           </div>
           <p className="message3">
             FEEDBACK: <br></br>

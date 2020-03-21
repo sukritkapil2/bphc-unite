@@ -2,10 +2,16 @@ import React from "react";
 import Logo from "./images/logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { connect } from "react-redux";
+import "../Stylesheets/nav.css";
 class VerticalNav extends React.Component {
   render() {
     return (
-      <nav className="navbar" role="navigation" aria-label="main navigation">
+      <nav
+        className="navbar"
+        role="navigation"
+        aria-label="main navigation"
+        id="nav1in"
+      >
         <div className="navbar-brand">
           <a href="/dashboard">
             <img src={Logo} width="112" height="100" />
@@ -26,14 +32,18 @@ class VerticalNav extends React.Component {
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <a href="/dashboard" className="navbar-item">
+            <a href="/dashboard" className="navbar-item" id="tnav">
               Home
             </a>
 
-            <a className="navbar-item">Profile</a>
+            <a className="navbar-item" id="tnav">
+              Profile
+            </a>
 
             <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">Notifications</a>
+              <a className="navbar-link" id="tnav">
+                Notifications
+              </a>
 
               <div className="navbar-dropdown">
                 <a className="navbar-item">NOTIF 1</a>
@@ -66,7 +76,7 @@ class VerticalNav extends React.Component {
             </a>
           </div>
 
-          <div className="navbar-item">
+          <div className="navbar-item" id="bnavitem">
             <div className="buttons">
               <a
                 href="/api/logout"

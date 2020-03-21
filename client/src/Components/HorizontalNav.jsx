@@ -1,50 +1,70 @@
 import React from "react";
+import "../Stylesheets/nav.css"
 
-import {NavLink} from "react-router-dom";
-class HorizontalNav extends React.Component
-{
-    constructor()
-    {
-      super()
-      this.state = {
-      }
-      this.showActive = this.showActive.bind(this)
-    }
+import { NavLink } from "react-router-dom";
+class HorizontalNav extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+    this.showActive = this.showActive.bind(this);
+  }
 
-    showActive(event)
-    {
-       let container = document.getElementsByClassName("menu-list");
-       console.log(container);
-      
-    
-    }
+  showActive(event) {
+    let container = document.getElementsByClassName("menu-list");
+    console.log(container);
+  }
 
-    render()
-    {
-        return (
-          <div className="box has-background-white-ter">
-          <div className="menu ">
-            <p className="menu-label"><span className="is-primary"><b>General</b></span></p>
+  render() {
+    return (
+      <div className="box" id="boxhor">
+        <div className="menu">
+          <p className="menu-label">
+            <span className="is-primary">
+              <b>General</b>
+            </span>
+          </p>
 
-            <ul className="menu-list">
-            <li>
-              <NavLink to= "dashboard" activeClassName="is-active has-text-white">Dashboard</NavLink>
+          <ul className="menu-list">
+            <li >
+              <NavLink
+                to="dashboard"
+                activeClassName="is-active has-text-white"
+              >
+                <b id="list1">Dashboard</b>
+              </NavLink>
             </li>
-            </ul>
-            <p className="menu-label"><span className="is-primary"><b>Cab Sharing</b></span></p>
-            <ul className="menu-list">
+          </ul>
+          <p className="menu-label">
+            <span className="is-primary">
+              <b>Cab Sharing</b>
+            </span>
+          </p>
+          <ul className="menu-list">
             <li>
-                <NavLink to = "cabs" activeClassName="is-active has-text-white"> Cab Sharing Portal</NavLink>
+              <NavLink to="cabs" activeClassName="is-active has-text-white">
+                {" "}
+                <b id="list1">Cab Sharing Portal</b>
+              </NavLink>
             </li>
             <li>
-                <NavLink to = "myrequests" activeClassName="is-active has-text-white">My Requests</NavLink>
+              <NavLink
+                to="myrequests"
+                activeClassName="is-active has-text-white"
+              >
+                <b id="list1">My Requests</b>
+              </NavLink>
             </li>
             <li>
-                <NavLink to = "searchcabs" activeClassName="is-active has-text-white">Search for Cabs</NavLink>
+              <NavLink
+                to="searchcabs"
+                activeClassName="is-active has-text-white"
+              >
+                <b id="list1">Search for Cabs</b>
+              </NavLink>
             </li>
-            </ul>
+          </ul>
 
-            {/* <p className="menu-label">  Administration</p>
+          {/* <p className="menu-label">  Administration</p>
               <ul className="menu-list">
               <li>
                 <a>Team Settings</a>
@@ -86,11 +106,10 @@ class HorizontalNav extends React.Component
               </li>
             </ul>
           </div> */}
-          </div>
-          </div>
-        );
-    }
-
-} 
+        </div>
+      </div>
+    );
+  }
+}
 
 export default HorizontalNav;

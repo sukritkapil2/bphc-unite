@@ -8,7 +8,7 @@ class CabPage extends React.Component {
   render() {
     return (
       <div>
-        <div className="box">
+        <div className="box" id="nav1">
           <VerticalNav />
         </div>
         <div className="columns">
@@ -16,9 +16,7 @@ class CabPage extends React.Component {
             <HorizontalNav />
           </div>
           <div className="head">
-            <div id="head2">
-              <p className="text">AVAILABLE CABS</p>
-            </div>
+            <p id="hde">ACTIVE REQUESTS</p>
             <div className="columns box is-paddingless" id="box2">
               <CabRequests></CabRequests>
               <CabForm></CabForm>

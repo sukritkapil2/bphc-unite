@@ -35,8 +35,6 @@ class CabRequests extends React.Component {
 
     return (
       <div className="column is-half pic-container cont1">
-        <p className="text">REQUESTS (Scroll Down To See More)</p>
-        <br></br>
         {cabcards}
       </div>
     );

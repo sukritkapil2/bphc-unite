@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import axios from "axios";
+import "../Stylesheets/main4.css";
 
 class RequestCard extends React.Component {
   constructor(props) {
@@ -30,8 +31,10 @@ class RequestCard extends React.Component {
     return (
       <div>
         <div class="card3">
-          <header class="card-header">
-            <p class="card-header-title">{this.props.requesterName}</p>
+          <header class="card-header" id="head4">
+            <p class="card-header-title" id="head4t">
+              {this.props.requesterName}
+            </p>
             <a href="#" class="card-header-icon" aria-label="more options">
               <span class="icon">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -40,9 +43,14 @@ class RequestCard extends React.Component {
           </header>
           <div class="card-content">
             <div class="content">
-              {this.props.message}
-              <br />
-              <time datetime="2016-1-1">{this.props.dateofrequest}</time>
+              <p id="p1">
+                <b>MESSAGE : </b>&nbsp;{this.props.message}
+              </p>
+              <div class="bar2">
+                <div className="emptybar2"></div>
+                <div className="filledbar2"></div>
+              </div>
+              <time datetime="2016-1-1" id="d1">{this.props.dateofrequest}</time>
               <br />
               <b>From :</b>
               {this.props.from}

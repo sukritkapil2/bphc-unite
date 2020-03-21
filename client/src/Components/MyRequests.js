@@ -4,6 +4,7 @@ import axios from "axios";
 import VerticalNav from "./VerticalNav";
 import HorizontalNav from "./HorizontalNav";
 import RequestCard from "./RequestCard";
+import "../Stylesheets/main4.css"
 
 class MyRequests extends React.Component {
   constructor(props) {
@@ -39,14 +40,14 @@ class MyRequests extends React.Component {
     });
     return (
       <div>
-        <div className="box">
+        <div className="box" id="nav1">
           <VerticalNav />
         </div>
         <div className="columns">
           <div className="column is-one-fifth sideNav">
             <HorizontalNav />
           </div>
-          <div className="normal-container">{myrequests}</div>
+          <div className="normal-container" id="cnt1">{myrequests}</div>
         </div>
       </div>
     );

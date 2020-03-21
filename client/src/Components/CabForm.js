@@ -62,9 +62,9 @@ class CabForm extends React.Component {
   render() {
     return (
       <div className="column is-half" id="cont2">
-        <p className="text">FORM</p>
+        <p className="text">Add a Cab Request</p>
 
-        <div class="field">
+        <div class="field" id="f1">
           <br></br>
           <label class="label">Departure Time</label>
           {/* <div class="control">
@@ -75,7 +75,7 @@ class CabForm extends React.Component {
       </select>
     </div>
   </div> */}
-          <Calendar id="f1" setDate={this.setDate} />
+          <Calendar setDate={this.setDate} />
         </div>
         <label class="label" id="l1">From</label>
         <div class="control">

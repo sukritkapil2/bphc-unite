@@ -24,7 +24,7 @@ const Dashboard = (props)=>
             default :
             return (
               <div>
-                <div className="box">
+                <div className="box"id="nav1">
                   <VerticalNav />
                 </div>
                 <div className="columns">
@@ -32,8 +32,8 @@ const Dashboard = (props)=>
                     <HorizontalNav />
                   </div>
                   <div>
-                  <div className="column box">
-                      <div id="content"><center><b>Welcome {props.user.name}<hr/></b></center></div>
+                  <div className="column box" id="nav1">
+                      <div id="content"><center><b className="text1">Welcome {props.user.name}<hr/></b></center></div>
                   </div>
                   </div>
                 </div>
