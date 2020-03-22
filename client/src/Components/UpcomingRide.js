@@ -24,7 +24,7 @@ class UpcomingRide extends React.Component {
                                     item.members.map((val) => {
                                         {
 
-                                            console.log(val)
+                                            
                                             if (val === this.props.user.name) {
                                                 flag = 1
                                             }
@@ -38,6 +38,7 @@ class UpcomingRide extends React.Component {
                                             <UpcomingRideCard
                                                 key={index}
                                                 dateofrequest={item.date} from={item.from} to={item.to}
+                                                
                                             ></UpcomingRideCard>
                                         );
                                     }

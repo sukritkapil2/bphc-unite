@@ -9,7 +9,7 @@ router.route("/update").post(function(req, res) {
   }
   Post.findOneAndUpdate(
     { id: updateReq.id },
-    { $push: { Member:updateReq.member } },
+    { $push: { members:updateReq.member } },
     { upsert: true },
     function(err, doc) {
       if (err) return res.send(500, { error: err });

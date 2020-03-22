@@ -10,7 +10,7 @@ class ShareRequestCard extends React.Component {
         super(props);
         this.onAccept = this.onAccept.bind(this);
         this.onReject=this.onReject.bind(this);
-        this.state = { count: 0};
+        this.state = { count: 0,poolid:0};
     }
     onAccept() {
         var flag1=0;
@@ -30,22 +30,29 @@ class ShareRequestCard extends React.Component {
             .then(res => {
                 res.data.map((item) => {
                         item.members.map((value) => {
-                        if (value === this.props.user.name) {
+                        
+                            if (value === this.props.user.name) {
                             flag1=1;
                         }
                     });
                     if (item.date === this.props.dateofrequest && item.from === this.props.from && item.to === this.props.to ) {
                         flag2=1;              
+                        this.setState({poolid:item.id})
                     }
                 });
                 if (flag1 === 1 && flag2 === 1) {
                     const updateReq = { 
-                        id:this.props.id,
+                        id:this.state.poolid,
                         member: this.props.requesterName }
                     axios
                         .post("/api/member/update", updateReq)
-                        
-                    toast.success("You have Accepted a Request Had  a Request!", {
+                    const updateShare = {
+                        id: this.props.id,
+                        status: "accepted"
+                    }
+                    axios
+                        .post("/api/share/update", updateShare)     
+                    toast.success("You have Accepted a Request Had a Request!", {
                         position: toast.POSITION.TOP_RIGHT
                     });    
                 }
