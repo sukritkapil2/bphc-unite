@@ -3,10 +3,12 @@ import "../Stylesheets/main3.css";
 import axios from "axios";
 import EventApprovalCard from "./EventApprovalCard";
 
+
+
 class AdminEvents extends React.Component {
   constructor() {
     super();
-    this.state = { events: [] };
+    this.state = {events:[]};
     this.onClick = this.onClick.bind(this);
     this.goBack = this.goBack.bind(this);
   }
@@ -16,7 +18,8 @@ class AdminEvents extends React.Component {
     window.location.href = "/adminlogin";
   }
 
-  goBack(event) {
+  goBack(event)
+  {
     window.location.href = "/admin";
   }
 
@@ -25,28 +28,29 @@ class AdminEvents extends React.Component {
       .get("/api/events/getall")
       .then(response => {
         const data = response.data;
-        this.setState({ events: data });
+        this.setState({ events : data });
       })
       .catch(err => {
         console.log(err);
       });
-    const myevents = this.state.events.map((item, index) => {
-      return (
-        <EventApprovalCard
-          key={index}
-          eventName={item.eventName}
-          status={item.status}
-          eventAddr={item.eventAddr}
-          action={this.forceUpdate}
-        ></EventApprovalCard>
-      );
-    });
+      const myevents = this.state.events.map((item, index) => {
+          return (
+            <EventApprovalCard
+
+              key={index}
+              eventName={item.eventName}
+              status = {item.status}
+              eventAddr = {item.eventAddr}
+              action = {this.forceUpdate}
+            ></EventApprovalCard>
+          );
+      });
 
     return (
       <div>
         <div className="AdminPage">
-          <h1 id="header-text">EVENT MANAGEMENT</h1>
-          <button
+        <h1 id = "header-text">EVENT MANAGEMENT</h1>
+        <button
             className="btn btn-primary btn-large buttonlogout"
             onClick={this.goBack}
           >
@@ -58,7 +62,9 @@ class AdminEvents extends React.Component {
           >
             LOGOUT
           </button>
-          <div class="container2">{myevents}</div>
+          <div class="container2">
+            {myevents}
+            </div>
         </div>
       </div>
     );
