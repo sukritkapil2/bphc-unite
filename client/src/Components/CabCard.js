@@ -3,6 +3,7 @@ import moment from "moment"
 import axios from "axios";
 import { connect } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
+import "../Stylesheets/main4.css";
 import "react-toastify/dist/ReactToastify.css";
 
 class CabCard extends React.Component {
@@ -29,18 +30,15 @@ class CabCard extends React.Component {
                 const sharing = {
                     id: this.state.count + 1,
                     requestor: this.props.user.name,
-                    requestee: this.props.requesterName,
+                    requestee: this.props.requestee,
                     msg: this.props.message,
                     date: this.props.dateofrequest,
                     from: this.props.from,
                     to: this.props.to,
                     status: "sent"
                 };
-                const str1 = JSON.stringify(sharing);
-                var pos = str1.indexOf("requestor");
-                var check1 = str1.slice(pos-1);
-                console.log(check1)
-                if (this.props.requesterName === this.props.user.name) {
+                console.log(sharing)
+                if (this.props.requestee === this.props.user.name) {
                     toast.error("You cannot send a Request to yourself !", {
                         position: toast.POSITION.TOP_RIGHT
                     });
@@ -53,18 +51,14 @@ class CabCard extends React.Component {
                             this.setState({ requests: data })
                             console.log(this.state.count)
                             data.map((item) => {
-
-                                const str = JSON.stringify(item)
-
-                                var pos = str.indexOf("requestor");
-                                var check2 = str.slice(pos - 1)
-                                console.log(check2)
-                                if (check2 === check1 ) {
-                                    
+                                console.log(item)
+                                if (item.date === this.props.dateofrequest && item.from === this.props.from && item.to === this.props.to &&item.requestor===this.props.user.name && item.requestee===this.props.requestee ) {
+                                    console.log(item.date)
+                                    console.log(this.props.dateofrequest)
                                     flag = 1;
 
                                 }
-                                if(item.requesterName===this.props.user.name && item.status==="rejected")
+                                if (item.requestor === this.props.user.name && (item.status === "rejected"))
                                 {
                                     flag=1;
                                 }
@@ -116,51 +110,61 @@ class CabCard extends React.Component {
 
         return (
             <div>
-                <div class="card">
-                    <header class="card-header">
-                        <p class="card-header-title">{this.props.requesterName}</p>
+                <div class="card2">
+                    <header class="card-header" id="head4">
+                        <p class="card-header-title" id="head4t">{this.props.requestee}</p>
                         <a href="#" class="card-header-icon" aria-label="more options">
                             <span class="icon">
                                 <i class="fas fa-angle-down" aria-hidden="true"></i>
                             </span>
                         </a>
                     </header>
-                    <div class="card-content">
+                    <div class="card-content contentcard">
                         <div class="content">
-                            {this.props.message}
-                            <br />
-                            <time datetime="2016-1-1">
-                                <b>Date :</b>
-                                {date}
-                            </time>
-                            <br />
-                            <time datetime="2016-1-1">
-                                <b>Time :</b>
-                                {time}
-                            </time>
-                            <br />
-                            <b>From :</b>
-                            {this.props.from}
-                            <br />
-                            <b>To :</b>
-                            {this.props.to}
+                        <p id="p1">
+                            <b>MESSAGE : </b>&nbsp;{this.props.message}
+                        </p>
+                        <div class="bar2">
+                            <div className="emptybar2"></div>
+                            <div className="filledbar2"></div>
+                        </div>
+                        <time datetime="2016-1-1" id="d1">
+                            <b>DATE : </b>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{date}
+                        </time>
+                        <br />
+                        <time datetime="2016-1-1" id="t1">
+                            <b>TIME : </b>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            {time}
+                        </time>
+                        <br />
+                        <b>FROM : </b>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.props.from}
+                        <br />
+                        <b>TO : </b>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {this.props.to}
                         </div>
                     </div>
-                    <footer class="card-footer">
+        
+                    <footer class="card-footer footcard">
                         <a
                             href="#"
-                            class="card-footer-item has-text-primary"
+                            class="card-footer-item"
+                            id="lin1"
                             onClick={this.onSend}
                         >
                             Send Request
             </a>
                         {/* <a href="#" class="card-footer-item">Edit</a>
                 <a href="#" class="card-footer-item">Delete</a> */}
-                        <ToastContainer></ToastContainer>
                     </footer>
                 </div>
-                <br />
-            </div>
+                <br/>
+                <ToastContainer></ToastContainer>
+
+                </div>
         );
 
     }

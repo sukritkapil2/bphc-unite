@@ -1,6 +1,6 @@
 import React from "react";
 import "../Stylesheets/main2.css";
-import Axios from "axios";
+import axios from "axios";
 
 const initialstate = {
   email: "",
@@ -30,7 +30,7 @@ class AdminLogin extends React.Component {
       email: this.state.email,
       password: this.state.password
     };
-    Axios.post("/adminlogin", form)
+    axios.post("/adminlogin", form)
       .then(response => {
         console.log("Got the response:" + response);
         window.localStorage.setItem("authToken", response.token);

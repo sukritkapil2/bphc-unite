@@ -34,7 +34,7 @@ class Dashboard extends React.Component {
 
         return (
           <div>
-            <div className="box">
+            <div className="box" id = "nav1">
               <VerticalNav />
             </div>
             <div className="columns">
@@ -42,17 +42,17 @@ class Dashboard extends React.Component {
                 <HorizontalNav />
               </div>
               <div>
-                <div className="column box">
-                  <div id="content"><center><b>Welcome {this.props.user.name}<hr /></b></center>
-                    <div className="columns box is-paddingless	">
-                      <div className="column is-half">
-                        <center><b>New Requests<hr /></b></center>
+                <div className="column box" id = "nav1">
+                  <div id="content"><center><b className="text1">Welcome {this.props.user.name}<hr /></b></center>
+                    <div className="columns box cont1">
+                      <div className="column is-half cont1">
+                      <p className="text">New Requests</p>
                         <div className="column pic-container">
                         <ShareRequests></ShareRequests>
                         </div>
                     </div>
-                      <div className="column is-half pic-container">
-                        <center><b>Upcoming<hr /></b></center>
+                      <div className="column is-half pic-container cont1">
+                      <p className="text">Upcoming</p>
                       </div>
                     </div>
                   </div>

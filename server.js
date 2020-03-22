@@ -20,6 +20,9 @@ const updatemember = require("./services/updatemembers");
 const getmemeber = require("./services/getmembers");
 const postmember = require("./services/postmembers");
 
+const sendFeedback = require("./services/sendFeedback");
+const getFeedback = require("./services/getFeedback");
+const deleteFeedback = require("./services/deleteFeedback");
 const path = require("path");
 require("./models/cabRequests");
 require("./models/User");
@@ -65,6 +68,9 @@ app.use("/api/member", updatemember);
 app.use("/api/member", postmember);
 
 
+app.use("/feedback", sendFeedback);
+app.use("/getfeedback", getFeedback);
+app.use("/deletefeedback", deleteFeedback);
 const port = process.env.PORT || 5000;
 require("./routes/authRoutes")(app);
 

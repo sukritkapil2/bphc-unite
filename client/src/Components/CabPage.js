@@ -9,26 +9,23 @@ class CabPage extends React.Component
     render()
     {
         return(
-            <div>
-            <div className="box">
-              <VerticalNav />
-            </div>
-            <div className="columns">
-              <div className="column is-one-fifth sideNav">
-                <HorizontalNav />
-              </div>
-              <div>
-              <center><b>AVAILABLE CABS<hr/></b></center>
-              <div className="columns box is-paddingless	">
-                  
-                  <CabRequests></CabRequests>
-                  <CabForm></CabForm>
-              </div>
-              </div>
-            </div>
-            
-           
+          <div>
+          <div className="box" id="nav1">
+            <VerticalNav />
           </div>
+          <div className="columns">
+            <div className="column is-one-fifth sideNav">
+              <HorizontalNav />
+            </div>
+            <div className="head">
+              <p id="hde">ACTIVE REQUESTS</p>
+              <div className="columns box is-paddingless" id="box2">
+                <CabRequests></CabRequests>
+                <CabForm></CabForm>
+              </div>
+            </div>
+          </div>
+        </div>
         )
     }
 }

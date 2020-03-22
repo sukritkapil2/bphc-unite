@@ -7,9 +7,6 @@ import { connect } from "react-redux";
 class UpcomingRideCard extends React.Component {
     constructor(props) {
         super(props);
-        this.onAccept = this.onAccept.bind(this);
-        this.onReject = this.onReject.bind(this);
-        this.state = { count: 0 };
     }
    
 
@@ -18,7 +15,7 @@ class UpcomingRideCard extends React.Component {
         var newDateObj = moment(dateobj).toDate();
         var date = moment(newDateObj).format("DD/MM/YY");
         var time = moment(newDateObj).format("HH:mm");
-
+        
         return (
             <div>
                 <div class="card">

@@ -154,10 +154,11 @@ class ShareRequestCard extends React.Component {
                             onClick={this.onReject}
                         >
                             Reject
-            </a><ToastContainer></ToastContainer>
+            </a>
                     </footer>
                 </div>
                 <br />
+                <ToastContainer></ToastContainer>
             </div>
         );
 

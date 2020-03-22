@@ -8,9 +8,12 @@ import { connect } from "react-redux";
 import { fetchUserAction } from "./actions/myaction";
 import MyRequests from "./Components/MyRequests";
 import AdminLogin from "./Components/AdminLogin";
-import AdminPage from "./Components/AdminPage";
+import AdminEvents from "./Components/AdminEvents";
 import SuggestEvents from "./Components/SuggestEvents";
 import PrivateRoute from "./helpers/PrivateRoute";
+import Feedback from "./Components/Feedback"
+import AdminFeedback from "./Components/AdminFeedback";
+import AdminOptions from "./Components/AdminOptions";
 
 function App(props) {
   useEffect(() => {
@@ -25,7 +28,10 @@ function App(props) {
       <Route exact path="/searchcabs" component={SearchCabs}></Route>
       <Route exact path="/adminlogin" component={AdminLogin}></Route>
       <Route exact path="/suggestevents" component={SuggestEvents}></Route>
-      <PrivateRoute exact path="/admin" component={AdminPage}></PrivateRoute>
+      <PrivateRoute exact path="/admin" component={AdminOptions}></PrivateRoute>
+      <PrivateRoute exact path="/adminevents" component={AdminEvents}></PrivateRoute>
+      <PrivateRoute exact path="/adminfeedback" component={AdminFeedback}></PrivateRoute>
+      <Route exact path="/feedback" component={Feedback}></Route>
     </Router>
   );
 }
