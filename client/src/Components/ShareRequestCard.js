@@ -20,15 +20,15 @@ class ShareRequestCard extends React.Component {
                 const data = response.data.map((item, index) => {
 
                     if (item.Field === "CarPool") {
+                        
                         return item.Counter 
+                        
                     }
                 });
-                this.setState({ count: data })
+                this.setState({ count: data[1] })
         axios.get("/api/member/")
             .then(res => {
-                console.log(res.data)
                 res.data.map((item) => {
-                    console.log(item)
                         item.members.map((value) => {
                         if (value === this.props.user.name) {
                             flag1=1;
@@ -50,7 +50,8 @@ class ShareRequestCard extends React.Component {
                     });    
                 }
                 else
-                {   
+                {
+                    
                     const newReq={
                         id:this.state.count +1,
                         member1:this.props.requesterName,
@@ -90,7 +91,6 @@ class ShareRequestCard extends React.Component {
             id:this.props.id,
             status:"rejected"
         }
-        console.log(update)
         axios
             .post("/api/share/update", update)
             

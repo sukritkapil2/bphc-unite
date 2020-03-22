@@ -19,13 +19,12 @@ class CabCard extends React.Component {
         axios.get("/api/counter/")
             .then(response => {
                const data= response.data.map((item, index) => {
-
                     if (item.Field === "Sharing") {
+                       
                         return item.Counter
                     }
                 });
-                console.log(data)
-                this.setState({ count: data })
+                this.setState({ count: data[0] })
 
                 const sharing = {
                     id: this.state.count + 1,
@@ -41,7 +40,7 @@ class CabCard extends React.Component {
                 var pos = str1.indexOf("requestor");
                 var check1 = str1.slice(pos-1);
                 console.log(check1)
-                if (sharing.requestor === sharing.requestee) {
+                if (this.props.requesterName === this.props.user.name) {
                     toast.error("You cannot send a Request to yourself !", {
                         position: toast.POSITION.TOP_RIGHT
                     });
@@ -52,7 +51,7 @@ class CabCard extends React.Component {
                             const data = response.data;
                             var flag = 0
                             this.setState({ requests: data })
-                            console.log(data)
+                            console.log(this.state.count)
                             data.map((item) => {
 
                                 const str = JSON.stringify(item)
@@ -60,16 +59,17 @@ class CabCard extends React.Component {
                                 var pos = str.indexOf("requestor");
                                 var check2 = str.slice(pos - 1)
                                 console.log(check2)
-                                if (check2 === check1 || item.status === "rejected") {
-                                    toast.warn("You have already sent a Request !", {
-                                        position: toast.POSITION.TOP_RIGHT
-                                    });
+                                if (check2 === check1 ) {
+                                    
                                     flag = 1;
 
                                 }
+                                if(item.requesterName===this.props.user.name && item.status==="rejected")
+                                {
+                                    flag=1;
+                                }
                             })
                             if (flag === 0) {
-                                console.log(sharing);
                                axios
                                     .post("/api/share/request", sharing)
                                     .then(res => {
@@ -86,6 +86,11 @@ class CabCard extends React.Component {
                                 }
                                axios.post("/api/counter/update",updateCount)
 
+                            }
+                            else{
+                                toast.warn("You have already sent a Request !", {
+                                    position: toast.POSITION.TOP_RIGHT
+                                });
                             }
                         })
                         .catch((err) => console.log(err));
