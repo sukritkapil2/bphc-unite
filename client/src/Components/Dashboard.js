@@ -3,11 +3,10 @@ import VerticalNav from "./VerticalNav"
 import HorizontalNav from "./HorizontalNav"
 import "../Stylesheets/main.css"
 import { connect } from 'react-redux'
-import { render } from "react-dom"
 import Login from './Login'
-import ShareRequestCard from '../Components/ShareRequestCard'
-import { axios } from 'axios'
 import ShareRequests from './ShareRequests'
+import UpcomingRequests from './UpcomingRide'
+import UpcomingRide from "./UpcomingRide"
 class Dashboard extends React.Component {
   constructor(props) {
     super(props)
@@ -53,6 +52,9 @@ class Dashboard extends React.Component {
                     </div>
                       <div className="column is-half pic-container cont1">
                       <p className="text">Upcoming</p>
+                        <div className="column pic-container">
+                          <UpcomingRide></UpcomingRide>
+                        </div>
                       </div>
                     </div>
                   </div>

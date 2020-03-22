@@ -7,7 +7,7 @@ class UpcomingRide extends React.Component {
     constructor() {
         super()
         this.state = {
-            requests: []
+            requests: [],flag:0
         }
         
     }
@@ -16,25 +16,33 @@ class UpcomingRide extends React.Component {
             .then((response) => {
                 const data = response.data;
                 this.setState({ requests: data })
-                console.log(data)
             })
             .catch((err) => console.log(err));
             console.log(this.state.requests)
-         const myrequests = this.state.requests.map((item, index) => {
-                                item.members.map((val, index) => { {
-                                    console.log(val)
-                                    if(val===this.props.user.name){    
+         const myrequests =this.state.requests.map((item, index) => {
+                                    var flag = 0;
+                                    item.members.map((val) => {
+                                        {
+
+                                            console.log(val)
+                                            if (val === this.props.user.name) {
+                                                flag = 1
+                                            }
+
+
+                                        }
+
+                                    });
+                                    if (flag === 1) {
                                         return (
                                             <UpcomingRideCard
                                                 key={index}
                                                 dateofrequest={item.date} from={item.from} to={item.to}
                                             ></UpcomingRideCard>
                                         );
-                                    }        
-                                }
-                            });
-         });
-         console.log(myrequests)
+                                    }
+                                });
+
          return (
             <div >
                 {myrequests}
