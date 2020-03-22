@@ -3,7 +3,11 @@ import { connect } from "react-redux";
 import axios from "axios";
 import VerticalNav from "./VerticalNav";
 import HorizontalNav from "./HorizontalNav";
+<<<<<<< HEAD
 import { ToastsContainer, ToastsStore } from "react-toasts";
+=======
+import { ToastsContainer, ToastsStore } from 'react-toasts';
+>>>>>>> cb6cc2f7da5fb7f898f6624c71f48f0d6fd9f9c5
 import "../Stylesheets/main4.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,6 +16,7 @@ class SuggestEvents extends React.Component {
     super(props);
     this.state = {
       places: [],
+<<<<<<< HEAD
       location: "",
       address: ""
     };
@@ -26,6 +31,17 @@ class SuggestEvents extends React.Component {
 
   updateAddress(event) {
     this.setState({ address: event.target.value });
+=======
+      location: '',
+      address: ''
+    };
+    this.updateText = this.updateText.bind(this)
+    this.submitEvent = this.submitEvent.bind(this)
+  }
+
+  updateText(event) {
+    this.setState({ [event.target.name]: event.target.value });
+>>>>>>> cb6cc2f7da5fb7f898f6624c71f48f0d6fd9f9c5
   }
 
   submitEvent(event) {
@@ -33,6 +49,7 @@ class SuggestEvents extends React.Component {
     const evt = {
       name: this.state.location,
       addr: this.state.address,
+<<<<<<< HEAD
       status: "0"
     };
     console.log(evt);
@@ -50,6 +67,27 @@ class SuggestEvents extends React.Component {
   }
 
   render() {
+=======
+      status : "0"
+    }
+    console.log(evt)
+    axios.post('/api/events/suggest', evt)
+      .then((res) => {
+        console.log(res.data)
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+    toast.success("Event sent for approval!", {
+        position: toast.POSITION.TOP_RIGHT
+    });
+    
+    
+  }
+
+  render() {
+
+>>>>>>> cb6cc2f7da5fb7f898f6624c71f48f0d6fd9f9c5
     return (
       <div>
         <div className="box" id="nav1">
@@ -59,6 +97,7 @@ class SuggestEvents extends React.Component {
           <div className="column is-one-fifth sideNav">
             <HorizontalNav />
           </div>
+<<<<<<< HEAD
           <div class="box" id="cont3">
             <input
               class="input"
@@ -90,6 +129,23 @@ class SuggestEvents extends React.Component {
             >
               Submit
             </button>
+=======
+          <div class = "box" id="cont2">
+          
+          
+              <input class="input" type="text" placeholder="Enter event here" onChange={this.updateText} name="location" width="250px"></input>
+          
+            <br />
+          <p>
+            <div class="control">
+              <textarea class="textarea has-fixed-size" placeholder="Fixed size textarea" onChange={this.updateAddress} name="address"></textarea>
+            </div>
+            </p>
+            <br />
+            
+            <button class="button is-link" onClick={this.submitEvent}>Submit</button>
+            
+>>>>>>> cb6cc2f7da5fb7f898f6624c71f48f0d6fd9f9c5
           </div>
         </div>
         <ToastContainer></ToastContainer>

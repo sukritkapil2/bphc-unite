@@ -1,16 +1,29 @@
+<<<<<<< HEAD
 import React from "react";
 import Calendar from "./Calendar";
 import { connect } from "react-redux";
 import axios from "axios";
+=======
+
+import React from "react";
+import Calendar from "./Calendar"
+import { connect } from 'react-redux'
+import axios from 'axios'
+>>>>>>> cb6cc2f7da5fb7f898f6624c71f48f0d6fd9f9c5
 import "../Stylesheets/cabform.css";
 import "../Stylesheets/main4.css";
 import Select from "react-select";
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb6cc2f7da5fb7f898f6624c71f48f0d6fd9f9c5
 class CabForm extends React.Component {
   constructor(props) {
     super(props);
     this.submitRequest = this.submitRequest.bind(this);
     this.updateText = this.updateText.bind(this);
+<<<<<<< HEAD
     this.setDate = this.setDate.bind(this);
     this.state = {
       value: "",
@@ -45,6 +58,38 @@ class CabForm extends React.Component {
     console.log(this.props.user);
     event.preventDefault();
     console.log(this.state.value);
+=======
+    this.setDate = this.setDate.bind(this)
+    this.state = { value: '', date: Date.now, fromValue: 'check', toValue: 'check', options: [] };
+    this.fromSelect = this.fromSelect.bind(this)
+    this.toSelect = this.toSelect.bind(this)
+
+  }
+  componentDidMount() {
+    axios.get('/api/events/get')
+      .then((response) => {
+        const data = response.data;
+        console.log(data);
+        const optionList = data.map((event, index) => {
+          
+            return { value: event.eventName, label: event.eventName }
+          
+        })
+        this.setState({ options: optionList })
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+  updateText(event) {
+    this.setState({ value: event.target.value });
+    console.log(this.state.value)
+  }
+  submitRequest(event) {
+    console.log(this.props.user)
+    event.preventDefault();
+    console.log(this.state.value)
+>>>>>>> cb6cc2f7da5fb7f898f6624c71f48f0d6fd9f9c5
     const newRequest = {
       name: this.props.user.name,
       msg: this.state.value,
@@ -52,6 +97,7 @@ class CabForm extends React.Component {
       emailID: this.props.user.email,
       from: this.state.fromValue,
       to: this.state.toValue
+<<<<<<< HEAD
     };
     console.log(newRequest);
     axios
@@ -134,12 +180,88 @@ class CabForm extends React.Component {
         paddingBottom: "2px",
         
       })
+=======
+    }
+    console.log(newRequest);
+    axios.post('/api/cabs/request', newRequest)
+      .then((res) => {
+        console.log(res.data)
+      }).catch((error) => {
+        console.log(error)
+        console.log("CabForm")
+      });
+
+  }
+  setDate(childData) {
+    this.setState({ date: childData })
+    console.log(this.state.date)
+  }
+  fromSelect(event) {
+    console.log(event);
+    this.setState({ fromValue: event.label })
+    console.log(this.state)
+  }
+  toSelect(event) {
+    this.setState({ toValue: event.label })
+    console.log(this.state)
+  }
+  render() {
+    const customStyles = {
+      container: (provided) => ({
+        ...provided,
+        display: 'inline-block',
+        width: '250px',
+        minHeight: '1px',
+        textAlign: 'left',
+        border: 'none',
+      }),
+      control: (provided) => ({
+        ...provided,
+        border: '2px solid #757575',
+        borderRadius: '0',
+        minHeight: '1px',
+        height: '20px',
+      }),
+      input: (provided) => ({
+        ...provided,
+        minHeight: '1px',
+      }),
+      dropdownIndicator: (provided) => ({
+        ...provided,
+        minHeight: '1px',
+        paddingTop: '0',
+        paddingBottom: '0',
+        color: '#757575',
+      }),
+      indicatorSeparator: (provided) => ({
+        ...provided,
+        minHeight: '1px',
+        height: '24px',
+      }),
+      clearIndicator: (provided) => ({
+        ...provided,
+        minHeight: '1px',
+      }),
+      valueContainer: (provided) => ({
+        ...provided,
+        minHeight: '1px',
+        height: '20px',
+        paddingTop: '0',
+        paddingBottom: '0',
+      }),
+      singleValue: (provided) => ({
+        ...provided,
+        minHeight: '1px',
+        paddingBottom: '2px',
+      }),
+>>>>>>> cb6cc2f7da5fb7f898f6624c71f48f0d6fd9f9c5
     };
 
     return (
       <div className="column is-half" id="cont2">
         <p className="text">Add a Cab Request</p>
 
+<<<<<<< HEAD
         <div class="field" id="f1">
           <br />
           <label class="label">Departure Time</label>
@@ -181,10 +303,34 @@ class CabForm extends React.Component {
                 onChange={this.updateText}
                 value={this.state.value}
               ></textarea>
+=======
+
+        <div class="field" id="f1">
+        <br/>
+          <label class="label">Departure Time</label>
+          <Calendar setDate={this.setDate} />
+        </div>
+        <label class="label" id = "l1">From</label>
+        <div class="control">
+          <div class = "field" id = "f1">
+          <Select onChange={this.fromSelect} options={this.state.options} styles={{customStyles}}/>
+          </div>
+          <label class="label" id="l2">To</label>
+          <div class="field" id="f1">
+
+            <Select onChange={this.toSelect} options={this.state.options} styles={{customStyles}}/>
+            <br/>
+          </div>
+          <div class="field" id = "f1">
+            <label class="label" id="l3">Message</label>
+            <div class="control">
+              <textarea class="textarea" id="te1" placeholder="Textarea" onChange={this.updateText} value={this.state.value}></textarea>
+>>>>>>> cb6cc2f7da5fb7f898f6624c71f48f0d6fd9f9c5
             </div>
           </div>
           <div class="field is-grouped">
             <div class="control">
+<<<<<<< HEAD
               <button
                 class="button is-link"
                 id="buto1"
@@ -207,3 +353,24 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(CabForm);
+=======
+              <button class="button is-link" id="buto1" onClick={this.submitRequest}>Submit</button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    )
+
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.auth
+  }
+}
+
+export default connect(mapStateToProps)(CabForm);
+>>>>>>> cb6cc2f7da5fb7f898f6624c71f48f0d6fd9f9c5

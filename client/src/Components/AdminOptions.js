@@ -48,9 +48,15 @@ class AdminOptions extends React.Component {
             Event Management
           </button>
           <button
+<<<<<<< HEAD
             type="submit"
             className="btn btn-primary btn-block btn-large"
             id="button23"
+=======
+            type="goback"
+            className="btn btn-primary"
+            id="button1"
+>>>>>>> cb6cc2f7da5fb7f898f6624c71f48f0d6fd9f9c5
             onClick={this.onFeedbackClick}
           >
             View Feedback
