@@ -6,8 +6,8 @@ const carPoolSchema = new Schema(
     id: {
       type: Number
     },
-    members:{
-      type:Array
+    members: {
+      type: Array
     },
     date: {
       type: Date,
@@ -18,9 +18,9 @@ const carPoolSchema = new Schema(
     },
     to: {
       type: String
-    },
+    }
   },
   { versionKey: false }
 );
 
-module.exports = Post = mongoose.model("CarPool", carPoolSchema);
+module.exports = CarPool = mongoose.model("CarPool", carPoolSchema);

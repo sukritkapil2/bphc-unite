@@ -11,9 +11,10 @@ import AdminLogin from "./Components/AdminLogin";
 import AdminEvents from "./Components/AdminEvents";
 import SuggestEvents from "./Components/SuggestEvents";
 import PrivateRoute from "./helpers/PrivateRoute";
-import Feedback from "./Components/Feedback"
+import Feedback from "./Components/Feedback";
 import AdminFeedback from "./Components/AdminFeedback";
 import AdminOptions from "./Components/AdminOptions";
+import CabGroup from "./Components/CabGroup.js";
 
 function App(props) {
   useEffect(() => {
@@ -29,8 +30,17 @@ function App(props) {
       <Route exact path="/adminlogin" component={AdminLogin}></Route>
       <Route exact path="/suggestevents" component={SuggestEvents}></Route>
       <PrivateRoute exact path="/admin" component={AdminOptions}></PrivateRoute>
-      <PrivateRoute exact path="/adminevents" component={AdminEvents}></PrivateRoute>
-      <PrivateRoute exact path="/adminfeedback" component={AdminFeedback}></PrivateRoute>
+      <Route exact path="/cabgroup" component={CabGroup}></Route>
+      <PrivateRoute
+        exact
+        path="/adminevents"
+        component={AdminEvents}
+      ></PrivateRoute>
+      <PrivateRoute
+        exact
+        path="/adminfeedback"
+        component={AdminFeedback}
+      ></PrivateRoute>
       <Route exact path="/feedback" component={Feedback}></Route>
     </Router>
   );

@@ -9,13 +9,13 @@ const crequest = require("./services/post");
 const bodyParser = require("body-parser");
 const getrequests = require("./services/fetchrequests");
 const deleterequests = require("./services/deleterequest");
-const sharerequests = require("./services/sharerequests")
+const sharerequests = require("./services/sharerequests");
 const sharing = require("./services/sharing");
 const events = require("./services/events");
 const adminLogin = require("./services/adminLogin");
-const updateshare=require("./services/updateshare");
-const updatecounter = require("./services/updatecounter")
-const getcounter = require("./services/getcounter")
+const updateshare = require("./services/updateshare");
+const updatecounter = require("./services/updatecounter");
+const getcounter = require("./services/getcounter");
 const updatemember = require("./services/updatemembers");
 const getmemeber = require("./services/getmembers");
 const postmember = require("./services/postmembers");
@@ -23,11 +23,12 @@ const postmember = require("./services/postmembers");
 const sendFeedback = require("./services/sendFeedback");
 const getFeedback = require("./services/getFeedback");
 const deleteFeedback = require("./services/deleteFeedback");
+const getGroups = require("./services/getGroups");
 const path = require("path");
 require("./models/cabRequests");
 require("./models/User");
 require("./services/passport");
-mongoose.set('useFindAndModify', false);
+mongoose.set("useFindAndModify", false);
 mongoose.connect(
   keys.mongoURI,
   { useNewUrlParser: true, useUnifiedTopology: true },
@@ -58,8 +59,8 @@ app.use("/api/fetchrequests", getrequests);
 app.use("/api/deletemyrequests", deleterequests);
 app.use("/api/share", sharerequests);
 app.use("/api/sharing", sharing);
-app.use('/api/share', updateshare);
-app.use('/api/events', events);
+app.use("/api/share", updateshare);
+app.use("/api/events", events);
 app.use("/adminlogin", adminLogin);
 app.use("/api/counter", getcounter);
 app.use("/api/counter", updatecounter);
@@ -67,7 +68,7 @@ app.use("/api/member", getmemeber);
 app.use("/api/member", updatemember);
 app.use("/api/member", postmember);
 
-
+app.use("/getgroups", getGroups);
 app.use("/feedback", sendFeedback);
 app.use("/getfeedback", getFeedback);
 app.use("/deletefeedback", deleteFeedback);

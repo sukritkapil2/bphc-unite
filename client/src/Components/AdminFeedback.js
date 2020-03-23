@@ -11,12 +11,11 @@ class AdminFeedback extends React.Component {
   constructor() {
     super();
     this.state = initialState;
-    this.goBack = this.goBack.bind(this)
+    this.goBack = this.goBack.bind(this);
   }
 
-  goBack(event)
-  {
-      window.location.href = "/admin";
+  goBack(event) {
+    window.location.href = "/admin";
   }
 
   onClick(event) {
@@ -47,27 +46,24 @@ class AdminFeedback extends React.Component {
       );
     });
     return (
-        <div>
-          <div className="AdminPage">
+      <div>
+        <div className="AdminPage">
           <button
             className="btn btn-primary btn-large buttonlogout"
             onClick={this.goBack}
           >
             Back
           </button>
-            <button
-              className="btn btn-primary btn-large buttonlogout"
-              onClick={this.onClick}
-            >
-              LOGOUT
-            </button>
-            <div class="container2">
-              {feedcards}
-              </div>
-          </div>
+          <button
+            className="btn btn-primary btn-large buttonlogout"
+            onClick={this.onClick}
+          >
+            LOGOUT
+          </button>
+          <div class="container2">{feedcards}</div>
         </div>
-      );
-    
+      </div>
+    );
   }
 }
 

@@ -1,14 +1,21 @@
 import React from "react";
 import Logo from "./images/logo.png";
-import { NavLink, Link } from "react-router-dom"
-import { connect } from 'react-redux'
+import { NavLink, Link } from "react-router-dom";
+import { connect } from "react-redux";
 import "../Stylesheets/nav.css";
 class VerticalNav extends React.Component {
   render() {
     return (
-      <nav className="navbar" role="navigation" aria-label="main navigation" id="nav1in">
+      <nav
+        className="navbar"
+        role="navigation"
+        aria-label="main navigation"
+        id="nav1in"
+      >
         <div className="navbar-brand">
-          <a href='/dashboard'><img src={Logo} width="112" height="100" /></a>
+          <a href="/dashboard">
+            <img src={Logo} width="112" height="100" />
+          </a>
 
           <a
             role="button"
@@ -25,12 +32,22 @@ class VerticalNav extends React.Component {
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <a href='/dashboard' className="navbar-item" id="tnav">Home</a> 
+            <a href="/dashboard" className="navbar-item" id="tnav">
+              Home
+            </a>
 
-            <a className="navbar-item" id = "tnav">Profile</a>
+            <a className="navbar-item" id="tnav">
+              Profile
+            </a>
+
+            <a className="navbar-item" id="tnav" href="/cabgroup">
+              Cab Groups
+            </a>
 
             <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link" id="tnav">Notifications</a>
+              <a className="navbar-link" id="tnav">
+                Notifications
+              </a>
 
               <div className="navbar-dropdown">
                 <a className="navbar-item">NOTIF 1</a>
@@ -46,7 +63,9 @@ class VerticalNav extends React.Component {
               <img
                 class="is-rounded"
                 style={{ border: "10px solid #ddd" }}
-                src={this.props && this.props.user ? this.props.user.avatar : ''} 
+                src={
+                  this.props && this.props.user ? this.props.user.avatar : ""
+                }
               />
             </figure>
 
@@ -77,13 +96,12 @@ class VerticalNav extends React.Component {
       </nav>
     );
   }
-
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     user: state.auth
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps)(VerticalNav);
