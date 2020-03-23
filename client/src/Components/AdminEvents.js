@@ -58,7 +58,7 @@ class AdminEvents extends React.Component {
           >
             LOGOUT
           </button>
-          <div class="container2">{myevents}</div>
+          <div class="container25">{myevents}</div>
         </div>
       </div>
     );

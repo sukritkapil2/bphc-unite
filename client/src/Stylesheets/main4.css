@@ -289,3 +289,12 @@
   margin-left: 10px;
   margin-top: 180px;
 }
+
+#buttonl25 {
+  position: absolute;
+  right: 0px;
+  height: 30px;
+  outline: none;
+  background-color: rgb(233, 109, 109);
+  margin-top: -70px;
+}

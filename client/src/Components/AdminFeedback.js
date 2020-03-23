@@ -60,7 +60,7 @@ class AdminFeedback extends React.Component {
           >
             LOGOUT
           </button>
-          <div class="container2">{feedcards}</div>
+          <div class="container25">{feedcards}</div>
         </div>
       </div>
     );

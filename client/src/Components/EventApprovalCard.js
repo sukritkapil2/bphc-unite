@@ -84,7 +84,7 @@ class EventApprovalCard extends React.Component {
           <br></br>
           <br></br>
           <a href="#" onClick={this.deleteLocation}>
-            <button class="btn btn-primary" id="buttonl2">X</button>
+            <button class="btn btn-primary" id="buttonl25">X</button>
           </a>
         </div>
       );
