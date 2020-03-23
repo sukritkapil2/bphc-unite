@@ -1,22 +1,75 @@
 import React from "react";
 import Member from "../Components/Member.js";
 import "../Stylesheets/maingroup.css";
+import "../reducers/authReducer";
+import { authReducer } from "../reducers/authReducer";
+import { connect } from "react-redux";
 
 class GroupCard extends React.Component {
   constructor(props) {
     super(props);
+    this.getCcString = this.getCcString.bind(this);
+    this.state = {
+      ccLink: ""
+    };
+  }
+
+  getCcString() {
+    var tempString = "";
+    console.log(this.props.members.length);
+    if (this.props.members.length === 0 || this.props.members.length === 1) {
+      return "";
+    } else {
+      const array = this.props.members;
+      for (var i = 1; i < this.props.members.length; i++) {
+        var string = array[i].email;
+        if (string == this.props.user.email) {
+        } else {
+          tempString = tempString.concat(string + ",");
+        }
+      }
+      console.log(tempString);
+      return tempString;
+    }
   }
 
   render() {
+    this.state = {
+      ccLink:
+        "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+        this.props.members[0].email +
+        "&su=" +
+        this.props.name +
+        " Group Has Sent Updates" +
+        "&body=Enter your Cab Group Message Here&cc=" +
+        this.getCcString()
+    };
     const membarr = this.props.members;
     const membcards = membarr.map((item, index) => {
-      console.log(item.name);
-      return <Member key={index} name={item.name}></Member>;
+      return (
+        <Member
+          key={index}
+          name={item.name}
+          email={item.email}
+          groupname={this.props.name}
+        ></Member>
+      );
     });
     return (
       <div>
         <div className="card6">
-          <h3 className="title">Group: &nbsp;{this.props.name}</h3>
+          <h3 className="title">
+            Group: &nbsp;{this.props.name}{" "}
+            <button className="btn btn-primary but232">
+              <a
+                href={this.state.ccLink}
+                target="_blank"
+                className="buttonText"
+              >
+                Mail All Members
+              </a>
+            </button>
+          </h3>
           <p className="title2">{this.props.date}</p>
           <div className="barcont">
             <div class="bar6">
@@ -25,7 +78,7 @@ class GroupCard extends React.Component {
             </div>
           </div>
           <div className="message34">
-            <p className="mestext">Members : </p>
+            <p className="mestext">Members (Click to mail) : </p>
             <div className="bold23">{membcards}</div>
           </div>
           <button className="btn btn-primary" id="buttonl2">
@@ -37,4 +90,10 @@ class GroupCard extends React.Component {
   }
 }
 
-export default GroupCard;
+const mapStateToProps = state => {
+  return {
+    user: state.auth
+  };
+};
+
+export default connect(mapStateToProps)(GroupCard);

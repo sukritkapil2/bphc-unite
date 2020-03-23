@@ -5,6 +5,7 @@ import VerticalNav from "./VerticalNav";
 import "../Stylesheets/maingroup.css";
 import Axios from "axios";
 import GroupCard from "../Components/GroupCard.js";
+import { ToastContainer, toast } from "react-toastify";
 
 const initalState = {
   group: []
@@ -53,6 +54,7 @@ class CabGroup extends React.Component {
           <p className="grouptext">Cab Groups</p>
           <div class="container2">{groupcards}</div>
         </div>
+        <ToastContainer></ToastContainer>
       </div>
     );
   }

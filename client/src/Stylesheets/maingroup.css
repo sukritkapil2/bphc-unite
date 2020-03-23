@@ -122,3 +122,12 @@
     font-family: "Open Sans";
 }
 
+.buttonText {
+  color: white;
+  font-weight: 600;
+  font-family: "Open Sans";
+}
+
+.but232 {
+  background-color: rgb(66, 170, 230);
+}
