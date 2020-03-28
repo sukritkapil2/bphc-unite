@@ -7,6 +7,7 @@ module.exports = app => {
       scope: ["profile", "email"]
     })
   );
+
   app.get(
     "/auth/google/redirect",
     passport.authenticate("google"),
