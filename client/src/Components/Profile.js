@@ -24,7 +24,7 @@ class Profile extends React.Component {
         
         <div class="container2" style={{overflow:"hidden"}}>
     
-      <div style={{ margin: "100px auto",}}>
+      <div style={{ marginTop: "100px",}}>
         <div className="columns">
           <div className="column is-two-fifth">
             <figure style={{width:"300px"}}>
@@ -39,9 +39,9 @@ class Profile extends React.Component {
           </div>
           
           <div
-            className="column card3 has-background-black has-text-white "
+            className="column card2 has-background-black has-text-white "
       
-            style={{fontSize:"35px", marginTop:"20px"}}
+            style={{fontSize:"30px", marginTop:"20px" }}
           >
             <p>{this.props && this.props.auth ? this.props.auth.name.toUpperCase() : ""}</p>
             <br />
@@ -50,7 +50,7 @@ class Profile extends React.Component {
                 <div className="filledbar2"></div>
               </div>
               <br/>
-            <p>{this.props && this.props.auth ? this.props.auth.email : ""}</p>
+            <p>{this.props && this.props.auth ? this.props.auth.email: ""}</p>
           </div>
         </div>
       </div>
