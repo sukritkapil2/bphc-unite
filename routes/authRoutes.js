@@ -8,6 +8,11 @@ module.exports = app => {
     })
   );
 
+  app.get("/:id", (req, res) => {
+    res.send(id);
+  });
+  
+
   app.get(
     "/auth/google/redirect",
     passport.authenticate("google"),
