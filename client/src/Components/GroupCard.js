@@ -15,20 +15,19 @@ class GroupCard extends React.Component {
   }
 
   getCcString() {
+    console.log(this.props.loggedin)
     var tempString = "";
-    console.log(this.props.members.length);
     if (this.props.members.length === 0 || this.props.members.length === 1) {
       return "";
     } else {
-      const array = this.props.members;
+      const array = this.props.email;
       for (var i = 1; i < this.props.members.length; i++) {
-        var string = array[i].email;
-        if (string == this.props.user.email) {
+        var string = array[i];
+        if (string === this.props.loggedin.email) {
         } else {
           tempString = tempString.concat(string + ",");
         }
       }
-      console.log(tempString);
       return tempString;
     }
   }
@@ -92,7 +91,7 @@ class GroupCard extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.auth
+    loggedin: state.auth
   };
 };
 

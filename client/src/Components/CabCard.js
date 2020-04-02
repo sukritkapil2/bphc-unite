@@ -31,6 +31,7 @@ class CabCard extends React.Component {
           id: this.state.count + 1,
           requestor: this.props.user.name,
           requestee: this.props.requestee,
+          email:this.props.email,
           msg: this.props.message,
           date: this.props.dateofrequest,
           from: this.props.from,

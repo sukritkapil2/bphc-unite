@@ -9,6 +9,10 @@ const carPoolSchema = new Schema(
     members: {
       type: Array
     },
+    email:{
+      type: Array
+    },
+    
     date: {
       type: Date,
       default: Date.now
