@@ -43,7 +43,8 @@ class ShareRequestCard extends React.Component {
                 if (flag1 === 1 && flag2 === 1) {
                     const updateReq = { 
                         id:this.state.poolid,
-                        member: this.props.requesterName }
+                        member: this.props.requesterName,
+                        email3:this.props.email }
                     axios
                         .post("/api/member/update", updateReq)
                     const updateShare = {
@@ -63,6 +64,8 @@ class ShareRequestCard extends React.Component {
                         id:this.state.count +1,
                         member1:this.props.requesterName,
                         member2:this.props.user.name,    
+                        email1:this.props.user.email,
+                        email2:this.props.email,
                         date:this.props.dateofrequest,
                         to:this.props.to,
                         from:this.props.from    

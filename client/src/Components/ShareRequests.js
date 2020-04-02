@@ -24,6 +24,7 @@ class ShareRequests extends React.Component {
                     <ShareRequestCard
                         key={index}
                         id={item.id}
+                        email={item.email}
                         requesterName={item.requestor}
                         requesteeName={item.requestee}
                         dateofrequest={item.date} message={item.msg} from={item.from} to={item.to}
