@@ -28,7 +28,14 @@ class CabGroup extends React.Component {
       });
     const grouparr = this.state.group;
     const groupcards = grouparr.map((item, index) => {
-      return (
+      var flag=0;
+      item.email.map((val)=> {
+        if(val === this.props.loggedin.email){
+            flag=1;
+        }
+      })
+        if(flag===1){
+        return (
         <GroupCard
           key={index}
           name={item.groupname}
@@ -38,7 +45,9 @@ class CabGroup extends React.Component {
           from={item.from}
           to={item.to}
         ></GroupCard>
-      );
+        );
+        }
+      
     });
     return (
       <div>
