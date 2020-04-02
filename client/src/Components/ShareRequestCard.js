@@ -119,7 +119,7 @@ class ShareRequestCard extends React.Component {
         <div class="card2">
           <header class="card-header" id="head4">
             <p class="card-header-title" id="head4t">
-              Car Pool
+              {this.props.requesterName}
             </p>
             <a href="#" class="card-header-icon" aria-label="more options">
               <span class="icon">
@@ -136,6 +136,7 @@ class ShareRequestCard extends React.Component {
                 <div className="emptybar2"></div>
                 <div className="filledbar2"></div>
               </div>
+              <br/>
               <time datetime="2016-1-1" id="d1">
                 <b>DATE : </b>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{date}

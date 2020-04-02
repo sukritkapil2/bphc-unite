@@ -48,7 +48,7 @@ class Dashboard extends React.Component {
                           <ShareRequests></ShareRequests>
                         </div>
                       </div>
-                      <div className="column is-half pic-container cont1">
+                      <div className="column is-half cont1">
                         <p className="textHead">Upcoming</p>
                         <div className="column pic-container">
                           <UpcomingRide></UpcomingRide>

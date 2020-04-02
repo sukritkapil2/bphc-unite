@@ -44,6 +44,8 @@ class UpcomingRideCard extends React.Component {
                 <div className="emptybar2"></div>
                 <div className="filledbar2"></div>
               </div>
+              <br/>
+              <br/>
               <time datetime="2016-1-1" id="d1">
                 <b>DATE : </b>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{date}
