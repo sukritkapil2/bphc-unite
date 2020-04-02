@@ -6,7 +6,7 @@ router.route("/update").post(function(req, res) {
   const updateReq={
     id:req.body.id,
     member:req.body.member,
-    email:req.body.email
+    email:req.body.email3
   }
   Post.findOneAndUpdate(
     { id: updateReq.id },
