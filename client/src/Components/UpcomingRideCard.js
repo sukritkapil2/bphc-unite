@@ -7,6 +7,12 @@ import { connect } from "react-redux";
 class UpcomingRideCard extends React.Component {
     constructor(props) {
         super(props);
+        this.onCompleted = this.onCompleted.bind(this);
+    }
+
+    onCompleted()
+    {
+
     }
    
 
@@ -18,45 +24,61 @@ class UpcomingRideCard extends React.Component {
         
         return (
             <div>
-                <div class="card">
-                    <header class="card-header">
-                        <p class="card-header-title">{this.props.requesterName} wants to ride with you</p>
-                        <a href="#" class="card-header-icon" aria-label="more options">
-                            <span class="icon">
-                                <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                    </header>
-                    <div class="card-content">
-                        <div class="content">
-                            {this.props.message}
-                            <br />
-                            <time datetime="2016-1-1">
-                                <b>Date :</b>
-                                {date}
-                            </time>
-                            <br />
-                            <time datetime="2016-1-1">
-                                <b>Time :</b>
-                                {time}
-                            </time>
-                            <br />
-                            <b>From :</b>
-                            {this.props.from}
-                            <br />
-                            <b>To :</b>
-                            {this.props.to}
-                            <br />
-        
-
-                        </div>
-                    </div>
-                    <footer class="card-footer">
-                     
-                    </footer>
-                </div>
-                <br />
+        <div class="card2">
+          <header class="card-header" id="head4">
+            <p class="card-header-title" id="head4t">
+              {this.props.requesterName}
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+              <span class="icon">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </a>
+          </header>
+          <div class="card-content contentcard">
+            <div class="content">
+              <p id="p1">
+                {/* <b>MESSAGE : </b>&nbsp;{this.props.message} */}
+              </p>
+              <div class="bar2">
+                <div className="emptybar2"></div>
+                <div className="filledbar2"></div>
+              </div>
+              <time datetime="2016-1-1" id="d1">
+                <b>DATE : </b>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{date}
+              </time>
+              <br />
+              <time datetime="2016-1-1" id="t1">
+                <b>TIME : </b>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {time}
+              </time>
+              <br />
+              <b>FROM : </b>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.props.from}
+              <br />
+              <b>TO : </b>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              {this.props.to}
             </div>
+          </div>
+
+          <footer class="card-footer footcard">
+            <a
+              href="#"
+              class="card-footer-item"
+              id="lin1"
+              onClick={this.onCompleted}
+            >
+              Ride Completed
+            </a>
+            {/* <a href="#" class="card-footer-item">Edit</a>
+                <a href="#" class="card-footer-item">Delete</a> */}
+          </footer>
+        </div>
+        <br />
+      </div>
         );
 
     }

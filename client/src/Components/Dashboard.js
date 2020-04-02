@@ -43,13 +43,13 @@ class Dashboard extends React.Component {
                     </center>
                     <div className="columns box cont1">
                       <div className="column is-half cont1">
-                        <p className="text">New Requests</p>
+                        <p className="textHead">New Requests</p>
                         <div className="column pic-container">
                           <ShareRequests></ShareRequests>
                         </div>
                       </div>
                       <div className="column is-half pic-container cont1">
-                        <p className="text">Upcoming</p>
+                        <p className="textHead">Upcoming</p>
                         <div className="column pic-container">
                           <UpcomingRide></UpcomingRide>
                         </div>

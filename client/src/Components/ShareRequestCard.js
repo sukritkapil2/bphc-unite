@@ -112,66 +112,76 @@ class ShareRequestCard extends React.Component {
         var newDateObj = moment(dateobj).toDate();
         var date = moment(newDateObj).format("DD/MM/YY");
         var time = moment(newDateObj).format("HH:mm");
+        console.log(this.props);
+        
         return (
             <div>
-                <div class="card">
-                    <header class="card-header">
-                        <p class="card-header-title">{this.props.requesterName} wants to ride with you</p>
-                        <a href="#" class="card-header-icon" aria-label="more options">
-                            <span class="icon">
-                                <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                    </header>
-                    <div class="card-content">
-                        <div class="content">
-                            {this.props.message}
-                            <br />
-                            <time datetime="2016-1-1">
-                                <b>Date :</b>
-                                {date}
-                            </time>
-                            <br />
-                            <time datetime="2016-1-1">
-                                <b>Time :</b>
-                                {time}
-                            </time>
-                            <br />
-                            <b>From :</b>
-                            {this.props.from}
-                            <br />
-                            <b>To :</b>
-                            {this.props.to}
-                            <br />
-                            <b>Message :</b>
-                            {this.props.message}
-                            <br />
-
-                        </div>
-                    </div>
-                    <footer class="card-footer">
-                        <a
-                            href="#"
-                            class="card-footer-item has-text-primary"
-                            onClick={this.onAccept}
-                        >
-                            Accept
+        <div class="card2">
+          <header class="card-header" id="head4">
+            <p class="card-header-title" id="head4t">
+              Car Pool
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+              <span class="icon">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
             </a>
-                        {/* <a href="#" class="card-footer-item">Edit</a>
-                <a href="#" class="card-footer-item">Delete</a> */}
-                        <a
-                            href="#"
-                            class="card-footer-item has-text-primary"
-                            onClick={this.onReject}
-                        >
-                            Reject
-            </a>
-                    </footer>
-                </div>
-                <br />
-                <ToastContainer></ToastContainer>
+          </header>
+          <div class="card-content contentcard">
+            <div class="content">
+              <p id="p1">
+                <b>wants to ride with you </b>
+              </p>
+              <div class="bar2">
+                <div className="emptybar2"></div>
+                <div className="filledbar2"></div>
+              </div>
+              <time datetime="2016-1-1" id="d1">
+                <b>DATE : </b>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{date}
+              </time>
+              <br />
+              <time datetime="2016-1-1" id="t1">
+                <b>TIME : </b>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {time}
+              </time>
+              <br />
+              <b>FROM : </b>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.props.from}
+              <br />
+              <b>TO : </b>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              {this.props.to}
             </div>
+          </div>
+
+          <footer class="card-footer footcard">
+            <a
+              href="#"
+              class="card-footer-item"
+              id="lin1"
+              onClick={this.onAccept}
+            >
+              Accept
+            </a>
+            <a
+              href="#"
+              class="card-footer-item"
+              id="lin1"
+              onClick={this.onReject}
+            >
+              Reject
+            </a>
+            {/* <a href="#" class="card-footer-item">Edit</a>
+                <a href="#" class="card-footer-item">Delete</a> */}
+          </footer>
+        </div>
+        <br />
+        <ToastContainer></ToastContainer>
+      </div>
         );
+
 
     }
 }
