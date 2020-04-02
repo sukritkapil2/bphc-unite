@@ -31,7 +31,7 @@ class CabGroup extends React.Component {
       return (
         <GroupCard
           key={index}
-          name={item.name}
+          name={item.groupname}
           members={item.members}
           email={item.email}
           date={item.date}

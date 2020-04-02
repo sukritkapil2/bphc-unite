@@ -15,13 +15,13 @@ class GroupCard extends React.Component {
   }
 
   getCcString() {
-    console.log(this.props.loggedin)
+    console.log(this.props.email)
     var tempString = "";
-    if (this.props.members.length === 0 || this.props.members.length === 1) {
+    if (this.props.email.length === 0 || this.props.email.length === 1) {
       return "";
     } else {
       const array = this.props.email;
-      for (var i = 1; i < this.props.members.length; i++) {
+      for (var i = 0; i < this.props.members.length; i++) {
         var string = array[i];
         if (string === this.props.loggedin.email) {
         } else {
@@ -36,7 +36,7 @@ class GroupCard extends React.Component {
     this.state = {
       ccLink:
         "https://mail.google.com/mail/?view=cm&fs=1&to=" +
-        this.props.members[0].email +
+        this.props.email[0] +
         "&su=" +
         this.props.name +
         " Group Has Sent Updates" +
@@ -48,8 +48,8 @@ class GroupCard extends React.Component {
       return (
         <Member
           key={index}
-          name={item.name}
-          email={item.email}
+          name={item}
+          email={this.props.email[index]}
           groupname={this.props.name}
         ></Member>
       );

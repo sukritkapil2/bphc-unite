@@ -62,10 +62,11 @@ class ShareRequestCard extends React.Component {
                     
                     const newReq={
                         id:this.state.count +1,
+                        groupname: "Group" + this.state.count + 1,
                         member1:this.props.requesterName,
                         member2:this.props.user.name,    
-                        email1:this.props.user.email,
-                        email2:this.props.email,
+                        email2:this.props.user.email,
+                        email1:this.props.email,
                         date:this.props.dateofrequest,
                         to:this.props.to,
                         from:this.props.from    
