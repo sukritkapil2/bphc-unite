@@ -9,6 +9,9 @@ const carPoolSchema = new Schema(
     members: {
       type: Array
     },
+    groupname:{
+      type : String
+    },
     email:{
       type: Array
     },
