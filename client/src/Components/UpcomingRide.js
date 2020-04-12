@@ -18,7 +18,7 @@ class UpcomingRide extends React.Component {
                 this.setState({ requests: data })
             })
             .catch((err) => console.log(err));
-            console.log(this.state.requests)
+            
          const myrequests =this.state.requests.map((item, index) => {
                                     var flag = 0;
                                     item.members.map((val) => {
@@ -37,7 +37,7 @@ class UpcomingRide extends React.Component {
                                         return (
                                             <UpcomingRideCard
                                                 key={index}
-                                                dateofrequest={item.date} from={item.from} to={item.to}
+                                                dateofrequest={item.date} from={item.from} to={item.to} id={item.id} length={item.members.length}
                                                 
                                             ></UpcomingRideCard>
                                         );
