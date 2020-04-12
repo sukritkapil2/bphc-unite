@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "../Stylesheets/main4.css";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
+
 class CabCard extends React.Component {
   constructor(props) {
     super(props);
@@ -112,14 +112,16 @@ class CabCard extends React.Component {
     return (
       <div>
         <div class="card2">
-        
-            <header class="card-header" id="head4">
-              <p class="card-header-title" id="head4t">
-                {this.props.requestee}
-              </p>
-            </header>
-      
-
+          <header class="card-header" id="head4">
+            <p class="card-header-title" id="head4t">
+              {this.props.requestee}
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+              <span class="icon">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </a>
+          </header>
           <div class="card-content contentcard">
             <div class="content">
               <p id="p1">

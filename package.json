@@ -28,8 +28,7 @@
     "nodemon": "^2.0.2",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
-    "react-datepicker": "^2.12.1",
-    "save": "^2.4.0"
+    "react-datepicker": "^2.12.1"
   },
   "devDependencies": {}
 }

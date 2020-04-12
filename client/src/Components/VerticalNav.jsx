@@ -36,7 +36,7 @@ class VerticalNav extends React.Component {
               Home
             </a>
 
-            <a href="/profile" className="navbar-item" id="tnav">
+            <a className="navbar-item" id="tnav">
               Profile
             </a>
 

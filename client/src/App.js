@@ -15,7 +15,6 @@ import Feedback from "./Components/Feedback";
 import AdminFeedback from "./Components/AdminFeedback";
 import AdminOptions from "./Components/AdminOptions";
 import CabGroup from "./Components/CabGroup.js";
-import Profile from "./Components/Profile.js";
 
 function App(props) {
   useEffect(() => {
@@ -32,7 +31,6 @@ function App(props) {
       <Route exact path="/suggestevents" component={SuggestEvents}></Route>
       <PrivateRoute exact path="/admin" component={AdminOptions}></PrivateRoute>
       <Route exact path="/cabgroup" component={CabGroup}></Route>
-      <Route exact path="/profile" component={Profile}></Route>
       <PrivateRoute
         exact
         path="/adminevents"
