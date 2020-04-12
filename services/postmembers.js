@@ -5,8 +5,11 @@ const Post = require('../models/CarPool');
 router.route('/request').post((req, res) => {
     const newReq = new Post({
         id: req.body.id,
+        groupname:req.body.groupname,
         members:[ req.body.member1,
              req.body.member2],
+        email:[req.body.email1,
+                req.body.email2],
         date:req.body.date,
         to:req.body.to,
         from:req.body.from

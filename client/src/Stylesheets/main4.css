@@ -9,6 +9,14 @@
   font-size: 20px;
 }
 
+.textHead {
+  text-align: center;
+  font-family: "Varela";
+  color: white;
+  font-size: 20px;
+  width: 660px;
+}
+
 .cont1 {
   background-color: rgb(52, 53, 54);
   background: linear-gradient(-360deg, rgb(150, 27, 231), rgb(57, 81, 160));

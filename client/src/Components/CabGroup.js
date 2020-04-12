@@ -17,28 +17,37 @@ class CabGroup extends React.Component {
     this.state = initalState;
   }
   render() {
-    Axios.get("/getgroups")
+    console.log(this.props.loggedin)
+    Axios.get("/api/member/")
       .then(res => {
-        console.log("Groups: " + res.data);
         const groups = res.data;
         this.setState({ group: groups });
       })
       .catch(err => {
         console.log("Error in fetching groups" + err);
       });
-
     const grouparr = this.state.group;
     const groupcards = grouparr.map((item, index) => {
-      return (
+      var flag=0;
+      item.email.map((val)=> {
+        if(val === this.props.loggedin.email){
+            flag=1;
+        }
+      })
+        if(flag===1){
+        return (
         <GroupCard
           key={index}
-          name={item.name}
+          name={item.groupname}
           members={item.members}
+          email={item.email}
           date={item.date}
           from={item.from}
           to={item.to}
         ></GroupCard>
-      );
+        );
+        }
+      
     });
     return (
       <div>
@@ -62,7 +71,7 @@ class CabGroup extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.auth
+    loggedin: state.auth
   };
 };
 

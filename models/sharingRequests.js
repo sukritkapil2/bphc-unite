@@ -11,6 +11,9 @@ const sharingSchema = new Schema({
   requestee: {
     type: String
   },
+  email:{
+    type:String
+  },
   msg: {
     type: String
   },

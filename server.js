@@ -72,7 +72,7 @@ app.use("/getgroups", getGroups);
 app.use("/feedback", sendFeedback);
 app.use("/getfeedback", getFeedback);
 app.use("/deletefeedback", deleteFeedback);
-
+const port = process.env.PORT || 5000;
 require("./routes/authRoutes")(app);
 
 if (process.env.NODE_ENV === "production") {
@@ -82,8 +82,12 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
   });
 }
+app.use(express.static("client/build"));
 
-const port = process.env.PORT || 5000;
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
+});
+
 app.listen(port, () => {
-  console.log("Backend server running at port :",port);
+  console.log(port);
 });
