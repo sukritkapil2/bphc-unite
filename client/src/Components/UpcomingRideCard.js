@@ -12,7 +12,27 @@ class UpcomingRideCard extends React.Component {
 
     onCompleted()
     {
-
+      const oldRequest={
+        id:this.props.id,
+        name:this.props.user.name,
+        email:this.props.user.email
+    }
+    console.log(oldRequest);
+    console.log(this.props.length)
+    if(this.props.length===1){
+      axios.post("/api/deleteride",oldRequest)
+        .then((res)=>{
+            console.log("Sucessful");
+        })
+        .catch((err)=>{console.log(err)});
+    }
+    else{
+      axios.post("/api/deleteride",oldRequest)
+        .then((res)=>{
+            console.log("Sucessful");
+        })
+        .catch((err)=>{console.log(err)});
+      }
     }
    
 

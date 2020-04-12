@@ -177,6 +177,7 @@ class ShareRequestCard extends React.Component {
             {/* <a href="#" class="card-footer-item">Edit</a>
                 <a href="#" class="card-footer-item">Delete</a> */}
           </footer>
+                 
         </div>
         <br />
         <ToastContainer></ToastContainer>
