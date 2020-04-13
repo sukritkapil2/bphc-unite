@@ -7,6 +7,7 @@ import Login from "./Login";
 import ShareRequests from "./ShareRequests";
 import UpcomingRequests from "./UpcomingRide";
 import UpcomingRide from "./UpcomingRide";
+import "../Stylesheets/main4.css"
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);

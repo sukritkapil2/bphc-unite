@@ -11,7 +11,7 @@ module.exports = app => {
     "/auth/google/redirect",
     passport.authenticate("google"),
     (req, res) => {
-      res.redirect("/dashboard");
+      res.redirect("http://localhost:3000/dashboard");
     }
   );
   app.get("/api/current_user", (req, res) => {

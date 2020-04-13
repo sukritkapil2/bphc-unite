@@ -17,7 +17,7 @@ const updateshare = require("./services/updateshare");
 const updatecounter = require("./services/updatecounter");
 const getcounter = require("./services/getcounter");
 const updatemember = require("./services/updatemembers");
-const getmemeber = require("./services/getmembers");
+const getmember = require("./services/getmembers");
 const postmember = require("./services/postmembers");
 
 const sendFeedback = require("./services/sendFeedback");
@@ -64,7 +64,7 @@ app.use("/api/events", events);
 app.use("/adminlogin", adminLogin);
 app.use("/api/counter", getcounter);
 app.use("/api/counter", updatecounter);
-app.use("/api/member", getmemeber);
+app.use("/api/member", getmember);
 app.use("/api/member", updatemember);
 app.use("/api/member", postmember);
 
