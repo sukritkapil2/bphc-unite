@@ -23,6 +23,7 @@ class CabRequests extends React.Component {
       return (
         <CabCard
           key={index}
+          email={item.email}
           requestee={item.name}
           dateofrequest={item.date}
           message={item.msg}

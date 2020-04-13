@@ -19,10 +19,12 @@ const getcounter = require("./services/getcounter");
 const updatemember = require("./services/updatemembers");
 const getmember = require("./services/getmembers");
 const postmember = require("./services/postmembers");
-
+const deleteRide = require("./services/deleteRide");
 const sendFeedback = require("./services/sendFeedback");
 const getFeedback = require("./services/getFeedback");
 const deleteFeedback = require("./services/deleteFeedback");
+const deletecarpool = require("./services/deletecarpool");
+
 const getGroups = require("./services/getGroups");
 const path = require("path");
 require("./models/cabRequests");
@@ -67,7 +69,8 @@ app.use("/api/counter", updatecounter);
 app.use("/api/member", getmember);
 app.use("/api/member", updatemember);
 app.use("/api/member", postmember);
-
+app.use("/api/deleteride",deleteRide)
+app.use("/api/deletecarpool",deletecarpool)
 app.use("/getgroups", getGroups);
 app.use("/feedback", sendFeedback);
 app.use("/getfeedback", getFeedback);

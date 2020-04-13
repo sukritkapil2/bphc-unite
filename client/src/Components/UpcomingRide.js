@@ -11,6 +11,7 @@ class UpcomingRide extends React.Component {
       flag: 0
     };
   }
+
   render() {
     axios
       .get("/api/member")
@@ -19,7 +20,7 @@ class UpcomingRide extends React.Component {
         this.setState({ requests: data });
       })
       .catch(err => console.log(err));
-    console.log(this.state.requests);
+
     const myrequests = this.state.requests.map((item, index) => {
       var flag = 0;
       item.members.map(val => {
@@ -36,6 +37,8 @@ class UpcomingRide extends React.Component {
             dateofrequest={item.date}
             from={item.from}
             to={item.to}
+            id={item.id}
+            length={item.members.length}
           ></UpcomingRideCard>
         );
       }

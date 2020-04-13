@@ -9,6 +9,7 @@ router.route("/request").post((req, res) => {
       id:req.body.id,
       requestor: req.body.requestor,
       requestee: req.body.requestee,
+      email:req.body.email,
       msg: req.body.msg,
       date: req.body.date,
       from: req.body.from,
