@@ -7,6 +7,7 @@ const keys = require("./config/keys");
 const cookieSession = require("cookie-session");
 const crequest = require("./services/post");
 const bodyParser = require("body-parser");
+const cookieParser = require('cookie-parser');
 const getrequests = require("./services/fetchrequests");
 const deleterequests = require("./services/deleterequest");
 const sharerequests = require("./services/sharerequests");
@@ -24,12 +25,15 @@ const sendFeedback = require("./services/sendFeedback");
 const getFeedback = require("./services/getFeedback");
 const deleteFeedback = require("./services/deleteFeedback");
 const deletecarpool = require("./services/deletecarpool");
-
+const expressSession = require('express-session')
 const getGroups = require("./services/getGroups");
+
 const path = require("path");
 require("./models/cabRequests");
 require("./models/User");
 require("./services/passport");
+
+
 mongoose.set("useFindAndModify", false);
 mongoose.connect(
   keys.mongoURI,
@@ -54,8 +58,17 @@ app.use(
 );
 
 app.use(cors());
+app.use(cookieParser('foo'));
+app.use(expressSession({ 
+  secret  : 'foo',
+  cookie  : {
+  expires: false,
+  secure:true
+  }
+}));
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use("/api/cabs", crequest);
 app.use("/api/fetchrequests", getrequests);
 app.use("/api/deletemyrequests", deleterequests);
@@ -75,6 +88,7 @@ app.use("/getgroups", getGroups);
 app.use("/feedback", sendFeedback);
 app.use("/getfeedback", getFeedback);
 app.use("/deletefeedback", deleteFeedback);
+
 const port = process.env.PORT || 5000;
 require("./routes/authRoutes")(app);
 

@@ -63,6 +63,12 @@ class CabForm extends React.Component {
         console.log(error);
         console.log("CabForm");
       });
+    axios
+      .post("/calendarcreate")
+      .then(res=>{console.log(res.data)})
+      .catch(err=>{
+        console.log(err);
+      })
   }
   setDate(childData) {
     this.setState({ date: childData });
