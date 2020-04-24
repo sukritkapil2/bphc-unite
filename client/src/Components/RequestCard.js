@@ -1,36 +1,38 @@
 import React from "react";
-import { connect } from "react-redux";
+import { connect } from 'react-redux'
 import axios from "axios";
 import "../Stylesheets/main4.css";
+class RequestCard extends React.Component
+{
+    constructor(props)
+    {
+        super(props)
+        this.deleteRequest = this.deleteRequest.bind(this);
+    }
 
-class RequestCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.deleteRequest = this.deleteRequest.bind(this);
-  }
+    deleteRequest()
+    {
+        
+        const oldRequest={
+            id:this.props.id,
+            name:this.props.requesterName,
+            msg:this.props.message,
+            date:this.props.dateofrequest,
+            email:this.props.user.email
+        }
+        console.log(oldRequest);
+        axios.post("/api/deletemyrequests",oldRequest)
+            .then((res)=>{
+                console.log(res.data);
+            })
+            .catch((err)=>{console.log(err)});
 
-  deleteRequest() {
-    const oldRequest = {
-      id: this.props.id,
-      name: this.props.requesterName,
-      msg: this.props.message,
-      date: this.props.dateofrequest,
-      email: this.props.user.email
-    };
-    console.log(oldRequest);
-    axios
-      .post("/api/deletemyrequests", oldRequest)
-      .then(res => {
-        console.log(res.data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
-  render() {
-    return (
-      <div>
-        <div class="card3">
+    }
+    render()
+    {
+        return(
+            <div>
+            <div class="card3">
           <header class="card-header" id="head4">
             <p class="card-header-title" id="head4t">
               {this.props.requesterName}
@@ -71,16 +73,16 @@ class RequestCard extends React.Component {
                 <a href="#" class="card-footer-item">Delete</a> */}
           </footer>
         </div>
-        <br />
-      </div>
-    );
-  }
+            <br/>
+            </div>
+        )
+    }
 }
 
-const mapStateToProps = state => {
-  return {
-    user: state.auth
-  };
-};
-
-export default connect(mapStateToProps)(RequestCard);
+const mapStateToProps = (state) => {
+    return {
+      user: state.auth
+    }
+  }
+  
+  export default connect(mapStateToProps)(RequestCard);

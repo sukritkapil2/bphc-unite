@@ -40,6 +40,10 @@ class VerticalNav extends React.Component {
               Profile
             </a>
 
+            <a className="navbar-item" id="tnav" href="/cabgroup">
+              Cab Groups
+            </a>
+
             <div className="navbar-item has-dropdown is-hoverable">
               <a className="navbar-link" id="tnav">
                 Notifications
@@ -59,7 +63,9 @@ class VerticalNav extends React.Component {
               <img
                 class="is-rounded"
                 style={{ border: "10px solid #ddd" }}
-                src={this.props.user.avatar}
+                src={
+                  this.props && this.props.user ? this.props.user.avatar : ""
+                }
               />
             </figure>
 

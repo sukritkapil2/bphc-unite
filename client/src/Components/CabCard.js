@@ -1,10 +1,102 @@
 import React from "react";
 import moment from "moment";
+import axios from "axios";
+import { connect } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
 import "../Stylesheets/main4.css";
+import "react-toastify/dist/ReactToastify.css";
 
 class CabCard extends React.Component {
   constructor(props) {
     super(props);
+
+    this.onSend = this.onSend.bind(this);
+    this.state = {
+      requests: [],
+      count: 0
+    };
+  }
+  onSend() {
+    axios
+      .get("/api/counter/")
+      .then(response => {
+        const data = response.data.map((item, index) => {
+          if (item.Field === "Sharing") {
+            return item.Counter;
+          }
+        });
+        this.setState({ count: data[0] });
+
+        const sharing = {
+          id: this.state.count + 1,
+          requestor: this.props.user.name,
+          requestee: this.props.requestee,
+          email:this.props.user.email,
+          msg: this.props.message,
+          date: this.props.dateofrequest,
+          from: this.props.from,
+          to: this.props.to,
+          status: "sent"
+        };
+        console.log(sharing);
+        if (this.props.requestee === this.props.user.name) {
+          toast.error("You cannot send a Request to yourself !", {
+            position: toast.POSITION.TOP_RIGHT
+          });
+        } else {
+          axios
+            .get("/api/sharing")
+            .then(response => {
+              const data = response.data;
+              var flag = 0;
+              this.setState({ requests: data });
+              console.log(this.state.count);
+              data.map(item => {
+                console.log(item);
+                if (
+                  item.date === this.props.dateofrequest &&
+                  item.from === this.props.from &&
+                  item.to === this.props.to &&
+                  item.requestor === this.props.user.name &&
+                  item.requestee === this.props.requestee
+                ) {
+                  console.log(item.date);
+                  console.log(this.props.dateofrequest);
+                  flag = 1;
+                }
+                if (
+                  item.requestor === this.props.user.name &&
+                  item.status === "rejected"
+                ) {
+                  flag = 1;
+                }
+              });
+              if (flag === 0) {
+                axios
+                  .post("/api/share/request", sharing)
+                  .then(res => {})
+                  .catch(err => {
+                    console.log(err);
+                  });
+                toast.success("Request Sent !", {
+                  position: toast.POSITION.TOP_RIGHT
+                });
+                const updateCount = {
+                  Field: "Sharing"
+                };
+                axios.post("/api/counter/update", updateCount);
+              } else {
+                toast.warn("You have already sent a Request !", {
+                  position: toast.POSITION.TOP_RIGHT
+                });
+              }
+            })
+            .catch(err => console.log(err));
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   render() {
@@ -16,12 +108,13 @@ class CabCard extends React.Component {
     var newDateObj = moment(dateobj).toDate();
     var date = moment(newDateObj).format("DD/MM/YY");
     var time = moment(newDateObj).format("HH:mm");
+
     return (
       <div>
         <div class="card2">
           <header class="card-header" id="head4">
             <p class="card-header-title" id="head4t">
-              {this.props.requesterName}
+              {this.props.requestee}
             </p>
             <a href="#" class="card-header-icon" aria-label="more options">
               <span class="icon">
@@ -57,8 +150,14 @@ class CabCard extends React.Component {
               {this.props.to}
             </div>
           </div>
+
           <footer class="card-footer footcard">
-            <a href="#" class="card-footer-item" id="lin1">
+            <a
+              href="#"
+              class="card-footer-item"
+              id="lin1"
+              onClick={this.onSend}
+            >
               Send Request
             </a>
             {/* <a href="#" class="card-footer-item">Edit</a>
@@ -66,9 +165,16 @@ class CabCard extends React.Component {
           </footer>
         </div>
         <br />
+        <ToastContainer></ToastContainer>
       </div>
     );
   }
 }
 
-export default CabCard;
+const mapStateToProps = state => {
+  return {
+    user: state.auth
+  };
+};
+
+export default connect(mapStateToProps)(CabCard);

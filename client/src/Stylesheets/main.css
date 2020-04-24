@@ -63,7 +63,7 @@
 }
 
 #box2 {
-  height: 685px;
+  height: 800px;
   margin-top: 15px;
   background-color: rgb(20, 20, 20);
   margin-left: 5%;
@@ -87,3 +87,4 @@
   font-weight: 600;
   font-family: "Open Sans";
 }
+

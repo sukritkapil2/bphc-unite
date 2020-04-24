@@ -9,10 +9,18 @@
   font-size: 20px;
 }
 
+.textHead {
+  text-align: center;
+  font-family: "Varela";
+  color: white;
+  font-size: 20px;
+  width: 660px;
+}
+
 .cont1 {
   background-color: rgb(52, 53, 54);
   background: linear-gradient(-360deg, rgb(150, 27, 231), rgb(57, 81, 160));
-  height: 100%;
+  height: 82%;
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -62,7 +70,7 @@
 #cont2 {
   background-color: rgb(52, 53, 54);
   background: linear-gradient(-360deg, rgb(107, 20, 165), rgb(57, 81, 160));
-  height: 100%;
+  height: 82%;
   border-radius: 0px 20px 20px 0px;
   width: 450px;
 }
@@ -85,7 +93,7 @@
 
 #l2 {
   margin-left: 0px;
-  margin-top: 10px;
+  margin-top: -30px;
 }
 
 #c2 {
@@ -94,7 +102,7 @@
 
 #l3 {
   margin-left: 0px;
-  margin-top: 30px;
+  margin-top: -20px;
 }
 
 #te1 {
@@ -186,9 +194,10 @@
 #cnt1 {
   display: flex;
   width: 1100px;
-  margin-left: 100px;
+  margin-left: 10px;
   margin-top: 50px;
   padding: 20px;
+  overflow-x: auto;
 }
 
 .card3:not(:first-child) {
@@ -221,4 +230,79 @@
   margin-left: -620px;
   margin-top: 200px;
   padding: 20px;
+}
+
+#setSelectSize {
+  height: 30px;
+}
+
+#l4 {
+  color: white;
+  font-weight: 600;
+}
+
+#f3 {
+  margin-top: 10px;
+}
+
+#l5 {
+  color: white;
+  font-weight: 600;
+}
+
+#f4 {
+  margin-top: 10px;
+}
+
+#c1 {
+  margin-top: 40px;
+  display: inline;
+}
+
+#but12 {
+  margin-left: 500px;
+  margin-top: -150px;
+}
+
+#in12 {
+  margin-left: 12px;
+  width: 387px;
+  text-shadow: none;
+}
+
+#in13 {
+  margin-left: -11px;
+}
+
+#cont3 {
+  margin-left: 24%;
+  margin-top: 8%;
+  background-color: rgb(52, 53, 54);
+  background: linear-gradient(-360deg, rgb(107, 20, 165), rgb(57, 81, 160));
+  height: 82%;
+  border-radius: 10px 10px 10px 10px;
+  width: 450px;
+}
+
+#but25 {
+  margin-left: 37%;
+}
+
+#bun12 {
+  margin-left: 60px;
+  margin-top: 180px;
+}
+
+#bun13 {
+  margin-left: 10px;
+  margin-top: 180px;
+}
+
+#buttonl25 {
+  position: absolute;
+  right: 0px;
+  height: 30px;
+  outline: none;
+  background-color: rgb(233, 109, 109);
+  margin-top: -70px;
 }

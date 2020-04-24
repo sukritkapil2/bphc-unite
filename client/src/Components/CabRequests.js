@@ -1,8 +1,7 @@
 import React from "react";
 import CabCard from "./CabCard";
 import axios from "axios";
-import "../Stylesheets/main4.css"
-
+import "../Stylesheets/main4.css";
 class CabRequests extends React.Component {
   constructor() {
     super();
@@ -24,7 +23,8 @@ class CabRequests extends React.Component {
       return (
         <CabCard
           key={index}
-          requesterName={item.name}
+          email={item.email}
+          requestee={item.name}
           dateofrequest={item.date}
           message={item.msg}
           from={item.from}
@@ -33,11 +33,7 @@ class CabRequests extends React.Component {
       );
     });
 
-    return (
-      <div className="column is-half pic-container cont1">
-        {cabcards}
-      </div>
-    );
+    return <div className="column is-half pic-container cont1">{cabcards}</div>;
   }
 }
 

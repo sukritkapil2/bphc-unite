@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import "../Stylesheets/cabform.css";
 import "../Stylesheets/main4.css";
+import Select from "react-select";
 
 class CabForm extends React.Component {
   constructor(props) {
@@ -15,10 +16,26 @@ class CabForm extends React.Component {
       value: "",
       date: Date.now,
       fromValue: "check",
-      toValue: "check"
+      toValue: "check",
+      options: []
     };
     this.fromSelect = this.fromSelect.bind(this);
     this.toSelect = this.toSelect.bind(this);
+  }
+  componentDidMount() {
+    axios
+      .get("/api/events/get")
+      .then(response => {
+        const data = response.data;
+        console.log(data);
+        const optionList = data.map((event, index) => {
+          return { value: event.eventName, label: event.eventName };
+        });
+        this.setState({ options: optionList });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
   updateText(event) {
     this.setState({ value: event.target.value });
@@ -46,83 +63,139 @@ class CabForm extends React.Component {
         console.log(error);
         console.log("CabForm");
       });
+    axios
+      .post("/calendarcreate")
+      .then(res=>{console.log(res.data)})
+      .catch(err=>{
+        console.log(err);
+      })
   }
   setDate(childData) {
     this.setState({ date: childData });
     console.log(this.state.date);
   }
   fromSelect(event) {
-    this.setState({ fromValue: event.target.value });
+    console.log(event);
+    this.setState({ fromValue: event.label });
     console.log(this.state);
   }
   toSelect(event) {
-    this.setState({ toValue: event.target.value });
+    this.setState({ toValue: event.label });
     console.log(this.state);
   }
   render() {
+    const customStyles = {
+      container: provided => ({
+        ...provided,
+        display: "inline-block",
+        width: "250px",
+        minHeight: "1px",
+        textAlign: "left",
+        border: "none"
+      }),
+      control: provided => ({
+        ...provided,
+        border: "2px solid #757575",
+        borderRadius: "10px",
+        minHeight: "1px",
+        height: "40px",
+      }),
+      input: provided => ({
+        ...provided,
+        minHeight: "1px",
+        height: "40px",
+        marginLeft: "160px",
+        background: "#fff"
+      }),
+      placeholder: provided => ({
+        ...provided,
+        marginTop: "0px"
+      }),
+      dropdownIndicator: provided => ({
+        ...provided,
+        minHeight: "1px",
+        paddingTop: "0",
+        paddingBottom: "0",
+        color: "#757575"
+      }),
+      indicatorSeparator: provided => ({
+        ...provided,
+        minHeight: "1px",
+        height: "24px"
+      }),
+      clearIndicator: provided => ({
+        ...provided,
+        minHeight: "1px"
+      }),
+      valueContainer: provided => ({
+        ...provided,
+        minHeight: "1px",
+        height: "20px",
+        paddingTop: "0",
+        paddingBottom: "0"
+      }),
+      singleValue: provided => ({
+        ...provided,
+        minHeight: "1px",
+        paddingBottom: "2px",
+        
+      })
+    };
+
     return (
       <div className="column is-half" id="cont2">
         <p className="text">Add a Cab Request</p>
 
         <div class="field" id="f1">
-          <br></br>
+          <br />
           <label class="label">Departure Time</label>
-          {/* <div class="control">
-    <div class="select">
-      <select>
-        <option>Select dropdown</option>
-        <option>With options</option>
-      </select>
-    </div>
-  </div> */}
           <Calendar setDate={this.setDate} />
         </div>
-        <label class="label" id="l1">From</label>
+        <label class="label" id="l1">
+          From
+        </label>
         <div class="control">
-          <div class="select">
-            <select
-              class="is-focused"
+          <div class="field" id="f1">
+            <Select
               onChange={this.fromSelect}
-              defaultValue={this.state.fromValue}
-            >
-              <option>Airport</option>
-              <option>Secundarabad</option>
-              <option>Railway Station</option>
-              <option>Event</option>
-              <option>Campus</option>
-            </select>
+              options={this.state.options}
+              styles={customStyles}
+              isSearchable={false}
+            />
           </div>
-          <label class="label" id="l2">To</label>
-          <div class="control"id="c2">
-            <div class="select">
-              <select
-                class="is-focused"
-                onChange={this.toSelect}
-                defaultValue={this.state.toValue}
-              >
-                <option>Airport</option>
-                <option>Secundarabad</option>
-                <option>Railway Station</option>
-                <option>Event</option>
-                <option>Campus</option>
-              </select>
-            </div>
+          <label class="label" id="l2">
+            To
+          </label>
+          <div class="field" id="f1">
+            <Select
+              onChange={this.toSelect}
+              options={this.state.options}
+              styles={customStyles}
+              isSearchable={false}
+            />
+            <br />
           </div>
-          <div class="field">
-            <label class="label" id="l3">Message</label>
+          <div class="field" id="f1">
+            <label class="label" id="l3">
+              Message
+            </label>
             <div class="control">
               <textarea
                 class="textarea"
+                id="te1"
                 placeholder="Textarea"
                 onChange={this.updateText}
                 value={this.state.value}
-                id="te1"
               ></textarea>
             </div>
           </div>
           <div class="field is-grouped">
             <div class="control">
-              <button class="button is-link" id="buto1" onClick={this.submitRequest}>
+              <button
+                class="button is-link"
+                id="buto1"
+                onClick={this.submitRequest}
+              >
                 Submit
               </button>
             </div>

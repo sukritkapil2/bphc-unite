@@ -140,6 +140,29 @@ body {
   background: linear-gradient(-120deg, rgb(208, 100, 241), rgb(72, 72, 204));
   border-radius: 20px;
 }
+.options
+{
+  position: absolute;
+  top: 40%;
+  left: 44%;
+  margin: -150px 0 0 -100px;
+  width: 420px;
+  height: 300px;
+  zoom: 1.5;
+  background: linear-gradient(-120deg, rgb(208, 100, 241), rgb(72, 72, 204));
+  border-radius: 20px;
+}
+.options h1 {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  text-align: center;
+  margin-block-end: 15px;
+  font-size: 27px;
+  margin-top: 30px;
+  font-family: "Varela";
+}
+
 .login h1 {
   color: #fff;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -184,6 +207,13 @@ input:focus {
   width: 370px;
   height: 50px;
   margin-top: 20px;
+  margin-left: 22px;
+}
+
+#button23 {
+  width: 370px;
+  height: 50px;
+  margin-top: 10px;
   margin-left: 22px;
 }
 
