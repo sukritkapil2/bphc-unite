@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Post = require("../models/CarPool");
+const Notif = require("../models/Notification");
 
 router.route('/request').post((req, res) => {
     const newReq = new Post({
@@ -14,7 +15,9 @@ router.route('/request').post((req, res) => {
         to:req.body.to,
         from:req.body.from
     });
-    newReq.save().then(post => res.json(post));
+    
+    newReq.save().then( (post) => res.json(post));
+   
     console.log("Request sucessfully submitted CarPool");
 });
 

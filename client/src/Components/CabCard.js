@@ -78,6 +78,13 @@ class CabCard extends React.Component {
                   .catch(err => {
                     console.log(err);
                   });
+                  const update={
+                    id:this.props.id,
+                    member1:this.props.requestee,
+                    member2:this.props.user.name,
+                    status:"sent"
+                }
+                  axios.post("/notifstatus/",update)
                 toast.success("Request Sent !", {
                   position: toast.POSITION.TOP_RIGHT
                 });

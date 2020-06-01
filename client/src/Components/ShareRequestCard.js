@@ -69,7 +69,8 @@ class ShareRequestCard extends React.Component {
                         email1:this.props.email,
                         date:this.props.dateofrequest,
                         to:this.props.to,
-                        from:this.props.from    
+                        from:this.props.from,
+                        status:"accepted"    
                     }
                     axios
                         .post("/api/member/request", newReq)
@@ -82,6 +83,8 @@ class ShareRequestCard extends React.Component {
                         id: this.props.id,
                         status:"accepted"
                     }
+                    axios
+                        .post("/notifstatus/",newReq)
                     axios
                         .post("/api/share/update", updateShare)  
                     toast.success("You have Accepted a Request New Request !", {
@@ -100,10 +103,14 @@ class ShareRequestCard extends React.Component {
     {
         const update={
             id:this.props.id,
+            member1:this.props.requesterName,
+            member2:this.props.user.name,
             status:"rejected"
         }
         axios
             .post("/api/share/update", update)
+        axios
+        .post("/notifstatus/",update)
             
     }
 

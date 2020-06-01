@@ -4,6 +4,8 @@ const keys = require("../config/keys");
 const mongoose = require("mongoose");
 const User = mongoose.model("users");
 const fs = require("fs");
+const Notif = require("../models/Notification");
+
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
@@ -41,6 +43,11 @@ passport.use(
               console.log("new user created" + newUser);
               done(null, newUser);
             });
+            const newNotif=new Notif({
+              name:  profile.displayName,
+              msg: "Welcome to BPHC Unite",
+              });
+            newNotif.save().then(post => res.json(post));    
         }
       });
     }
