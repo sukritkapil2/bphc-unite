@@ -29,6 +29,7 @@ const expressSession = require('express-session')
 const getGroups = require("./services/getGroups");
 const getNotif= require("./services/getNotif");
 const notifstatus= require("./services/notifstatus");
+const deletenotif= require("./services/deletenotif");
 const path = require("path");
 require("./models/cabRequests");
 require("./models/User");
@@ -91,6 +92,7 @@ app.use("/getfeedback", getFeedback);
 app.use("/deletefeedback", deleteFeedback);
 app.use("/notif", getNotif);
 app.use("/notifstatus", notifstatus);
+app.use("/notif",deletenotif)
 
 const port = process.env.PORT || 5000;
 require("./routes/authRoutes")(app);

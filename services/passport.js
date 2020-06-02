@@ -5,6 +5,9 @@ const mongoose = require("mongoose");
 const User = mongoose.model("users");
 const fs = require("fs");
 const Notif = require("../models/Notification");
+const Requests= require("../models/cabRequests")
+const express = require("express");
+const app = express();
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -26,8 +29,8 @@ passport.use(
     (accessToken, refreshToken, profile, done) => {
       console.log(refreshToken);
       User.findOne({ googleId: profile.id }).then(userExists => {
-        if (userExists) {
-          console.log("Current user (exists) is :" + profile.id);
+        if (userExists) { 
+          
           done(null, userExists);
         } else {
           console.log(profile.emails[0].value);

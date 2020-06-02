@@ -24,14 +24,21 @@ class VerticalNav extends React.Component {
       })
       
     this.state.requests.map((item,index)=>{
-      if(item.name===this.props.user.name)
+      if(item.name===this.props.user.name )
       {
          notifbar=item.msg.map((nm,nmi)=>{
+           if(nmi<=5){
            return(
          <a className="navbar-item">{nm}</a>
-         
-         )})
+           
+         )}
+         else{
+           const delReq  ={name:this.props.user.name}
+           axios.post("/notif/delete",delReq)
+         }
+        })
       }
+      
     })
    
   

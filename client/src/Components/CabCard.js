@@ -115,6 +115,7 @@ class CabCard extends React.Component {
     var newDateObj = moment(dateobj).toDate();
     var date = moment(newDateObj).format("DD/MM/YY");
     var time = moment(newDateObj).format("HH:mm");
+    console.log(moment(newDateObj).year())
 
     return (
       <div>

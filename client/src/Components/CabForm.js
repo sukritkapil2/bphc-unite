@@ -2,6 +2,9 @@ import React from "react";
 import Calendar from "./Calendar";
 import { connect } from "react-redux";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import moment from "moment";
+
 import "../Stylesheets/cabform.css";
 import "../Stylesheets/main4.css";
 import Select from "react-select";
@@ -54,6 +57,27 @@ class CabForm extends React.Component {
       to: this.state.toValue
     };
     console.log(newRequest);
+    var today = new Date();
+    var tday=today.getDate();
+    var tmonth=today.getMonth();
+    var tyear=today.getFullYear();
+    const dateobj = moment(this.state.date);
+      var newDateObj = moment(dateobj).toDate();
+      var day=moment(newDateObj).day()
+      var month=moment(newDateObj).month()
+      var year=moment(newDateObj).year()
+    if(((tyear>year)||(tyear==year && tmonth>month)||(tyear==year && tmonth==month && tday>day)))
+    {
+      toast.error("You cannot submit a request with a past date !", {
+        position: toast.POSITION.TOP_RIGHT
+      });
+    }
+    else if(this.state.toValue===this.state.fromValue){
+      toast.error("You cannot have same To and From value !", {
+        position: toast.POSITION.TOP_RIGHT
+      });
+    }
+    else{
     axios
       .post("/api/cabs/request", newRequest)
       .then(res => {
@@ -69,6 +93,8 @@ class CabForm extends React.Component {
       .catch(err=>{
         console.log(err);
       })
+  
+    }
   }
   setDate(childData) {
     this.setState({ date: childData });
@@ -201,6 +227,8 @@ class CabForm extends React.Component {
             </div>
           </div>
         </div>
+        <ToastContainer></ToastContainer>
+
       </div>
     );
   }
