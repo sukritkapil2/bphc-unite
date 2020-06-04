@@ -109,7 +109,7 @@ class CabForm extends React.Component {
     this.setState({ toValue: event.label });
     console.log(this.state);
   }
-  render() {
+  render() {   
     const customStyles = {
       container: provided => ({
         ...provided,
@@ -163,11 +163,11 @@ class CabForm extends React.Component {
       singleValue: provided => ({
         ...provided,
         minHeight: "1px",
-        paddingBottom: "2px",
+        paddingTop: "95px",
         
       })
     };
-
+    
     return (
       <div className="column is-half" id="cont2">
         <p className="text">Add a Cab Request</p>
@@ -181,12 +181,12 @@ class CabForm extends React.Component {
           From
         </label>
         <div class="control">
-          <div class="field" id="f1">
+          <div>
             <Select
               onChange={this.fromSelect}
               options={this.state.options}
               styles={customStyles}
-              isSearchable={false}
+              isSearchable={true}
             />
           </div>
           <label class="label" id="l2">
@@ -197,7 +197,8 @@ class CabForm extends React.Component {
               onChange={this.toSelect}
               options={this.state.options}
               styles={customStyles}
-              isSearchable={false}
+
+              isSearchable={true}
             />
             <br />
           </div>

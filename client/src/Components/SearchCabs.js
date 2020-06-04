@@ -100,53 +100,63 @@ class MyRequests extends React.Component {
         width: "250px",
         minHeight: "1px",
         textAlign: "left",
-        border: "none"
+        border: "none",
+        color:'black'
       }),
       control: provided => ({
         ...provided,
         border: "2px solid #757575",
         borderRadius: "10px",
         minHeight: "1px",
-        height: "40px"
+        height: "40px",
+        color:'black'
       }),
       input: provided => ({
         ...provided,
         minHeight: "1px",
         height: "40px",
         marginLeft: "160px",
-        background: "#fff"
+        background: "#fff",
+        color:'black'
       }),
       placeholder: provided => ({
         ...provided,
-        marginTop: "0px"
+        marginTop: "0px",
+        color:'black'
       }),
       dropdownIndicator: provided => ({
         ...provided,
         minHeight: "1px",
         paddingTop: "0",
         paddingBottom: "0",
-        color: "#757575"
+        
+        color:'black'
       }),
       indicatorSeparator: provided => ({
         ...provided,
         minHeight: "1px",
-        height: "24px"
+        height: "24px",
+        color:'black'
       }),
       clearIndicator: provided => ({
         ...provided,
-        minHeight: "1px"
+        minHeight: "1px",
+        color:'black'
       }),
       valueContainer: provided => ({
         ...provided,
         minHeight: "1px",
         height: "20px",
         paddingTop: "0",
-        paddingBottom: "0"
+        paddingBottom: "0",
+        color:'black'
       }),
       singleValue: provided => ({
         ...provided,
         minHeight: "1px",
-        paddingBottom: "2px"
+        color:'black',
+        paddingTop: "95px",
+
       })
     };
     return (

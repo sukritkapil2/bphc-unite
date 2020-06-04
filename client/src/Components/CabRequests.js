@@ -48,7 +48,7 @@ class CabRequests extends React.Component {
           })
           .catch((err)=>{console.log(err)});
           flag=1
-          console.log("Old Req deleted");
+          console.log("Old Req");
         }
       if(flag===0){
       return (
