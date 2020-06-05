@@ -2,6 +2,9 @@ import React from "react";
 import Calendar from "./Calendar";
 import { connect } from "react-redux";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import moment from "moment";
+
 import "../Stylesheets/cabform.css";
 import "../Stylesheets/main4.css";
 import Select from "react-select";
@@ -54,6 +57,27 @@ class CabForm extends React.Component {
       to: this.state.toValue
     };
     console.log(newRequest);
+    var today = new Date();
+    var tday=today.getDate();
+    var tmonth=today.getMonth();
+    var tyear=today.getFullYear();
+    const dateobj = moment(this.state.date);
+      var newDateObj = moment(dateobj).toDate();
+      var day=moment(newDateObj).day()
+      var month=moment(newDateObj).month()
+      var year=moment(newDateObj).year()
+    if(((tyear>year)||(tyear==year && tmonth>month)||(tyear==year && tmonth==month && tday>day)))
+    {
+      toast.error("You cannot submit a request with a past date !", {
+        position: toast.POSITION.TOP_RIGHT
+      });
+    }
+    else if(this.state.toValue===this.state.fromValue){
+      toast.error("You cannot have same To and From value !", {
+        position: toast.POSITION.TOP_RIGHT
+      });
+    }
+    else{
     axios
       .post("/api/cabs/request", newRequest)
       .then(res => {
@@ -63,6 +87,14 @@ class CabForm extends React.Component {
         console.log(error);
         console.log("CabForm");
       });
+    axios
+      .post("/calendarcreate")
+      .then(res=>{console.log(res.data)})
+      .catch(err=>{
+        console.log(err);
+      })
+  
+    }
   }
   setDate(childData) {
     this.setState({ date: childData });
@@ -77,7 +109,7 @@ class CabForm extends React.Component {
     this.setState({ toValue: event.label });
     console.log(this.state);
   }
-  render() {
+  render() {   
     const customStyles = {
       container: provided => ({
         ...provided,
@@ -131,11 +163,11 @@ class CabForm extends React.Component {
       singleValue: provided => ({
         ...provided,
         minHeight: "1px",
-        paddingBottom: "2px",
+        paddingTop: "95px",
         
       })
     };
-
+    
     return (
       <div className="column is-half" id="cont2">
         <p className="text">Add a Cab Request</p>
@@ -149,12 +181,12 @@ class CabForm extends React.Component {
           From
         </label>
         <div class="control">
-          <div class="field" id="f1">
+          <div>
             <Select
               onChange={this.fromSelect}
               options={this.state.options}
               styles={customStyles}
-              isSearchable={false}
+              isSearchable={true}
             />
           </div>
           <label class="label" id="l2">
@@ -165,7 +197,8 @@ class CabForm extends React.Component {
               onChange={this.toSelect}
               options={this.state.options}
               styles={customStyles}
-              isSearchable={false}
+
+              isSearchable={true}
             />
             <br />
           </div>
@@ -195,6 +228,8 @@ class CabForm extends React.Component {
             </div>
           </div>
         </div>
+        <ToastContainer></ToastContainer>
+
       </div>
     );
   }
