@@ -1,72 +1,73 @@
 import React from "react";
 import "../Stylesheets/main2.css";
-import axios from "axios";
+import { Button, Card, CardBody, CardHeader } from "reactstrap";
 
 const initialstate = {
-  email: "",
-  password: ""
+    email: "",
+    password: "",
 };
 
 class AdminOptions extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = initialstate;
-    this.onEventClick = this.onEventClick.bind(this);
-    this.onFeedbackClick = this.onFeedbackClick.bind(this)
-    this.onLogout = this.onLogout.bind(this);
-  }
+    constructor(props) {
+        super(props);
+        this.state = initialstate;
+        this.onEventClick = this.onEventClick.bind(this);
+        this.onFeedbackClick = this.onFeedbackClick.bind(this);
+        this.onLogout = this.onLogout.bind(this);
+    }
 
-  
+    onEventClick(e) {
+        console.log("Sending Post Request");
+        e.preventDefault();
+        return (window.location.href = "/adminevents");
+    }
 
-  onEventClick(e) {
-    console.log("Sending Post Request");
-    e.preventDefault();
-    return(window.location.href = "/adminevents");
-  }
+    onFeedbackClick(e) {
+        return (window.location.href = "/adminfeedback");
+    }
 
-  onFeedbackClick(e) {
-    return (window.location.href = "/adminfeedback");
-  }
+    onLogout(e) {
+        window.localStorage.removeItem("authToken");
+        window.location.href = "/adminlogin";
+    }
 
-  onLogout(e)
-  {
-    window.localStorage.removeItem("authToken");
-    window.location.href = "/adminlogin";
-  }
-
-  render() {
-    return (
-      <div>
-        <div className="options">
-          <h1>Administrator Options</h1>
-          <button
-            type="submit"
-            className="btn btn-primary btn-block btn-large"
-            id="button1"
-            onClick={this.onEventClick}
-          >
-            Event Management
-          </button>
-          <button
-            type="submit"
-            className="btn btn-primary btn-block btn-large"
-            id="button23"
-            onClick={this.onFeedbackClick}
-          >
-            View Feedback
-          </button>
-          <button
-            type="goback"
-            className="btn btn-primary"
-            id="buttonhome"
-            onClick={this.onLogout}
-          >
-            Logout
-          </button>
-        </div>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="col-12 col-sm-4 offset-sm-4 mt-5">
+                <Card>
+                    <CardHeader className="bg-primary text-center">
+                        <strong style={{ color: "white" }}>
+                            Administrator Options
+                        </strong>
+                    </CardHeader>
+                    <CardBody>
+                        <Button
+                            type="submit"
+                            className="btn btn-warning btn-block btn-large"
+                            onClick={this.onEventClick}
+                        >
+                            Event Management
+                        </Button>
+                        <Button
+                            type="submit"
+                            className="btn btn-warning btn-block btn-large"
+                            onClick={this.onFeedbackClick}
+                        >
+                            View Feedback
+                        </Button>
+                        <br></br>
+                        <Button
+                            type="goback"
+                            className="btn btn-danger"
+                            onClick={this.onLogout}
+                        >
+                            Logout
+                        </Button>
+                    </CardBody>
+                </Card>
+            </div>
+        );
+    }
 }
 
 export default AdminOptions;

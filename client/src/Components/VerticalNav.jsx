@@ -3,8 +3,45 @@ import Logo from "./images/logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "../Stylesheets/nav.css";
+import axios from "axios";
+
 class VerticalNav extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      requests: [],
+      name:"",
+      len:0
+    };
+   
+  }
   render() {
+    var notifbar
+    axios
+      .get("/notif/")
+      .then(res => {
+        this.setState({requests:res.data});
+      })
+      
+    this.state.requests.map((item,index)=>{
+      if(item.name===this.props.user.name )
+      {
+         notifbar=item.msg.map((nm,nmi)=>{
+           if(nmi<=5){
+           return(
+         <a className="navbar-item">{nm}</a>
+           
+         )}
+         else{
+           const delReq  ={name:this.props.user.name}
+           axios.post("/notif/delete",delReq)
+         }
+        })
+      }
+      
+    })
+   
+  
     return (
       <nav
         className="navbar"
@@ -48,13 +85,9 @@ class VerticalNav extends React.Component {
               <a className="navbar-link" id="tnav">
                 Notifications
               </a>
-
+                
               <div className="navbar-dropdown">
-                <a className="navbar-item">NOTIF 1</a>
-                <a className="navbar-item">NOTIF 2</a>
-                <a className="navbar-item">NOTIF 3</a>
-                <hr className="navbar-divider" />
-                <a className="navbar-item">Report an issue</a>
+              {notifbar}
               </div>
             </div>
           </div>
