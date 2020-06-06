@@ -1,8 +1,7 @@
 import React from "react";
-import moment from "moment"
+import moment from "moment";
 import axios from "axios";
 import { connect } from "react-redux";
-
 
 class UpcomingRideCard extends React.Component {
     constructor(props) {
@@ -107,9 +106,9 @@ class UpcomingRideCard extends React.Component {
 }
 
 const mapStateToProps = state => {
-    return {
-        user: state.auth
-    };
+  return {
+    user: state.auth
+  };
 };
 
 export default connect(mapStateToProps)(UpcomingRideCard);

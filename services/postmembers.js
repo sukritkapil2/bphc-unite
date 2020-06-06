@@ -1,6 +1,6 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const Post = require('../models/CarPool');
+const Post = require("../models/CarPool");
 
 router.route('/request').post((req, res) => {
     const newReq = new Post({
@@ -17,7 +17,5 @@ router.route('/request').post((req, res) => {
     newReq.save().then(post => res.json(post));
     console.log("Request sucessfully submitted CarPool");
 });
-
-
 
 module.exports = router;
