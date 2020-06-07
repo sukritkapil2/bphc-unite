@@ -14,6 +14,7 @@ class AdminOptions extends React.Component {
         this.onEventClick = this.onEventClick.bind(this);
         this.onFeedbackClick = this.onFeedbackClick.bind(this);
         this.onLogout = this.onLogout.bind(this);
+        this.onDashboardClick = this.onDashboardClick.bind(this);
     }
 
     onEventClick(e) {
@@ -31,6 +32,10 @@ class AdminOptions extends React.Component {
         window.location.href = "/adminlogin";
     }
 
+    onDashboardClick(e) {
+        return (window.location.href = "/admindashboard");
+    }
+
     render() {
         return (
             <div className="col-12 col-sm-4 offset-sm-4 mt-5">
@@ -43,7 +48,14 @@ class AdminOptions extends React.Component {
                     <CardBody>
                         <Button
                             type="submit"
-                            className="btn btn-warning btn-block btn-large"
+                            className="btn btn-info btn-block btn-large"
+                            onClick={this.onDashboardClick}
+                        >
+                            Dashboard
+                        </Button>
+                        <Button
+                            type="submit"
+                            className="btn btn-success btn-block btn-large"
                             onClick={this.onEventClick}
                         >
                             Event Management
