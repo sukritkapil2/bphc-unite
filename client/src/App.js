@@ -16,6 +16,7 @@ import AdminFeedback from "./Components/AdminFeedback";
 import AdminOptions from "./Components/AdminOptions";
 import CabGroup from "./Components/CabGroup.js";
 import AdminDashboard from "./Components/AdminDashboard";
+import Profile from "./Components/Profile";
 
 function App(props) {
     useEffect(() => {
@@ -56,6 +57,7 @@ function App(props) {
                 component={AdminDashboard}
             ></PrivateRoute>
             <Route exact path="/feedback" component={Feedback}></Route>
+            <Route exact path="/profile" component={Profile}></Route>
         </Router>
     );
 }
