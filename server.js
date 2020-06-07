@@ -30,6 +30,7 @@ const getGroups = require("./services/getGroups");
 const getNotif= require("./services/getNotif");
 const notifstatus= require("./services/notifstatus");
 const deletenotif= require("./services/deletenotif");
+const googlecalendar = require("./services/googlecalendar");
 const path = require("path");
 require("./models/cabRequests");
 require("./models/User");
@@ -93,7 +94,7 @@ app.use("/deletefeedback", deleteFeedback);
 app.use("/notif", getNotif);
 app.use("/notifstatus", notifstatus);
 app.use("/notif",deletenotif)
-
+app.use("/calendar",googlecalendar);
 const port = process.env.PORT || 5000;
 require("./routes/authRoutes")(app);
 

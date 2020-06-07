@@ -2,11 +2,36 @@ import React from "react";
 import moment from "moment";
 import axios from "axios";
 import { connect } from "react-redux";
-
+import { ToastContainer, toast } from "react-toastify";
 class UpcomingRideCard extends React.Component {
     constructor(props) {
         super(props);
         this.onCompleted = this.onCompleted.bind(this);
+        this.notifyMe = this.notifyMe.bind(this);
+    }
+
+    notifyMe()
+    {
+      console.log(this.props.user);
+      const dateobj = moment(this.props.dateofrequest);
+      console.log(dateobj);
+      const information = {
+        dateTime : dateobj,
+        refreshToken : this.props.user.refreshToken
+      }
+      toast.success("The event has been added to your Google Calendar",{
+        position : toast.POSITION.TOP_RIGHT
+      });
+      console.log(information);
+      axios.post("/calendar/add",information)
+          .then((res)=>{
+            
+            console.log("information is "+information);
+            console.log("event added");
+          })
+          .catch((err)=>{
+            console.log(err);
+          })
     }
 
     onCompleted()
@@ -96,6 +121,14 @@ class UpcomingRideCard extends React.Component {
             </a>
             {/* <a href="#" class="card-footer-item">Edit</a>
                 <a href="#" class="card-footer-item">Delete</a> */}
+            <a
+            href="#"
+            class="card-footer-item"
+            id="lin1"
+            onClick={this.notifyMe}
+            >
+              Notify Me
+            </a>
           </footer>
         </div>
         <br />
