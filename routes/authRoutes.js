@@ -20,7 +20,7 @@ module.exports = (app) => {
         "/auth/google/redirect",
         passport.authenticate("google"),
         (req, res) => {
-            res.redirect("http://localhost:5000/dashboard");
+            res.redirect("/dashboard");
         }
     );
     app.get("/api/current_user", (req, res) => {
