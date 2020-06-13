@@ -1,4 +1,21 @@
-.card5 {
+.AdminPage .buttonlogout {
+    margin-left: 92%;
+    margin-top: 2%;
+    background-color: rgb(241, 70, 70);
+    font-weight: 600;
+    font-family: "Varela";
+}
+
+.container25 {
+    position: absolute;
+    height: 500px;
+    width: 1500px;
+    display: flex;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.card {
     display: flex;
     height: 350px;
     width: 280px;
@@ -11,17 +28,17 @@
     left: -100px;
 }
 
-.card5:not(:first-child) {
+.card:not(:first-child) {
     margin-left: -50px;
 }
 
-.card5:hover {
+.card:hover {
     transform: translate(-10px, -20px);
     transition: 0.4s ease-out;
     z-index: 10;
 }
 
-.card5:hover ~ .card {
+.card:hover ~ .card {
     position: relative;
     left: 150px;
     transition: 0.4s ease-out;
@@ -88,6 +105,12 @@
     left: 20px;
 }
 
+#header-text {
+    color: white;
+    font-size: 40px;
+    font-variant-caps: normal;
+}
+
 #buttonl {
     position: absolute;
     right: 0px;
@@ -103,10 +126,4 @@
     outline: none;
     background-color: rgb(233, 109, 109);
     margin-top: -71px;
-}
-
-.scrollable {
-    position: relative;
-    overflow-y: scroll;
-    height: 500px;
 }

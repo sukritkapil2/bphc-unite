@@ -40,21 +40,18 @@ class AdminDashboard extends Component {
             theme: "dark2",
             animationEnabled: true,
             title: {
-                text: "Number of Logins vs Cab Requests",
+                text: "Number of Users vs Cab Requests",
             },
             subtitles: [
                 {
                     text: "Last 10 days data",
-                },
-                {
-                    text: "Same user's login is counted",
                 },
             ],
             axisX: {
                 title: "Time in Days",
             },
             axisY: {
-                title: "User Logins",
+                title: "Users",
                 titleFontColor: "#6D78AD",
                 lineColor: "#6D78AD",
                 labelFontColor: "#6D78AD",
@@ -79,7 +76,7 @@ class AdminDashboard extends Component {
             data: [
                 {
                     type: "spline",
-                    name: "User Logins",
+                    name: "Users",
                     showInLegend: true,
                     xValueFormatString: "DDD",
                     yValueFormatString: "##0",

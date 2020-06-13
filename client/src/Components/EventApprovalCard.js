@@ -4,8 +4,6 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../Stylesheets/main4.css";
-import { Card, CardBody, CardHeader, CardFooter } from "reactstrap";
-
 class EventApprovalCard extends React.Component {
     constructor(props) {
         super(props);
@@ -67,16 +65,21 @@ class EventApprovalCard extends React.Component {
         if (status == "0") {
             buttons = (
                 <div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                     <button
-                        class="btn btn-success"
+                        class="button is-success"
                         onClick={this.approveLocation}
+                        id="bun12"
                     >
                         &#10004;
                     </button>
 
                     <button
-                        class="btn btn-danger"
+                        class="button is-danger"
                         onClick={this.deleteLocation}
+                        id="bun13"
                     >
                         X
                     </button>
@@ -85,29 +88,35 @@ class EventApprovalCard extends React.Component {
         } else {
             buttons = (
                 <div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                     <a href="#" onClick={this.deleteLocation}>
-                        <button class="btn btn-danger">X</button>
+                        <button class="btn btn-primary" id="buttonl25">
+                            X
+                        </button>
                     </a>
                 </div>
             );
         }
 
         return (
-            <React.Fragment>
-                <Card style={{ width: "350px" }}>
-                    <CardHeader>
-                        <h5>{this.props.eventName}</h5>
-                    </CardHeader>
-                    <CardBody>
-                        <p>
-                            Address: <br></br>
-                            {this.props.eventAddr}
-                        </p>
-                    </CardBody>
-                    <CardFooter>{buttons}</CardFooter>
-                </Card>
+            <div>
+                <div className="card">
+                    <h3 className="title">{this.props.eventName}</h3>
+                    <p className="title2"></p>
+                    <div class="bar">
+                        <div className="emptybar"></div>
+                        <div className="filledbar"></div>
+                    </div>
+                    <p className="message3">
+                        Address: <br></br>
+                        {this.props.eventAddr}
+                    </p>
+                    {buttons}
+                </div>
                 <ToastContainer></ToastContainer>
-            </React.Fragment>
+            </div>
         );
     }
 }
