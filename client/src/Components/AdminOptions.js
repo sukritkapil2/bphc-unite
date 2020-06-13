@@ -1,6 +1,5 @@
 import React from "react";
 import "../Stylesheets/main2.css";
-import axios from "axios";
 
 const initialstate = {
     email: "",

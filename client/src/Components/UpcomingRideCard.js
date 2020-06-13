@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment";
 import axios from "axios";
 import { connect } from "react-redux";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 class UpcomingRideCard extends React.Component {
     constructor(props) {
         super(props);
