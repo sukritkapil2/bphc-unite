@@ -60,15 +60,13 @@ class MyRequests extends React.Component {
                 const cabcards = data.map((item, index) => {
             
                     return (
-                      <CabCard
-                        key={index}
-                        email={item.email}
-                        requestee={item.name}
-                        dateofrequest={item.date}
-                        message={item.msg}
-                        from={item.from}
-                        to={item.to}
-                      ></CabCard>
+                        <CabCard
+                            key={index}
+                            requestee={item.name}
+                            from={item.from}
+                            to={item.to}
+                            dateofrequest={item.date}
+                        ></CabCard>
                     );
                     })
                     this.setState({cabcard:cabcards})

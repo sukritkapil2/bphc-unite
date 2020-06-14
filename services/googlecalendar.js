@@ -8,6 +8,7 @@ router.route("/add").post((req,res)=>{
         refreshToken : req.body.refreshToken
         
     }
+    console.log(information)
     console.log("here" +information.dateTime);
     const OAuth2Client = new google.auth.OAuth2(keys.googleClientId,keys.googleClientSecret,"/dashboard");
     OAuth2Client.setCredentials({refresh_token : information.refreshToken});

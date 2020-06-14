@@ -45,7 +45,7 @@ class AdminEvents extends React.Component {
         return (
             <div>
                 <div className="AdminPage">
-                    <h1 id="header-text">EVENT MANAGEMENT</h1>
+                    <h1 id="header-text"></h1>
                     <button
                         className="btn btn-primary btn-large buttonlogout"
                         onClick={this.goBack}
