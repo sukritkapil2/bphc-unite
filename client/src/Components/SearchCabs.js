@@ -58,7 +58,7 @@ class MyRequests extends React.Component {
                     return (
                         <CabCard
                             key={index}
-                            requesterName={item.name}
+                            requestee={item.name}
                             from={item.from}
                             to={item.to}
                             dateofrequest={item.date}
