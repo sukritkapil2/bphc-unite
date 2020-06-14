@@ -11,6 +11,7 @@ class MyRequests extends React.Component {
         super(props);
         this.state = {
             requests: [],
+            cabcard:[],
             date: Date.now,
             fromValue: "check",
             toValue: "check",
@@ -35,15 +36,17 @@ class MyRequests extends React.Component {
                         return (
                             <CabCard
                                 key={index}
-                                requesterName={item.name}
+                                email={item.email}
+                                requestee={item.name}
+                                dateofrequest={item.date}
+                                message={item.msg}
                                 from={item.from}
                                 to={item.to}
-                                dateofrequest={item.date}
                             ></CabCard>
                         );
                     }
                 });
-                this.setState({ requests: req });
+                this.setState({ cabcard: req });
             })
             .catch((err) => {
                 console.log(err);
@@ -54,18 +57,22 @@ class MyRequests extends React.Component {
             .get("/api/fetchrequests")
             .then((response) => {
                 const data = response.data;
-                const req = data.map((item, index) => {
+                const cabcards = data.map((item, index) => {
+            
                     return (
-                        <CabCard
-                            key={index}
-                            requesterName={item.name}
-                            from={item.from}
-                            to={item.to}
-                            dateofrequest={item.date}
-                        ></CabCard>
+                      <CabCard
+                        key={index}
+                        email={item.email}
+                        requestee={item.name}
+                        dateofrequest={item.date}
+                        message={item.msg}
+                        from={item.from}
+                        to={item.to}
+                      ></CabCard>
                     );
-                });
-                this.setState({ requests: req });
+                    })
+                    this.setState({cabcard:cabcards})
+                this.setState({ requests: data });
             })
             .catch((err) => console.log(err));
 
@@ -82,6 +89,7 @@ class MyRequests extends React.Component {
             .catch((err) => {
                 console.log(err);
             });
+        
     }
 
     fromSelect(event) {
@@ -157,6 +165,7 @@ class MyRequests extends React.Component {
                 paddingTop: "95px",
             }),
         };
+        
         return (
             <div>
                 <div className="box" id="nav1">
@@ -195,7 +204,7 @@ class MyRequests extends React.Component {
                             </button>
                         </div>
                         <div className="cnt1" id="cnt1">
-                            {this.state.requests}
+                            {this.state.cabcard}
                         </div>
                     </div>
                 </div>
