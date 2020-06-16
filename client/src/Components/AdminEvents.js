@@ -43,38 +43,22 @@ class AdminEvents extends React.Component {
         });
 
         return (
-            <div className="d-flex">
-                <div className="container">
-                    <div className="row" style={{ backgroundColor: "#191a1a" }}>
-                        <div className="col-12 col-sm-6 offset-sm-3 text-center mt-3">
-                            <h2 style={{ color: "floralwhite" }}>
-                                Event Management
-                            </h2>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-12 col-sm-6 offset-sm-3">
-                            <div className="d-inline-block scrollable mt-3">
-                                {myevents}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row mt-4">
-                        <div className="col-12 col-sm-6 offset-sm-4">
-                            <button
-                                className="btn btn-primary btn-large buttonlogout ml-5"
-                                onClick={this.goBack}
-                            >
-                                Back
-                            </button>
-                            <button
-                                className="btn btn-danger btn-large buttonlogout ml-4"
-                                onClick={this.onClick}
-                            >
-                                Logout
-                            </button>
-                        </div>
-                    </div>
+            <div>
+                <div className="AdminPage">
+                    <h1 id="header-text"></h1>
+                    <button
+                        className="btn btn-primary btn-large buttonlogout"
+                        onClick={this.goBack}
+                    >
+                        Back
+                    </button>
+                    <button
+                        className="btn btn-primary btn-large buttonlogout"
+                        onClick={this.onClick}
+                    >
+                        LOGOUT
+                    </button>
+                    <div class="container25">{myevents}</div>
                 </div>
             </div>
         );

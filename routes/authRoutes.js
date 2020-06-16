@@ -3,26 +3,30 @@ const { google } = require('googleapis');
 const { OAuth2 } = google.auth;
 const keys = require('../config/keys');
 module.exports = (app) => {
-	app.get(
-		'/auth/google',
-		passport.authenticate('google', {
-			scope: [
-				'profile',
-				'email',
-				'https://www.googleapis.com/auth/calendar',
-				'https://www.googleapis.com/auth/calendar.events'
-			],
-			accessType: 'offline',
-			prompt: 'consent'
-		})
-	);
-	app.get('/auth/google/redirect', passport.authenticate('google'), (req, res) => {
-		res.redirect('http://localhost:5000/dashboard');
-	});
-	app.get('/api/current_user', (req, res) => {
-		res.send(req.user);
-		console.log('current user is ', req.user);
-	});
+    app.get(
+        "/auth/google",
+        passport.authenticate("google", {
+            scope: [
+                "profile",
+                "email",
+                "https://www.googleapis.com/auth/calendar",
+                "https://www.googleapis.com/auth/calendar.events",
+            ],
+            accessType: "offline",
+            prompt: "consent",
+        })
+    );
+    app.get(
+        "/auth/google/redirect",
+        passport.authenticate("google"),
+        (req, res) => {
+            res.redirect("/dashboard");
+        }
+    );
+    app.get("/api/current_user", (req, res) => {
+        res.send(req.user);
+        console.log("current user is ", req.user);
+    });
 
 	app.get('/api/logout', (req, res) => {
 		req.logout();

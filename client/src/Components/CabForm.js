@@ -61,11 +61,15 @@ class CabForm extends React.Component {
     var tday=today.getDate();
     var tmonth=today.getMonth();
     var tyear=today.getFullYear();
+    console.log("Today "+today)
+    console.log("Today "+tday)
     const dateobj = moment(this.state.date);
       var newDateObj = moment(dateobj).toDate();
-      var day=moment(newDateObj).day()
+      var day=moment(newDateObj).date()
       var month=moment(newDateObj).month()
       var year=moment(newDateObj).year()
+      console.log("Selected "+newDateObj)
+      console.log("Selected "+day)
     if(((tyear>year)||(tyear==year && tmonth>month)||(tyear==year && tmonth==month && tday>day)))
     {
       toast.error("You cannot submit a request with a past date !", {

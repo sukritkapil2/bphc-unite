@@ -1,14 +1,6 @@
 import React from "react";
+import "../Stylesheets/feedback.css";
 import Axios from "axios";
-import {
-    Card,
-    CardBody,
-    CardHeader,
-    FormGroup,
-    Label,
-    Input,
-    Button,
-} from "reactstrap";
 
 const initialState = {
     name: "",
@@ -69,61 +61,51 @@ class Feedback extends React.Component {
 
     render() {
         return (
-            <div className="col-12 col-sm-4 offset-sm-4 mt-5">
-                <Card>
-                    <CardHeader className="bg-primary text-center">
-                        <strong style={{ color: "white" }}>
-                            Feedback to Developers
-                        </strong>
-                    </CardHeader>
-                    <CardBody>
-                        <FormGroup>
-                            <Label htmlFor="name">Name</Label>
-                            <Input
-                                type="text"
-                                id="name"
-                                name="n"
-                                required="required"
-                                onChange={this.onChange}
-                            ></Input>
-                        </FormGroup>
-                        <FormGroup>
-                            <Label htmlFor="email2">Email</Label>
-                            <Input
-                                type="email"
-                                id="email2"
-                                name="e"
-                                required="required"
-                                onChange={this.onChange}
-                            ></Input>
-                        </FormGroup>
-                        <FormGroup>
-                            <textarea
-                                name="paragraph_text"
-                                cols="30"
-                                rows="4"
-                                id="message"
-                                onChange={this.onChange}
-                                placeholder="Your Feedback"
-                                required="required"
-                            ></textarea>
-                        </FormGroup>
-                        <Button
-                            type="goback"
-                            className="btn btn-danger"
-                            onClick={this.goBack}
-                        >
-                            Home
-                        </Button>
-                        <Button
-                            type="submit"
-                            className="btn btn-success text-center ml-5"
-                            onClick={this.onSend}
-                        >
-                            Send Feedback
-                        </Button>
-                    </CardBody>
-                </Card>
+            <div>
+                <div className="feedback">
+                    <div className="text12">Feedback to Developers</div>
+                    <input
+                        type="text"
+                        name="n"
+                        placeholder="Name"
+                        required="required"
+                        id="name"
+                        onChange={this.onChange}
+                    />
+                    <input
+                        type="text"
+                        name="e"
+                        placeholder="Email"
+                        required="required"
+                        id="email2"
+                        onChange={this.onChange}
+                    />
+                    <textarea
+                        name="paragraph_text"
+                        cols="50"
+                        rows="10"
+                        id="message"
+                        onChange={this.onChange}
+                    >
+                        Your Feedback
+                    </textarea>
+                    <button
+                        type="submit"
+                        className="btn btn-primary btn-block btn-large"
+                        id="button2"
+                        onClick={this.onSend}
+                    >
+                        Send Feedback
+                    </button>
+                    <button
+                        type="goback"
+                        className="btn btn-primary"
+                        id="buttonhome2"
+                        onClick={this.goBack}
+                    >
+                        Home
+                    </button>
+                </div>
             </div>
         );
     }

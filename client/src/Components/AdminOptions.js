@@ -1,6 +1,5 @@
 import React from "react";
 import "../Stylesheets/main2.css";
-import { Button, Card, CardBody, CardHeader } from "reactstrap";
 
 const initialstate = {
     email: "",
@@ -14,6 +13,7 @@ class AdminOptions extends React.Component {
         this.onEventClick = this.onEventClick.bind(this);
         this.onFeedbackClick = this.onFeedbackClick.bind(this);
         this.onLogout = this.onLogout.bind(this);
+        this.onDashboardClick = this.onDashboardClick.bind(this);
     }
 
     onEventClick(e) {
@@ -31,40 +31,48 @@ class AdminOptions extends React.Component {
         window.location.href = "/adminlogin";
     }
 
+    onDashboardClick(e) {
+        return (window.location.href = "/admindashboard");
+    }
+
     render() {
         return (
-            <div className="col-12 col-sm-4 offset-sm-4 mt-5">
-                <Card>
-                    <CardHeader className="bg-primary text-center">
-                        <strong style={{ color: "white" }}>
-                            Administrator Options
-                        </strong>
-                    </CardHeader>
-                    <CardBody>
-                        <Button
-                            type="submit"
-                            className="btn btn-warning btn-block btn-large"
-                            onClick={this.onEventClick}
-                        >
-                            Event Management
-                        </Button>
-                        <Button
-                            type="submit"
-                            className="btn btn-warning btn-block btn-large"
-                            onClick={this.onFeedbackClick}
-                        >
-                            View Feedback
-                        </Button>
-                        <br></br>
-                        <Button
-                            type="goback"
-                            className="btn btn-danger"
-                            onClick={this.onLogout}
-                        >
-                            Logout
-                        </Button>
-                    </CardBody>
-                </Card>
+            <div>
+                <div className="options">
+                    <h1>Administrator Options</h1>
+                    <button
+                        type="submit"
+                        className="btn btn-primary btn-block btn-large"
+                        id="button1"
+                        onClick={this.onDashboardClick}
+                    >
+                        Dashboard
+                    </button>
+                    <button
+                        type="submit"
+                        className="btn btn-primary btn-block btn-large"
+                        id="button23"
+                        onClick={this.onEventClick}
+                    >
+                        Event Management
+                    </button>
+                    <button
+                        type="submit"
+                        className="btn btn-primary btn-block btn-large"
+                        id="button23"
+                        onClick={this.onFeedbackClick}
+                    >
+                        View Feedback
+                    </button>
+                    <button
+                        type="goback"
+                        className="btn btn-primary"
+                        id="buttonhome"
+                        onClick={this.onLogout}
+                    >
+                        Logout
+                    </button>
+                </div>
             </div>
         );
     }

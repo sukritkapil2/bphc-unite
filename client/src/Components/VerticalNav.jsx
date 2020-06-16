@@ -1,6 +1,5 @@
 import React from "react";
 import Logo from "./images/logo.png";
-import { NavLink, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "../Stylesheets/nav.css";
 import axios from "axios";
@@ -73,7 +72,7 @@ class VerticalNav extends React.Component {
               Home
             </a>
 
-            <a className="navbar-item" id="tnav">
+            <a href="/profile" className="navbar-item" id="tnav">
               Profile
             </a>
 

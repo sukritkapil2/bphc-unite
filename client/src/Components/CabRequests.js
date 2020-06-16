@@ -30,7 +30,7 @@ class CabRequests extends React.Component {
       var flag=0
       const dateobj = moment(item.date);
       var newDateObj = moment(dateobj).toDate();
-      var day=moment(newDateObj).day()
+      var day=moment(newDateObj).date()
       var month=moment(newDateObj).month()
       var year=moment(newDateObj).year()
       if(item.email===this.props.user.email &&((tyear>year)||(tyear==year && tmonth>month)||(tyear==year && tmonth==month && tday>day))){

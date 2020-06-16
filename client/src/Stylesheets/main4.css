@@ -3,7 +3,7 @@
 .text {
     text-align: center;
     font-weight: 600;
-    font-family: "Varela";
+    font-family: "Varela", sans-serif;
     color: white;
     background-color: rgb(57, 81, 160);
     font-size: 20px;
@@ -11,7 +11,7 @@
 
 .textHead {
     text-align: center;
-    font-family: "Varela";
+    font-family: "Varela", sans-serif;
     color: white;
     font-size: 20px;
     width: 660px;
@@ -26,7 +26,6 @@
 }
 
 .cont1 {
-    background-color: rgb(52, 53, 54);
     background: linear-gradient(-360deg, rgb(150, 27, 231), rgb(57, 81, 160));
     height: 82%;
     border-radius: 20px;
@@ -42,7 +41,7 @@
 
 #head4t {
     color: rgb(233, 229, 229);
-    font-family: "Varela";
+    font-family: "Varela", sans-serif;
     font-size: 16px;
 }
 
@@ -58,7 +57,7 @@
 .content {
     color: rgb(123, 115, 204);
     font-weight: 600;
-    font-family: "Varela";
+    font-family: "Varela", sans-serif;
     line-height: 1.6em;
     font-size: 16px;
 }
@@ -76,7 +75,6 @@
 }
 
 #cont2 {
-    background-color: rgb(52, 53, 54);
     background: linear-gradient(-360deg, rgb(107, 20, 165), rgb(57, 81, 160));
     height: 82%;
     border-radius: 0px 20px 20px 0px;
@@ -87,7 +85,7 @@
     color: white;
     font-size: 17px;
     font-weight: 600;
-    font-family: "Varela";
+    font-family: "Varela", sans-serif;
     margin-left: 24px;
 }
 
@@ -123,7 +121,7 @@
     margin-top: 20px;
     background-color: white;
     color: rgb(27, 27, 27);
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
 }
 
 .card2 {
@@ -285,7 +283,6 @@
 #cont3 {
     margin-left: 24%;
     margin-top: 8%;
-    background-color: rgb(52, 53, 54);
     background: linear-gradient(-360deg, rgb(107, 20, 165), rgb(57, 81, 160));
     height: 82%;
     border-radius: 10px 10px 10px 10px;

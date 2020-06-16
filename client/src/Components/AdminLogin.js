@@ -1,15 +1,6 @@
 import React from "react";
 import "../Stylesheets/main2.css";
 import axios from "axios";
-import {
-    Card,
-    CardBody,
-    CardHeader,
-    FormGroup,
-    Label,
-    Input,
-    Button,
-} from "reactstrap";
 
 const initialstate = {
     email: "",
@@ -58,50 +49,42 @@ class AdminLogin extends React.Component {
 
     render() {
         return (
-            <div className="col-12 col-sm-4 offset-sm-4 mt-5">
-                <Card>
-                    <CardHeader className="bg-primary text-center">
-                        <strong style={{ color: "white" }}>
-                            Login as Admin
-                        </strong>
-                    </CardHeader>
-                    <CardBody>
-                        <FormGroup>
-                            <Label htmlFor="email">Email</Label>
-                            <Input
-                                type="email"
-                                id="email"
-                                name="u"
-                                required="required"
-                                onChange={this.onChange}
-                            ></Input>
-                        </FormGroup>
-                        <FormGroup>
-                            <Label htmlFor="password">Password</Label>
-                            <Input
-                                type="password"
-                                id="password"
-                                name="p"
-                                required="required"
-                                onChange={this.onChange}
-                            ></Input>
-                        </FormGroup>
-                        <Button
-                            type="submit"
-                            onClick={this.onSubmit}
-                            className="btn btn-success"
-                        >
-                            Let me in.
-                        </Button>
-                        <Button
-                            type="goback"
-                            onClick={this.goBack}
-                            className="btn btn-danger ml-5"
-                        >
-                            Home
-                        </Button>
-                    </CardBody>
-                </Card>
+            <div>
+                <div className="login">
+                    <h1>Login as Admin</h1>
+                    <input
+                        type="text"
+                        name="u"
+                        placeholder="Admin Email"
+                        required="required"
+                        id="email"
+                        onChange={this.onChange}
+                    />
+                    <input
+                        type="password"
+                        name="p"
+                        placeholder="Admin Password"
+                        required="required"
+                        id="password"
+                        onChange={this.onChange}
+                    />
+                    <button
+                        type="submit"
+                        className="btn btn-primary btn-block btn-large"
+                        id="button1"
+                        onClick={this.onSubmit}
+                    >
+                        Let me in.
+                    </button>
+                    <button
+                        type="goback"
+                        className="btn btn-primary"
+                        id="buttonhome"
+                        onClick={this.goBack}
+                    >
+                        Home
+                    </button>
+                </div>
             </div>
         );
     }
