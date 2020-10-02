@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 var cors = require("cors");
 const passport = require("passport");
@@ -97,21 +97,21 @@ app.use("/notifstatus", notifstatus);
 app.use("/notif", deletenotif);
 app.use("/calendar", googlecalendar);
 const port = process.env.PORT || 5000;
-require("./routes/authRoutes")(app);
+require('./routes/authRoutes')(app);
 
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('client/build'));
 
-    app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
-    });
+	app.get('*', (req, res) => {
+		res.sendFile(path.join(__dirname, 'client', 'build', 'index.html')); // relative path
+	});
 }
-app.use(express.static("client/build"));
+app.use(express.static('client/build'));
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html")); // relative path
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, 'client', 'build', 'index.html')); // relative path
 });
 
 app.listen(port, () => {
-    console.log(port);
+	console.log(port);
 });
